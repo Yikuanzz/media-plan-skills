@@ -9,11 +9,19 @@ description: Use when a media plan direction is viable and needs proposal-grade 
 
 Turn a chosen strategy into an execution plan that can survive proposal review. Keep every action tied to the brief, research, idea score, and stated constraints.
 
+## Embedded Runtime Contract
+
+Do not start execution planning unless all three later-stage brief fields are present and specific enough to use: `deliverables_needed`, `constraints`, and `success_metric`. Treat `unknown`, `tbd`, or similar placeholders as missing.
+
+Use the selected channels, deliverables, timeline, budget or resource level, and constraints from the brief as hard limits.
+
+The proposal slot this stage must supply is `## 7. Recommended Execution Plan`.
+
 ## Entry Gate
 
 - Start only after intake is `ready`, research verdict is `pass`, and ideation has produced an explicit `## Selected Direction Handoff` for the chosen direction.
-- Require `deliverables_needed`, `constraints`, and `success_metric` from `../shared/brief-intake-template.md` before planning starts. Treat `unknown`, `tbd`, or similar placeholders as missing, and route back for clarification instead of guessing.
-- Use the selected channels, deliverables, timeline, budget or resource level, and constraints from `../shared/brief-intake-template.md` as hard limits.
+- Require `deliverables_needed`, `constraints`, and `success_metric` from the embedded runtime contract above before planning starts. Treat `unknown`, `tbd`, or similar placeholders as missing, and route back for clarification instead of guessing.
+- Use the selected channels, deliverables, timeline, budget or resource level, and constraints from the embedded runtime contract above as hard limits.
 - If the chosen direction already conflicts with those limits, stop and route back before planning details.
 
 ## Planning Rules
@@ -26,7 +34,7 @@ Turn a chosen strategy into an execution plan that can survive proposal review. 
 
 ## Output
 
-- Produce proposal-ready material for `## 7. Recommended Execution Plan` in `../shared/proposal-template.md`.
+- Produce proposal-ready material for `## 7. Recommended Execution Plan`.
 - Produce `## Validated Execution-Plan Handoff` exactly in the output shape below so downstream proposal writing and review can validate a concrete contract.
 - Include phase rhythm, channel or deliverable actions, resource logic, KPI logic, and major risk controls in direct business language.
 - Surface any execution mismatch as a blocker instead of smoothing it over in the draft.
