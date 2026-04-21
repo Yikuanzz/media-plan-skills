@@ -1,6 +1,6 @@
-# harness-template-cn
+# media-plan-skills
 
-这个仓库是一个面向 Agent 协作开发的基础模板。
+这个仓库是一个面向传媒策划方案生成的 Agent skill 仓库，而不是通用基础模板。
 
 `AGENTS.md` 故意保持简短，只负责做导航，不负责塞满所有规则。仓库内的 `docs/` 才是本地知识的正式来源。
 
@@ -10,7 +10,7 @@
 
 - `docs/REPO_COLLAB_GUIDE.md`：仓库级协作、提交、文档同步与测试约定。
 - `docs/ARCHITECTURE.md`：仓库整体结构和预期边界。
-- `docs/design-docs/core-beliefs.md`：Agent-first 的工作原则和这个模板的设计出发点。
+- `docs/design-docs/core-beliefs.md`：Agent-first 的工作原则和这个 media-plan skill 仓库的设计出发点。
 
 ## 代码改完前要读
 

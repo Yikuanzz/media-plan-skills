@@ -11,3 +11,4 @@
 ## 初始文档
 
 - `core-beliefs.md`
+- `2026-04-21-media-plan-skill-design.md`：通用型传媒策划方案 skill 首版设计，定义总控架构、loop 和质量门槛。
