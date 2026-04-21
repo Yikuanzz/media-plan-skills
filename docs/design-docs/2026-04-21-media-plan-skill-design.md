@@ -114,6 +114,8 @@
 - `brief-intake-template.md`：半结构化 brief 字段定义与提问口径
 - `research-rubric.md`：调研充分性判断标准
 - `idea-scorecard.md`：创意新鲜度、差异化与可执行性评分标准
+- `inspiration-directions.md`：灵感母题库与适用/禁用边界
+- `pre-brief-source-map.md`：前期预搜索的 source priority 与使用场景
 - `proposal-template.md`：方案正文固定结构与写作顺序
 
 这些 shared 文件是仓库维护时的 canonical contract；如果宿主运行环境只复制单个 skill 到临时目录，则允许把运行所需的最小 contract 镜像进对应 `SKILL.md`，但两边必须同步维护，避免漂移。
@@ -125,7 +127,9 @@
 `收 brief -> intake 前预搜索 -> 校验完整度 -> 补问关键缺口 -> 实时调研 -> 洞察提炼 -> 创意发散与筛选 -> 策略成型 -> 执行设计 -> 方案写作 -> 成案评审`
 
 - 如果用户已经给出可识别的品牌、品类、平台、议题或地域信号，总控应先做一轮轻量预搜索，用于缩小补问范围并保留后续 research 线索。
+- 预搜索默认优先看中国平台与社媒信号，再用商业媒体、咨询和官方来源校准热点与趋势，避免把单一热闹信号直接升级成策略结论。
 - 预搜索产出的内容只能作为“待确认上下文”，不能直接顶替必填 brief 字段，也不能绕过 intake gate。
+- 预搜索除了补问线索外，还应输出一层 inspiration hints，说明哪些灵感母题值得试、哪些方向应避免。
 
 ### 回退规则
 
@@ -158,6 +162,7 @@
 ### 创意门槛
 
 - 至少发散 3 个方向，再筛出推荐路径。
+- 至少保留 1 个不依赖既有母题库的 wildcard 方向，避免方向库过拟合。
 - 推荐方向需同时满足新鲜度、相关性、可执行性三个维度。
 - 若创意只是常见话术重组，视为不通过，必须回炉。
 
@@ -190,6 +195,8 @@
 - `skills/shared/brief-intake-template.md`
 - `skills/shared/research-rubric.md`
 - `skills/shared/idea-scorecard.md`
+- `skills/shared/inspiration-directions.md`
+- `skills/shared/pre-brief-source-map.md`
 - `skills/shared/proposal-template.md`
 
 ## 验收场景

@@ -11,6 +11,8 @@ Generate and filter strategy directions before recommendation writing. Keep the 
 
 ## Embedded Runtime Contract
 
+Treat inspiration directions as optional strategy seeds, not as a mandatory checklist.
+
 Score ideas on these five dimensions:
 
 - `brief_fit`: matches the stated goal, audience, and offer
@@ -44,6 +46,9 @@ Use this output shape:
   - Strength:
   - Weakness:
   - Revision note:
+  - Inspiration anchor:
+  - Recent signal used:
+  - Why this is not generic:
 
 ## Selected Direction Handoff
 - Selected direction:
@@ -59,8 +64,12 @@ Use this output shape:
 
 ## Direction Rules
 
+- Screen 2 to 4 plausible inspiration directions before drafting final options.
+- Generate at least one brief-specific angle from each surviving inspiration direction.
+- Keep at least one wildcard direction outside the inspiration library.
 - Produce at least three distinct directions before choosing one.
 - Make each direction traceable to specific brief inputs and research findings.
+- Name directions to avoid when the brief, research, or recent signals make them a weak fit.
 - Reject cliche, interchangeable, or trend-chasing ideas before final selection.
 - If the research pack cannot support differentiated directions, stop and route back to research or ask for sharper brief inputs.
 
@@ -75,6 +84,6 @@ Use this output shape:
 
 - Return the `## Idea Evaluation` table and `## Notes` section exactly as shaped above.
 - If one direction remains recommended for downstream work, also return `## Selected Direction Handoff` exactly as shaped above.
-- In `## Notes`, use only `Strength`, `Weakness`, and `Revision note`, and place the brief anchor or supporting research signal inside those fields when relevant.
+- In `## Notes`, use only `Strength`, `Weakness`, `Revision note`, `Inspiration anchor`, `Recent signal used`, and `Why this is not generic`, and place the brief anchor or supporting research signal inside those fields when relevant.
 - In `## Selected Direction Handoff`, name the exact winning direction, why it won, what execution planning must preserve, and what still needs execution validation.
 - If all directions fail, do not force a winner; return upstream for stronger research or clearer brief constraints.

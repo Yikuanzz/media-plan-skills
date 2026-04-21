@@ -14,6 +14,43 @@ Turn a semi-structured China-market media planning brief into a review-ready pro
 - Treat this skill as self-contained at runtime. Some hosts copy only this skill into a temporary directory without sibling assets.
 - Keep the runtime contract here aligned with the repo-level shared templates and review specs during maintenance, but do not require those files to be readable while executing.
 
+### Pre-Brief Search Contract
+
+Use pre-brief search to discover recent signals, not to finalize claims. Default source priority should favor China-market platform and social signals first, then use stronger editorial, consulting, or official sources to calibrate what matters.
+
+Source buckets and default order:
+
+- First: platform and social signals for fast-moving hotspots, creator formats, user emotion, and live discussion.
+- Second: China business and news media for brand moves, category news, and event context.
+- Third: consulting and industry research for trend framing and audience behavior context.
+- Fourth: official and public data for baseline validation, regional planning, and macro context.
+
+Source rules:
+
+- Use platform and social sources to spot live signals, not as the only support for major strategic conclusions.
+- If the brief is social-first, youth-facing, or content-led, start with platform and social signals.
+- If the brief mentions city, region, travel, or offline activation, add local official and local media sources early.
+- If the brief is B2B, innovation-led, or category-education heavy, elevate consulting and research sources sooner.
+- If multiple source buckets disagree, document the tension instead of forcing a clean story.
+
+Return both of these shapes during intake:
+
+```md
+## Pre-Brief Search Context
+- status: used | skipped | inconclusive
+- Known signals:
+- Items to confirm:
+- Notes for later research:
+
+## Inspiration Hints
+- Likely relevant directions:
+- Supporting recent signals:
+- Directions to avoid:
+- Unknowns that block inspiration choice:
+```
+
+Use `## Inspiration Hints` only as a provisional bridge between recent signals and later ideation. Do not lock a final strategy direction here.
+
 ### Intake Contract
 
 - Required fields to start research: `business_goal`, `target_audience`, `timeline`, `budget_or_resource_level`, `geography_or_region`, `channel_constraints`
@@ -87,9 +124,16 @@ Use this research output shape:
 
 ## Recommendation For Next Step
 - proceed | refine research | ask user for inputs
+
+## Inspiration Signal Check
+- Supported directions:
+- Weak or unsupported directions:
+- Risks or cautions:
 ```
 
 ### Idea Contract
+
+Treat inspiration directions as optional strategy seeds, not as a mandatory checklist.
 
 Score ideas on these five dimensions:
 
@@ -124,6 +168,9 @@ Use this idea output shape:
   - Strength:
   - Weakness:
   - Revision note:
+  - Inspiration anchor:
+  - Recent signal used:
+  - Why this is not generic:
 
 ## Selected Direction Handoff
 - Selected direction:
@@ -131,6 +178,14 @@ Use this idea output shape:
 - Must preserve:
 - Needs execution validation:
 ```
+
+For ideation generation, require all of the following:
+
+- Screen 2 to 4 plausible inspiration directions before drafting final options.
+- Generate at least one brief-specific angle from each surviving inspiration direction.
+- Keep at least one wildcard direction outside the inspiration library.
+- Name directions to avoid when the brief, research, or recent signals make them a weak fit.
+- Track for each kept idea which inspiration anchor and which recent signal informed it, plus why it is not generic.
 
 ### Proposal Contract
 
@@ -194,20 +249,10 @@ Review every proposal against these failure modes before delivery:
 ## Workflow
 
 1. Pre-brief search.
-Before asking intake follow-up questions, run one lightweight public search pass whenever the user has already given enough identifiable signal such as a brand, product, category, campaign topic, platform, or geography. Use that pass only to gather context that can sharpen later questions, such as recent market signals, category dynamics, likely channel context, or obvious items the user should confirm. Keep the search concise and recent, prefer public sources, and never let searched context satisfy required intake fields by inference. If the signal is too weak or the search is inconclusive, say so briefly and continue intake without blocking.
+Before asking intake follow-up questions, run one lightweight public search pass whenever the user has already given enough identifiable signal such as a brand, product, category, campaign topic, platform, or geography. Use that pass only to gather context that can sharpen later questions, such as recent market signals, category dynamics, likely channel context, obvious items the user should confirm, and which inspiration directions may be worth testing later. Keep the search concise and recent, start with China-market platform and social signals by default, and use stronger editorial, consulting, or official sources to calibrate what matters. Never let searched context satisfy required intake fields by inference. If the signal is too weak or the search is inconclusive, say so briefly and continue intake without blocking.
 
 2. Intake gate.
-Normalize the user brief into the intake template. Return a concise `## Pre-Brief Search Context` section before the intake summary using this shape:
-
-```md
-## Pre-Brief Search Context
-- status: used | skipped | inconclusive
-- Known signals:
-- Items to confirm:
-- Notes for later research:
-```
-
-Before research starts, require only the design-mandated intake fields listed under `Required Fields To Start Research`: `business_goal`, `target_audience`, `timeline`, `budget_or_resource_level`, `geography_or_region`, and `channel_constraints`. Do not treat `unknown`, `tbd`, or similar placeholders as satisfying the gate. If any required field is missing or unknown, return the pre-brief search context, the intake summary, the missing-field list, focused open questions, and the `## Intake Status` section set to `blocked`. Other intake fields may remain open until later-stage work makes them necessary, but `deliverables_needed`, `constraints`, and `success_metric` must all be resolved before execution planning or proposal drafting. Do not start research while blocked.
+Normalize the user brief into the intake template. Return both `## Pre-Brief Search Context` and `## Inspiration Hints` before the intake summary. Before research starts, require only the design-mandated intake fields listed under `Required Fields To Start Research`: `business_goal`, `target_audience`, `timeline`, `budget_or_resource_level`, `geography_or_region`, and `channel_constraints`. Do not treat `unknown`, `tbd`, or similar placeholders as satisfying the gate. If any required field is missing or unknown, return the pre-brief search context, the inspiration hints, the intake summary, the missing-field list, focused open questions, and the `## Intake Status` section set to `blocked`. Other intake fields may remain open until later-stage work makes them necessary, but `deliverables_needed`, `constraints`, and `success_metric` must all be resolved before execution planning or proposal drafting. Do not start research while blocked.
 
 3. Research validation.
 Run research only after intake is `ready`. Use the embedded research contract, require at least two evidence classes, and keep every important claim tied to at least one concrete source. If the verdict is `fail`, name the unsupported, stale, generic, single-class, or decision-useless claims and route back upstream with `refine research` or `ask user for inputs`.

@@ -47,6 +47,24 @@ This spec defines failure modes the media plan skill must catch before it return
 - Expected behavior: The skill stops before execution planning or final proposal drafting, asks only for the missing late-stage fields or fixes the blocked handoff, and does not guess execution details.
 - Failure signal: The skill drafts execution recommendations or a final proposal while execution-critical fields remain open, placeholder-only, or explicitly blocked.
 
+## Scenario 7: Inspiration Direction Overfitting
+
+- Trigger: The brief is generic or constraint-heavy, but the model force-fits one of the inspiration directions anyway.
+- Expected behavior: The skill names which inspiration directions should be avoided, keeps a wildcard option, and explains why the final options are brief-specific rather than template reuse.
+- Failure signal: The skill copies a direction from the inspiration library with only cosmetic wording changes and no brief-specific logic.
+
+## Scenario 8: Hot Signal Without Brand Fit
+
+- Trigger: A hot social topic or platform signal is strong, but its relevance to the brand or campaign goal is weak.
+- Expected behavior: The skill treats the signal as provisional, lowers its weight, or explicitly rejects the connection instead of forcing a hotspot tie-in.
+- Failure signal: The skill treats recency as sufficient reason to build the strategy around an unrelated hotspot.
+
+## Scenario 9: Low-Trust Signal Misuse
+
+- Trigger: Pre-brief search or research finds only weak social chatter, low-trust articles, or thin reposted summaries.
+- Expected behavior: The skill uses the signal only as a discovery hint, seeks stronger calibration sources, and marks the direction unsupported if better evidence does not appear.
+- Failure signal: The skill uses a low-trust or single-source signal as the main justification for ideation or recommendation.
+
 ## Review Reminder
 
 - Every final proposal should show a visible chain from brief -> research -> ideas -> recommendation.

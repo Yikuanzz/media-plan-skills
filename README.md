@@ -11,7 +11,7 @@
 - `strategy-ideation`：多方向创意发散、评分筛选与反老套回退
 - `execution-planning`：把策略翻译成执行路径、节奏、KPI 和风险控制
 - `proposal-writing-review`：按模板成案，并在缺证据、创意老套或执行失配时打回上游
-- `skills/shared/`：共享 intake 模板、research rubric、idea scorecard 和 proposal template，作为仓库内的规范源
+- `skills/shared/`：共享 intake 模板、research rubric、idea scorecard、proposal template、灵感母题库和预搜索 source map，作为仓库内的规范源
 
 ## 设计要点
 
@@ -19,15 +19,16 @@
 
 | 层级 | 职责概要 |
 | --- | --- |
-| **总控** `media-plan-orchestrator` | intake 前先做一轮轻量预搜索，归一化 brief、按模板做 intake 门禁、驱动阶段前进/回退、在「可宣称完成」前统一把关 |
-| **调研** `industry-insight-research` | 在 brief 已就绪后做近期公开证据采集，按 `research-rubric` 输出事实包与判定 |
-| **创意** `strategy-ideation` | 在调研通过后做多方向发散与 scorecard 评分，显式产出选中方向的 handoff |
+| **总控** `media-plan-orchestrator` | intake 前先做一轮轻量预搜索，默认优先看中国平台与社媒信号，给出 inspiration hints，再归一化 brief、按模板做 intake 门禁、驱动阶段前进/回退、在「可宣称完成」前统一把关 |
+| **调研** `industry-insight-research` | 在 brief 已就绪后做近期公开证据采集，并验证 inspiration hints 是否有真实支持，按 `research-rubric` 输出事实包与判定 |
+| **创意** `strategy-ideation` | 在调研通过后基于母题库和近期信号做多方向发散、保留 wildcard，并用 scorecard 评分筛选，显式产出选中方向的 handoff |
 | **执行** `execution-planning` | 将选定方向译为可提案的执行路径、节奏、KPI、风险，并产出经校验的 execution-plan handoff |
 | **成案** `proposal-writing-review` | 按 `proposal-template` 组装 Markdown 全文，并对照压力测试 spec 做评审，不合格则打回上游 |
 
 **输入与门禁（摘要）**
 
 - 进入补问前：如果 brief 已包含可识别的品牌、品类、议题、平台或地域信号，总控会先做一轮轻量预搜索，用于缩小提问范围；预搜索不能替代用户确认。
+- 预搜索默认优先看中国平台与社媒信号，再用媒体、咨询和官方来源做校准；热点只能作为信号发现，不能直接替代策略判断。
 - 进入调研前：须补齐「启动调研」所需字段（见 `skills/shared/brief-intake-template.md` 中 *Required Fields To Start Research*）；占位符如 `unknown` / `tbd` 不算通过。
 - 进入执行规划与成案前：还须明确 `deliverables_needed`、`constraints`、`success_metric`，且须具体可用。
 - 各阶段之间通过 **显式 handoff**（如 Selected Direction、Validated Execution-Plan Handoff）衔接，避免口头承接导致断层。
@@ -40,7 +41,7 @@
 **质量门槛（摘要）**
 
 - 调研：至少两类证据（热点/案例/公开数据/平台信号等），重要论断需可溯源。
-- 创意：至少三个可区分方向并评分筛选；明显套路化须回炉。
+- 创意：至少三个可区分方向并评分筛选，其中至少保留一个 wildcard；明显套路化或强行蹭热点须回炉。
 - 成案：九章结构齐全，结论可决策，KPI/风险/预案不可缺省。
 
 **运行环境假设**：依赖 Agent 的澄清与检索能力；设计文档中约定可结合 `websearch` / `webfetch` 等与实时信源协作（见设计文档「工具绑定」小节）。
