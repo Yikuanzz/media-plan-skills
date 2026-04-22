@@ -12,12 +12,18 @@ Use the inspiration library plus the validated research pack to generate multipl
 ## Rules
 
 - After filling `## Selected Direction Handoff`, downstream execution must not start until the user explicitly confirms that selection; see **Step 5 BLOCKING** in `../SKILL.md`.
-- Screen 2 to 4 plausible inspiration directions before drafting final options.
-- Generate at least one brief-specific angle from each surviving inspiration direction.
-- Keep at least one wildcard direction outside the inspiration library.
-- Produce at least three distinct directions before choosing one.
-- Name directions to avoid when the brief, research, or recent signals make them weak.
-- Reject cliche, interchangeable, trend-chasing, or poorly supported directions before final selection.
+- Screen 2-3 inspiration directions from the library.
+- For each surviving direction, generate **2-3 angle-specific proposals** that differ in at least one of:
+  - Target audience segment (e.g., Gen-Z vs. new middle class vs. silver generation)
+  - Content format (e.g., short video vs. interactive H5 vs. offline experience)
+  - Platform strategy (e.g., Douyin full-funnel vs. Xiaohongshu seeding vs. WeChat private domain)
+  - Emotional hook (e.g., humor/meme vs. emotional resonance vs. value identification)
+  - Execution scale (e.g., small pilot vs. national rollout vs. city-limited)
+- Keep **two wildcard directions** (see Step 2 below).
+- Produce **at least 8 distinct proposals** before scoring. At least 3 must come from wildcards or frontier signals.
+- Name directions to avoid when brief, research, or recent signals make them weak.
+- Reject cliché, interchangeable, trend-chasing, or poorly supported proposals before final selection.
+- Proposals within the same direction must not exceed 70% structural similarity.
 
 ## Step 0: Frontier Signal Retrieval (mandatory)
 
