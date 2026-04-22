@@ -77,3 +77,12 @@ For each idea in `## Notes`, include:
 - `Inspiration anchor`
 - `Recent signal used`
 - `Why this is not generic`
+
+## Multi-Selection Rules
+
+- The user may select 1 primary direction + 0-2 co-directions.
+- When multiple directions are selected, provide:
+  1. **Combination logic**: how the directions complement, relay, or layer-cover each other.
+  2. **Phased execution recommendations**: avoid temporal conflicts between directions.
+  3. **Resource allocation guidance**: how budget and headcount are split across directions.
+- Co-directions must differentiate from the primary direction in phase coverage or channel mix to avoid redundancy.
