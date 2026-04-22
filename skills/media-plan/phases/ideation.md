@@ -47,6 +47,26 @@ Before generating any idea, run one targeted frontier signal search.
 - If no frontier signals from the last 6 months are found, explicitly label "frontier signal weak" and prioritize wildcard directions in subsequent ideation.
 - Do not generate ideas from AI internal knowledge alone. Every idea must be anchored to a frontier signal or an anti-convention assumption.
 
+## Step 2: Wildcard Dual-Track
+
+After generating proposals from the inspiration library, generate **two mandatory wildcard directions**:
+
+**Wildcard A — Frontier Signal Driven**
+- Extend directly from one high-relevance signal in the `## Frontier Signal Scan`.
+- Ask: "If this signal is pushed one step further, what could the brand do?"
+- Must cite the supporting frontier signal source.
+
+**Wildcard B — Anti-Convention Assumption**
+- Deliberately break 1-2 "default consensus" rules in the category.
+- Template: "Everyone assumes [category convention X], but what if the opposite [anti-convention Y]?"
+- Must name the broken convention.
+- Even if the direction is ultimately unworkable, it must be generated and recorded as a thinking breakthrough.
+
+**Rules:**
+- Both Wildcard A and B must appear in the final `## Idea Evaluation`.
+- If Wildcard A cannot be generated due to weak frontier signals, substitute with a "radical frontier hypothesis" (a 12-month forward projection based on category trends).
+- Wildcard B must not exceed 50% structural similarity with any direction in the inspiration library.
+
 ## Notes Requirements
 
 For each idea in `## Notes`, include:
