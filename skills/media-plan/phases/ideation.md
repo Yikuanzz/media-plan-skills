@@ -77,6 +77,14 @@ For each idea in `## Notes`, include:
 - `Inspiration anchor`
 - `Recent signal used`
 - `Why this is not generic`
+- `Innovation source`:
+  - type: `frontier_signal` / `classic_framework` / `anti_convention` / `hybrid`
+  - specific_source: [signal name / broken convention / hybrid composition]
+  - freshness: [signal date if frontier_signal; usage frequency in last 3 years if classic]
+- `Pain point anchored`: [core pain point this idea addresses]
+- `Phase coverage`: [early / mid / late / full-cycle]
+- `Channel mix`: [online / offline / online-offline blend]
+- `Combinability`: [which other ideas this can combine with, and the logic]
 
 ## Multi-Selection Rules
 
