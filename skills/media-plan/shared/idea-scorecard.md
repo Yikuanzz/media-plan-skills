@@ -7,6 +7,7 @@
 - `form_breakthrough`: uses a new content format, interaction mechanic, or platform play instead of standard formats
 - `research_support`: uses validated insight instead of guesswork
 - `channel_fit`: works for the selected channels and formats
+- `mechanism_strength`: forms a clear participation, spread, and conversion logic instead of disconnected actions
 - `execution_feasibility`: fits timeline, budget, and team reality
 
 ## Scoring Rules
@@ -18,15 +19,15 @@
 - Reject the idea if any dimension scores below `3`.
 - **Innovation floor**: `topic_freshness` + `form_breakthrough` must be `6` or higher (no idea can score 3 on both).
 - **Conservative downgrade**: if `topic_freshness` <= `2` AND `form_breakthrough` <= `2`, reject regardless of other dimensions.
-- Prefer ideas with a total score of `22` or higher out of `30`.
+- Prefer ideas with a total score of `26` or higher out of `35`.
 
 ## Output Shape
 
 ```md
 ## Idea Evaluation
-| Idea | Brief Fit | Topic Freshness | Form Breakthrough | Research Support | Channel Fit | Execution Feasibility | Total | Verdict |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Idea name | 0 | 0 | 0 | 0 | 0 | 0 | 0 | keep / revise / reject |
+| Idea | Brief Fit | Topic Freshness | Form Breakthrough | Research Support | Channel Fit | Mechanism Strength | Execution Feasibility | Total | Verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Idea name | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | keep / revise / reject |
 
 ## Notes Requirements
 
@@ -47,6 +48,10 @@ For each idea in `## Notes`, include:
 - `Channel mix`: [online / offline / online-offline blend]
 - `Combinability`: [which other ideas this can combine with, and the logic]
 
+## Highlight Mechanism Canvas
+
+Use `highlight-mechanism-canvas.md` for every `keep` direction.
+
 ## Selected Direction Handoff
 
 ### Recommended Direction Set
@@ -56,6 +61,11 @@ For each idea in `## Notes`, include:
 | Primary | [name] | [pain point] | [phases] | [channels] | [why this leads] |
 | Co-direction 1 | [name] | [pain point] | [phases] | [channels] | [relationship to primary] |
 | Co-direction 2 | [name] | [pain point] | [phases] | [channels] | [relationship to primary] |
+
+### Canvas Reference
+- Primary direction canvas: complete / incomplete
+- Co-direction 1 canvas: complete / incomplete
+- Co-direction 2 canvas: complete / incomplete
 
 ### Independent Feasibility
 - [Direction name]: yes / no — reason
@@ -79,6 +89,7 @@ For each idea in `## Notes`, include:
 
 - Score evidence, not enthusiasm.
 - Penalize ideas that could be reused for any brand with minor copy edits.
+- Do not mark an idea as `keep` if `mechanism_strength` is below `3`.
 - Do not mark an idea as `keep` if execution feasibility is weak.
 - If one direction is recommended for downstream planning, fill `## Selected Direction Handoff` explicitly so execution planning does not need to infer the winner.
 

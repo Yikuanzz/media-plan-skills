@@ -35,6 +35,13 @@
 ## Gaps
 -
 
+## Proposal Ammunition
+- Audience tension:
+- Scene or regional hooks:
+- Category cliches to avoid:
+- Mechanic-worthy signals:
+- Proof assets worth carrying into proposal:
+
 ## Recommendation For Next Step
 - proceed | refine research | ask user for inputs
 ```
@@ -42,6 +49,7 @@
 ## Rules
 
 - Keep findings tied to decisions, not trivia.
+- Keep `## Proposal Ammunition` specific enough that ideation can turn it into a theme, hero event, or conversion path.
 - Name missing evidence explicitly.
 - Mark the verdict `fail` if fewer than two evidence classes are present.
 - If the verdict is `fail`, do not pretend the strategy is validated.

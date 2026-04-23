@@ -22,6 +22,7 @@ Run the full China-market media planning workflow from pre-brief search through 
 > 3. **NO CROSS-PHASE BUNDLING** — Do not draft a full proposal while research is not `pass`. Do not perform deep research while intake is not `ready`. Do not invent brief fields from search alone.
 > 4. **NO SPECULATIVE BACKFILL** — Pre-brief search narrows questions only; it never satisfies required intake fields by inference.
 > 5. **RUNTIME SCOPE** — Use only `./phases/*.md` and `./shared/*.md` as workflow and contracts. Do not treat repository `docs/` as a runtime dependency.
+> 6. **NO UNSTATED CLIENT PRIORS** — Workshop-only preferences, off-record promises, or “TARGET-style” plans that are not in the normalized intake and evidence chain must not be invented. Capture them in intake (`brief-intake-template.md` optional fields) or `Open Questions` when the user can supply them.
 
 ## Package rules
 
@@ -57,6 +58,7 @@ Run the full China-market media planning workflow from pre-brief search through 
 | `./shared/query-playbook.md` | Query patterns for research |
 | `./shared/inspiration-directions.md` | Inspiration library |
 | `./shared/idea-scorecard.md` | Scoring table + `## Selected Direction Handoff` shape |
+| `./shared/highlight-mechanism-canvas.md` | Canonical highlight mechanism handoff shape |
 | `./shared/proposal-template.md` | Final proposal structure and review checks |
 
 ## Phase switch protocol
@@ -79,7 +81,8 @@ These apply across steps; each step repeats only what is entry-specific.
 - Do not start **execution** or **proposal** until `deliverables_needed`, `constraints`, and `success_metric` are present and specific.
 - Do not pass **research** without at least two evidence classes and at least one concrete source per important claim.
 - Do not pass **ideation** unless at least three distinct directions were considered and at least one wildcard direction was preserved.
-- Do not enter **proposal** without `## Selected Direction Handoff` and `## Validated Execution-Plan Handoff` with `Validation status: validated`.
+- Do not start **execution** until the chosen direction includes a complete `## Highlight Mechanism Canvas` with `Stage pillars`, `Local life map`, and `Calendar alignment` populated per `./shared/highlight-mechanism-canvas.md`.
+- Do not enter **proposal** without `## Selected Direction Handoff`, `## Highlight Mechanism Canvas`, and `## Validated Execution-Plan Handoff` with `Validation status: validated`.
 - Do not declare **completion** until the final proposal is complete, decision-useful, and traceable from brief → research → ideas → recommendation.
 
 ## Workflow
@@ -145,15 +148,16 @@ These apply across steps; each step repeats only what is entry-specific.
 
 **GATE**: Research verdict is `pass`.
 
-**Required reads**: `./phases/ideation.md`, `./shared/inspiration-directions.md`, `./shared/idea-scorecard.md`
+**Required reads**: `./phases/ideation.md`, `./shared/inspiration-directions.md`, `./shared/idea-scorecard.md`, `./shared/highlight-mechanism-canvas.md`
 
-**Action**: Produce `## Idea Evaluation`, `## Notes`, and `## Selected Direction Handoff` per scorecard; meet direction-count and wildcard rules.
+**Action**: Produce `## Idea Evaluation`, `## Notes`, `## Highlight Mechanism Canvas`, and `## Selected Direction Handoff` per scorecard; meet direction-count and wildcard rules.
 
 **Checkpoint**
 
 ```markdown
 ## Ideation complete
 - [x] At least three directions + one wildcard preserved
+- [x] `## Highlight Mechanism Canvas` present for viable directions, each including `Stage pillars`, `Local life map`, and `Calendar alignment`
 - [x] `## Selected Direction Handoff` filled with primary direction + 0-2 co-directions per multi-selection rules
 - [ ] Next: **BLOCKING** — user confirmation (Step 5 entry)
 ```
@@ -162,19 +166,21 @@ These apply across steps; each step repeats only what is entry-specific.
 
 ### Step 5: Execution
 
-**GATE**: Ideation outputs exist **and** global later-stage fields (`deliverables_needed`, `constraints`, `success_metric`) are specific.
+**GATE**: Ideation outputs exist, `## Highlight Mechanism Canvas` is complete for the chosen direction, **and** global later-stage fields (`deliverables_needed`, `constraints`, `success_metric`) are specific.
 
 **BLOCKING**: Do not start this step until the user **explicitly confirms** the `## Selected Direction Handoff` (e.g., approves the primary direction and any co-directions, or states that the agent’s recommended direction set is accepted).
 
-**Required reads**: `./phases/execution.md`, `./shared/brief-intake-template.md`, `./shared/proposal-template.md`
+**Required reads**: `./phases/execution.md`, `./shared/brief-intake-template.md`, `./shared/highlight-mechanism-canvas.md`, `./shared/proposal-template.md`
 
-**Action**: Produce material for proposal execution sections and `## Validated Execution-Plan Handoff` with `Validation status: validated` or `blocked`.
+**Action**: Validate the selected highlight mechanism against constraints, then produce material for proposal execution sections and `## Validated Execution-Plan Handoff` with `Validation status: validated` or `blocked`.
 
 **Checkpoint**
 
 ```markdown
 ## Execution complete
 - [x] User confirmed selected direction before planning began
+- [x] Selected direction's `## Highlight Mechanism Canvas` was used as the planning input (including pillars, local map, calendar)
+- [x] `## Validated Execution-Plan Handoff` present with `Pillar roster by phase` and `Calendar anchors` aligned to the canvas
 - [x] `## Validated Execution-Plan Handoff` present with validation status
 - [ ] Next: Proposal (Step 6) when status is `validated`
 ```
@@ -183,9 +189,9 @@ These apply across steps; each step repeats only what is entry-specific.
 
 ### Step 6: Proposal
 
-**GATE**: `## Selected Direction Handoff` present; `## Validated Execution-Plan Handoff` has `Validation status: validated`.
+**GATE**: `## Selected Direction Handoff` present; `## Highlight Mechanism Canvas` present for the selected direction; `## Validated Execution-Plan Handoff` has `Validation status: validated`.
 
-**Required reads**: `./phases/proposal.md`, `./shared/proposal-template.md`
+**Required reads**: `./phases/proposal.md`, `./shared/highlight-mechanism-canvas.md`, `./shared/proposal-template.md`
 
 **Action**: Assemble the full markdown proposal; run template-aligned review; route upstream if any gate fails.
 
@@ -193,7 +199,8 @@ These apply across steps; each step repeats only what is entry-specific.
 
 ```markdown
 ## Proposal pass
-- [x] All template sections present and decision-useful
+- [x] All template sections present and decision-useful, including `## 9. Phased Event Menu` per `./shared/proposal-template.md`
+- [x] Event Menu row names align with `Pillar roster by phase` in `## Validated Execution-Plan Handoff` (note any intentional omissions)
 - [x] Traceability brief → research → idea → execution is visible
 - [x] No unresolved evidence, creativity, or execution gaps
 - [ ] Next: Completion Gate
@@ -218,5 +225,5 @@ Do not declare the work complete until all of the following are true:
 - At least one idea remains viable after scoring.
 - A single selected direction is handed off explicitly for execution planning **and** user-confirmed before execution.
 - The execution-plan handoff is validated.
-- Every proposal section is present and decision-useful.
+- Every proposal section is present and decision-useful, including the Phased Event Menu section.
 - Final review finds no unresolved evidence, creativity, or execution gaps.

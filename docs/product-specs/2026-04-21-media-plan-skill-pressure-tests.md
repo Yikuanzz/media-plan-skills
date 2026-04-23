@@ -35,6 +35,12 @@ This spec defines failure modes the media plan skill must catch before it return
 - Expected behavior: The skill scores the ideas against the scorecard, rejects low-differentiation concepts, and explicitly loops back to research or asks the user for sharper brand, audience, or offer inputs before proposing new ideas.
 - Failure signal: The skill accepts generic slogans, formats, or campaign themes without explaining why they are distinctive.
 
+## Scenario 4A: Idea Name Without Main Mechanism
+
+- Trigger: The output contains a catchy direction name or slogan, but no clear 主机制, no hero event, or no explanation of how participation, spread, and conversion connect.
+- Expected behavior: The skill marks the direction as incomplete or revise-level, writes a complete highlight mechanism canvas, or loops back to ideation instead of sending the idea downstream.
+- Failure signal: The skill treats a slogan plus a few disconnected actions as a valid direction and continues to execution or proposal.
+
 ## Scenario 5: Strategy-Execution Mismatch
 
 - Trigger: The strategy recommends channels, assets, or pacing that do not match the available team, budget, timeline, or brief goals.

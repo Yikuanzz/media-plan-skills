@@ -70,11 +70,11 @@
 
 ## 推荐架构
 
-采用 `1 个总控 skill + 4 个阶段子 skill + 4 份共享 rubric/template` 的混合架构。
+采用 `1 个单包 master skill + package-local phases + package-local shared` 的结构。
 
-### 1. 总控 skill
+### 1. 入口 skill
 
-`media-plan-orchestrator`
+`skills/media-plan/SKILL.md`
 
 职责：
 
@@ -83,42 +83,54 @@
 - 触发关键缺口补问
 - 驱动阶段流转与回退
 - 控制最终成案节奏
+- 指挥按阶段读取 package-local phase 与 shared 文件
 
-### 2. 阶段子 skill
+### 2. 阶段模块
 
-`industry-insight-research`
+`skills/media-plan/phases/pre-brief-search.md`
+
+- 负责近期信号发现、来源优先级、热点与灵感方向的初步 hint 输出
+
+`skills/media-plan/phases/intake.md`
+
+- 负责 brief 归一化与字段缺口补问
+
+`skills/media-plan/phases/research.md`
 
 - 采集近期热点、行业趋势、竞品动作、案例与公开数据
 - 区分已验证事实、可引用来源和分析推断
-- 输出事实包与机会点
+- 验证 inspiration hints 是否成立
 
-`strategy-ideation`
+`skills/media-plan/phases/ideation.md`
 
 - 从调研中提炼洞察与传播命题
-- 发散多个创意方向并进行筛选
+- 基于母题库与近期信号发散多个创意方向并保留 wildcard
 - 用反老套规则淘汰平庸创意
 
-`execution-planning`
+`skills/media-plan/phases/execution.md`
 
-- 将策略翻译为阶段节奏、渠道动作、资源建议、KPI 与风险控制
+- 将策略翻译为阶段节奏、渠道动作、资源建议、 KPI 与风险控制
 - 保证执行建议与策略主张一致
 
-`proposal-writing-review`
+`skills/media-plan/phases/proposal.md`
 
 - 组织完整方案正文
 - 检查章节缺项、证据不足和逻辑脱节
 - 把缺口回退到上游阶段修补
 
-### 3. 共享文件
+### 3. 包内共享文件
 
-- `brief-intake-template.md`：半结构化 brief 字段定义与提问口径
-- `research-rubric.md`：调研充分性判断标准
-- `idea-scorecard.md`：创意新鲜度、差异化与可执行性评分标准
-- `inspiration-directions.md`：灵感母题库与适用/禁用边界
-- `pre-brief-source-map.md`：前期预搜索的 source priority 与使用场景
-- `proposal-template.md`：方案正文固定结构与写作顺序
+- `skills/media-plan/shared/brief-intake-template.md`：半结构化 brief 字段定义与提问口径
+- `skills/media-plan/shared/research-rubric.md`：调研充分性判断标准
+- `skills/media-plan/shared/idea-scorecard.md`：创意新鲜度、差异化与可执行性评分标准
+- `skills/media-plan/shared/highlight-mechanism-canvas.md`：把保留方向沉淀成主题、主事件和转化链路的提案型 handoff
+- `skills/media-plan/shared/inspiration-directions.md`：灵感母题库与适用/禁用边界
+- `skills/media-plan/shared/pre-brief-source-map.md`：前期预搜索的 source priority 与使用场景
+- `skills/media-plan/shared/source-trust-policy.md`：research 来源可信度分层
+- `skills/media-plan/shared/query-playbook.md`：预搜索与 research 的查询模板
+- `skills/media-plan/shared/proposal-template.md`：方案正文固定结构与写作顺序
 
-这些 shared 文件是仓库维护时的 canonical contract；如果宿主运行环境只复制单个 skill 到临时目录，则允许把运行所需的最小 contract 镜像进对应 `SKILL.md`，但两边必须同步维护，避免漂移。
+这些 shared 文件直接放在 `skills/media-plan/` 包内，作为运行时与维护时共用的 canonical contract。设计目标就是避免多 skill + 根级 shared 造成的运行时断链。
 
 ## 工作流
 
@@ -147,6 +159,7 @@
 - 调研包含近期公开信息与来源
 - 创意至少给出 3 个方向并完成筛选
 - 已存在显式的 Selected Direction Handoff
+- 已存在完整的 Highlight Mechanism Canvas
 - 已存在通过验证的 Validated Execution-Plan Handoff
 - 最终方案结构完整
 - 评审未发现明显证据缺口或逻辑断裂
@@ -163,7 +176,7 @@
 
 - 至少发散 3 个方向，再筛出推荐路径。
 - 至少保留 1 个不依赖既有母题库的 wildcard 方向，避免方向库过拟合。
-- 推荐方向需同时满足新鲜度、相关性、可执行性三个维度。
+- 推荐方向需同时满足新鲜度、相关性、机制完整度、可执行性四个维度。
 - 若创意只是常见话术重组，视为不通过，必须回炉。
 
 ### 成案门槛
@@ -187,17 +200,19 @@
 
 首版实现建议至少包含：
 
-- `skills/media-plan-orchestrator/SKILL.md`
-- `skills/industry-insight-research/SKILL.md`
-- `skills/strategy-ideation/SKILL.md`
-- `skills/execution-planning/SKILL.md`
-- `skills/proposal-writing-review/SKILL.md`
-- `skills/shared/brief-intake-template.md`
-- `skills/shared/research-rubric.md`
-- `skills/shared/idea-scorecard.md`
-- `skills/shared/inspiration-directions.md`
-- `skills/shared/pre-brief-source-map.md`
-- `skills/shared/proposal-template.md`
+- `skills/media-plan/SKILL.md`
+- `skills/media-plan/phases/pre-brief-search.md`
+- `skills/media-plan/phases/intake.md`
+- `skills/media-plan/phases/research.md`
+- `skills/media-plan/phases/ideation.md`
+- `skills/media-plan/phases/execution.md`
+- `skills/media-plan/phases/proposal.md`
+- `skills/media-plan/shared/brief-intake-template.md`
+- `skills/media-plan/shared/research-rubric.md`
+- `skills/media-plan/shared/idea-scorecard.md`
+- `skills/media-plan/shared/inspiration-directions.md`
+- `skills/media-plan/shared/pre-brief-source-map.md`
+- `skills/media-plan/shared/proposal-template.md`
 
 ## 验收场景
 
@@ -227,4 +242,5 @@
 ## 下一步
 
 - implementation plan 已完成并归档到 `docs/exec-plans/completed/2026-04-21-media-plan-skill-implementation.md`。
+- 亮点机制升级设计已补充到 `docs/design-docs/2026-04-22-highlight-mechanism-upgrade.md`。
 - 下一步是用真实 brief 做至少 3 轮压力测试，并按结果继续迭代 skill、rubric 与模板。

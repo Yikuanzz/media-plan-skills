@@ -8,6 +8,7 @@ Use the inspiration library plus the validated research pack to generate multipl
 
 - `../shared/inspiration-directions.md`
 - `../shared/idea-scorecard.md`
+- `../shared/highlight-mechanism-canvas.md`
 
 ## Rules
 
@@ -24,6 +25,10 @@ Use the inspiration library plus the validated research pack to generate multipl
 - Name directions to avoid when brief, research, or recent signals make them weak.
 - Reject cliché, interchangeable, trend-chasing, or poorly supported proposals before final selection.
 - Proposals within the same direction must not exceed 70% structural similarity.
+- A `keep` direction is not valid unless it has explicit participation, spread, and conversion mechanisms.
+- A `keep` direction must form at least three of the following four asset types: core theme, hero event, participation mechanism, online-offline relay path.
+- A `keep` direction is **invalid** if its `## Highlight Mechanism Canvas` is missing any of: `Stage pillars`, `Local life map`, or `Calendar alignment` (see `../shared/highlight-mechanism-canvas.md`). In that case, mark the direction `revise`, not `keep`.
+- For every `keep` direction, each macro stage (Early / Mid / Late) must show **at least two different formats** of concrete activation on the canvas (e.g. online UGC program + offline pop-up; elite circle salon + city landmark). **Forbidden**: only “one Hero + channel flight list” with no second named activation format in that stage.
 
 ## Step 0: Frontier Signal Retrieval (mandatory)
 
@@ -85,6 +90,15 @@ For each idea in `## Notes`, include:
 - `Phase coverage`: [early / mid / late / full-cycle]
 - `Channel mix`: [online / offline / online-offline blend]
 - `Combinability`: [which other ideas this can combine with, and the logic]
+
+## Highlight Mechanism Requirement
+
+Before final recommendation, write `## Highlight Mechanism Canvas` for every `keep` idea using `../shared/highlight-mechanism-canvas.md`.
+
+**Rules:**
+- The selected direction cannot move downstream unless its canvas is complete, including `Stage pillars`, `Local life map`, and `Calendar alignment` per `../shared/highlight-mechanism-canvas.md`.
+- Rejected ideas do not need a full canvas.
+- If a direction has a strong theme but weak mechanisms, or any of the three mandatory canvas blocks above is missing, mark it `revise` instead of `keep`.
 
 ## Multi-Selection Rules
 

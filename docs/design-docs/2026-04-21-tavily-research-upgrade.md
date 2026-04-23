@@ -11,7 +11,7 @@
 
 当前 media-plan skill 系统已经具备较完整的 research gate、evidence diversity 和 pressure-test 约束，但 research 阶段仍主要依赖当前 Agent 环境自带的检索能力。对“近 30/90 天热点”“中国市场行业案例”“平台信号”“公开数据”这类任务来说，现有检索层在时间范围控制、域名控制、提取一致性和结果可审计性上还不够强。
 
-这次升级的目标不是重写整个 skill 系统，而是优先提升 research 质量，使 `industry-insight-research` 能稳定地产出更可追溯、更容易进入 proposal review 的 evidence pack。
+这次升级的目标不是重写整个 skill 系统，而是优先提升 `skills/media-plan/phases/research.md` 所在 research 阶段的质量，使其能稳定地产出更可追溯、更容易进入 proposal review 的 evidence pack。
 
 ## 目标
 
@@ -23,7 +23,7 @@
 
 ## 非目标
 
-- 不在本次设计里重写 `media-plan-orchestrator` 的整体架构。
+- 不在本次设计里重写 `skills/media-plan/SKILL.md` 的整体 workflow。
 - 不一次性实现完整 provider runtime 或独立服务层。
 - 不在本次阶段接入 UI、dashboard 或后台监控界面。
 - 不把 ideation、execution、proposal 阶段改成直接依赖 Tavily。
@@ -38,7 +38,7 @@
 
 ## 设计原则
 
-- Tavily 只先服务 `industry-insight-research`，不要过早扩散到全链路。
+- Tavily 只先服务 `skills/media-plan/phases/research.md`，不要过早扩散到全链路。
 - 先提升 evidence quality，再考虑 provider abstraction 的完整实现。
 - 所有检索结果都必须进入 shared contract，不能只停留在 provider 原始返回。
 - 搜不到、提不出、来源弱或证据单一时，必须回退，不允许硬写方案。
@@ -48,22 +48,22 @@
 
 ### 直接接入
 
-- `skills/industry-insight-research/SKILL.md`
-- `skills/shared/research-rubric.md`
+- `skills/media-plan/phases/research.md`
+- `skills/media-plan/shared/research-rubric.md`
 - `docs/product-specs/2026-04-21-media-plan-skill-pressure-tests.md`
 
 ### 间接同步
 
-- `skills/media-plan-orchestrator/SKILL.md`
+- `skills/media-plan/SKILL.md`
 - `docs/design-docs/2026-04-21-media-plan-skill-design.md`
 - `docs/ARCHITECTURE.md`
 - `docs/QUALITY_SCORE.md`
 
 ### 暂不接入
 
-- `skills/strategy-ideation/SKILL.md`
-- `skills/execution-planning/SKILL.md`
-- `skills/proposal-writing-review/SKILL.md`
+- `skills/media-plan/phases/ideation.md`
+- `skills/media-plan/phases/execution.md`
+- `skills/media-plan/phases/proposal.md`
 
 这些阶段只消费 research pack，不直接调用 Tavily。
 
@@ -290,15 +290,15 @@
 ### 建议新增
 
 - `docs/design-docs/2026-04-21-tavily-research-upgrade.md`
-- `skills/shared/research-provider-contract.md`
-- `skills/shared/source-trust-policy.md`
-- `skills/shared/query-playbook.md`
+- `skills/media-plan/shared/research-provider-contract.md`
+- `skills/media-plan/shared/source-trust-policy.md`
+- `skills/media-plan/shared/query-playbook.md`
 
 ### 建议修改
 
-- `skills/industry-insight-research/SKILL.md`
-- `skills/shared/research-rubric.md`
-- `skills/media-plan-orchestrator/SKILL.md`
+- `skills/media-plan/phases/research.md`
+- `skills/media-plan/shared/research-rubric.md`
+- `skills/media-plan/SKILL.md`
 - `docs/product-specs/2026-04-21-media-plan-skill-pressure-tests.md`
 - `docs/design-docs/2026-04-21-media-plan-skill-design.md`
 - `docs/ARCHITECTURE.md`

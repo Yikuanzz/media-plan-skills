@@ -22,6 +22,7 @@ required_files=(
   ".github/workflows/release.yml"
   ".github/workflows/supply-chain-security.yml"
   ".markdownlint.json"
+  "scripts/check-media-plan-highlight-mechanism.sh"
   "scripts/check-action-pinning.sh"
 )
 
