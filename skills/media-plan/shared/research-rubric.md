@@ -18,6 +18,19 @@
 - The research pack relies on only one evidence class.
 - Important strategic claims have no source.
 - Findings do not change or sharpen the recommendation.
+- Competitor section is only evaluative praise (e.g. “X is very good / very strong”) with no **user trust path** and no **our break** row in `## Competitor Actionable View` per [competitor-actionable.md](competitor-actionable.md).
+- `## Competitor Actionable View` is missing when the brief implies competitive or category-benchmark context.
+- For city or regional briefs, `## City Evidence Pack` is missing or incomplete on mandatory evidence items.
+
+## City / Regional Mandatory Evidence (fail if missing)
+
+When the brief includes city or regional scope, collect all five items below. Missing any unchecked item means research cannot pass.
+
+- [ ] Target-affluent or priority-circle concentration map (communities, clubs, associations, business groups)
+- [ ] City events, festivals, or sports windows during the launch timeline
+- [ ] Competitor launch or marketing actions in this city over the last 12 months
+- [ ] Local KOL or KOC matrix (auto, parenting, technology, lifestyle)
+- [ ] Representative premium venues in this city (launch event, pop-up, private salon)
 
 ## Required Output Shape
 
@@ -32,6 +45,16 @@
   - Why it matters:
   - Source:
 
+## City Evidence Pack (required for city/regional briefs)
+- Circle map:
+- Event and hotspot calendar:
+- Competitor local actions (12 months):
+- KOL/KOC matrix:
+- Premium venue pool:
+- Audience persona: [age/income/family structure/decision drivers/pain points for target segment]
+- City localization insight: [consumption patterns, distribution maps, cultural anchors relevant to category]
+- Market trend snapshot: [category growth, technology shift, or policy window in this region]
+
 ## Gaps
 -
 
@@ -41,6 +64,13 @@
 - Category cliches to avoid:
 - Mechanic-worthy signals:
 - Proof assets worth carrying into proposal:
+- Strategic derivation anchors: [inputs that can become Core value / Marketing主线]
+- Family/emotional scene hooks: [for auto family-SUV briefs, emotional entry points beyond tech specs]
+
+## Audience & Market Context
+- Target audience persona:
+- Market trend (region + category):
+- City localization insight:
 
 ## Recommendation For Next Step
 - proceed | refine research | ask user for inputs
@@ -52,4 +82,6 @@
 - Keep `## Proposal Ammunition` specific enough that ideation can turn it into a theme, hero event, or conversion path.
 - Name missing evidence explicitly.
 - Mark the verdict `fail` if fewer than two evidence classes are present.
+- For city or regional briefs, mark the verdict `fail` if any `## City Evidence Pack` mandatory item is absent, placeholder-only, or unsupported.
+- The three items `Audience persona`, `City localization insight`, and `Market trend snapshot` are strongly recommended but not mandatory-fail. If missing, mark them in `## Gaps` and note that proposal Chapter 2 will be weaker.
 - If the verdict is `fail`, do not pretend the strategy is validated.
