@@ -9,6 +9,8 @@ Use the inspiration library plus the validated research pack to generate multipl
 - `../shared/inspiration-directions.md`
 - `../shared/idea-scorecard.md`
 - `../shared/highlight-mechanism-canvas.md`
+- `../shared/core-strategic-idea.md`
+- `../shared/content-assets.md`
 
 ## Rules
 
@@ -29,6 +31,8 @@ Use the inspiration library plus the validated research pack to generate multipl
 - A `keep` direction must form at least three of the following four asset types: core theme, hero event, participation mechanism, online-offline relay path.
 - A `keep` direction is **invalid** if its `## Highlight Mechanism Canvas` is missing any of: `Stage pillars`, `Local life map`, or `Calendar alignment` (see `../shared/highlight-mechanism-canvas.md`). In that case, mark the direction `revise`, not `keep`.
 - For every `keep` direction, each macro stage (Early / Mid / Late) must show **at least two different formats** of concrete activation on the canvas (e.g. online UGC program + offline pop-up; elite circle salon + city landmark). **Forbidden**: only “one Hero + channel flight list” with no second named activation format in that stage.
+- For city or regional briefs, include `Propagation Theme Clarity` as a scoring dimension. Ideas with weak theme clarity cannot be marked `keep`.
+- For city or regional briefs, each `keep` direction must define at least one executable flagship program concept with mechanism and phase flow (for example: track design + launch/create/vote/award flow) so proposal can expand it into Program Blueprint Cards.
 
 ## Step 0: Frontier Signal Retrieval (mandatory)
 
@@ -72,6 +76,17 @@ After generating proposals from the inspiration library, generate **two mandator
 - If Wildcard A cannot be generated due to weak frontier signals, substitute with a "radical frontier hypothesis" (a 12-month forward projection based on category trends).
 - Wildcard B must not exceed 50% structural similarity with any direction in the inspiration library.
 
+### Core Strategic Idea completeness rule (auto_regional_launch)
+
+For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Core Strategic Idea` block contains all of the following fields with non-placeholder content:
+1. `One-line claim`
+2. `Core value`
+3. `Marketing主线`
+4. `Core contradiction`
+5. `Resolution path`
+
+If any field is missing, empty, or placeholder-only (e.g. "TBD", "待定"), mark the direction `revise`, not `keep`.
+
 ## Notes Requirements
 
 For each idea in `## Notes`, include:
@@ -90,6 +105,24 @@ For each idea in `## Notes`, include:
 - `Phase coverage`: [early / mid / late / full-cycle]
 - `Channel mix`: [online / offline / online-offline blend]
 - `Combinability`: [which other ideas this can combine with, and the logic]
+- `Strategy pillars`: [2-4 strategic thrusts that organize execution; must map to Stage pillars in canvas]
+
+For city or regional briefs, also include:
+
+- `One-line propagation theme` (with emotional hook)
+- `City or regional emotional binding`
+- `Product-sellpoint mapping`
+- `Hashtag extensibility` (example tags such as `#...#`)
+
+- These four items (`One-line propagation theme`, `City or regional emotional binding`, `Product-sellpoint mapping`, `Hashtag extensibility`) must also be surfaced in either the `## Core Strategic Idea` block or the `## Highlight Mechanism Canvas` for the direction. They may not exist only inside `## Notes`.
+
+## Core Strategic Idea requirement
+
+For every `keep` direction, fill `## Core Strategic Idea` per `../shared/core-strategic-idea.md` **before** the primary direction’s `## Highlight Mechanism Canvas` and before `## Selected Direction Handoff`. The primary direction’s block is mandatory; co-directions need a block only if their story differs.
+
+## Content Assets requirement
+
+After the primary `keep` direction’s `## Highlight Mechanism Canvas` is complete, output `## Content Assets` per `../shared/content-assets.md`.
 
 ## Highlight Mechanism Requirement
 
@@ -108,3 +141,4 @@ Before final recommendation, write `## Highlight Mechanism Canvas` for every `ke
   2. **Phased execution recommendations**: avoid temporal conflicts between directions.
   3. **Resource allocation guidance**: how budget and headcount are split across directions.
 - Co-directions must differentiate from the primary direction in phase coverage or channel mix to avoid redundancy.
+- **Core value compatibility**: When co-directions are selected, verify that their `Core value` and `Marketing主线` are either identical or hierarchically compatible (one is a subset or natural extension of the other). If the core values are contradictory or fundamentally misaligned, reject the combination even if individual scores are high.
