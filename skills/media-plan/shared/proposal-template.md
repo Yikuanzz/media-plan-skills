@@ -178,53 +178,79 @@ For `auto_regional_launch`, each phase section (3/4/5) must include at least one
 
 ### Phase 1: 预热造势期 / Pre-Heat Momentum
 #### Online Actions
-| 时间 | 动作 | 产出物 | 关键节点 |
-| --- | --- | --- | --- |
+| 时间 | 动作 | 产出物 | 关键节点 | 销售机制 |
+| --- | --- | --- | --- | --- |
 
 #### Offline Actions
-| 时间 | 动作 | 产出物 | 关键节点 |
-| --- | --- | --- | --- |
+| 时间 | 动作 | 产出物 | 关键节点 | 销售机制 |
+| --- | --- | --- | --- | --- |
 
 #### Program Blueprint Card: [Program name]
 - Program name and role: (awareness / circle / lead / conversion)
 - Objective and audience slice:
 - Theme and hooks: (include one-line theme and example hashtags)
 - Mechanism design: (e.g., track setup, grouping logic, or participation routes)
-- Execution flow: (step-by-step such as launch → creation → voting → award)
+- **Interaction flow**: (step-by-step user journey on-site or online: what the user does, in what order, and what triggers the next step)
+- **Execution flow**: (brand-side step-by-step: launch → creation → voting → award)
+- **Sales mechanism**: (conversion incentive tied to this program: e.g., "现场扫码预约试驾送定制周边", "三人成团享额外权益", "集章打卡解锁购车优惠券")
 - Deliverables and asset pack: (content templates, creator assets, event materials)
 - Owner and partner model:
-- Lead capture and conversion action:
+- **Lead capture path**: (specific method and trigger: e.g., "扫码进入小程序留资 → 销售顾问24h内回访", "现场注册会员 → 自动派发试驾券")
 - KPI linked to this program:
 - Fallback plan:
 
 ### Phase 2: 上市引爆期 / Launch Burst
 #### Online Actions
-| 时间 | 动作 | 产出物 | 关键节点 |
-| --- | --- | --- | --- |
+| 时间 | 动作 | 产出物 | 关键节点 | 销售机制 |
+| --- | --- | --- | --- | --- |
 
 #### Offline Actions
-| 时间 | 动作 | 产出物 | 关键节点 |
-| --- | --- | --- | --- |
+| 时间 | 动作 | 产出物 | 关键节点 | 销售机制 |
+| --- | --- | --- | --- | --- |
 
 #### Launch Event Plan
 - Venue:
 - Core agenda:
-- On-site traffic collection:
+- **On-site interaction → lead capture → conversion incentive loop**: (describe the full closed loop: what visitors do on-site, how they are prompted to leave contact info, and what immediate conversion incentive they receive)
+- On-site traffic collection method:
+- **Circle resource integration**: (which local premium circles, clubs, or associations are invited or co-hosting, and how they are activated)
 
 #### Program Blueprint Card: [Program name]
-- [same structure as Phase 1]
+- Program name and role: (awareness / circle / lead / conversion)
+- Objective and audience slice:
+- Theme and hooks: (include one-line theme and example hashtags)
+- Mechanism design: (e.g., track setup, grouping logic, or participation routes)
+- **Interaction flow**: (step-by-step user journey on-site or online: what the user does, in what order, and what triggers the next step)
+- **Execution flow**: (brand-side step-by-step: launch → creation → voting → award)
+- **Sales mechanism**: (conversion incentive tied to this program: e.g., "现场扫码预约试驾送定制周边", "三人成团享额外权益", "集章打卡解锁购车优惠券")
+- Deliverables and asset pack: (content templates, creator assets, event materials)
+- Owner and partner model:
+- **Lead capture path**: (specific method and trigger: e.g., "扫码进入小程序留资 → 销售顾问24h内回访", "现场注册会员 → 自动派发试驾券")
+- KPI linked to this program:
+- Fallback plan:
 
 ### Phase 3: 延续转化期 / Sustain And Conversion
 #### Online Actions
-| 时间 | 动作 | 产出物 | 关键节点 |
-| --- | --- | --- | --- |
+| 时间 | 动作 | 产出物 | 关键节点 | 销售机制 |
+| --- | --- | --- | --- | --- |
 
 #### Offline Actions
-| 时间 | 动作 | 产出物 | 关键节点 |
-| --- | --- | --- | --- |
+| 时间 | 动作 | 产出物 | 关键节点 | 销售机制 |
+| --- | --- | --- | --- | --- |
 
 #### Program Blueprint Card: [Program name]
-- [same structure as Phase 1]
+- Program name and role: (awareness / circle / lead / conversion)
+- Objective and audience slice:
+- Theme and hooks: (include one-line theme and example hashtags)
+- Mechanism design: (e.g., track setup, grouping logic, or participation routes)
+- **Interaction flow**: (step-by-step user journey on-site or online: what the user does, in what order, and what triggers the next step)
+- **Execution flow**: (brand-side step-by-step: launch → creation → voting → award)
+- **Sales mechanism**: (conversion incentive tied to this program: e.g., "现场扫码预约试驾送定制周边", "三人成团享额外权益", "集章打卡解锁购车优惠券")
+- Deliverables and asset pack: (content templates, creator assets, event materials)
+- Owner and partner model:
+- **Lead capture path**: (specific method and trigger: e.g., "扫码进入小程序留资 → 销售顾问24h内回访", "现场注册会员 → 自动派发试驾券")
+- KPI linked to this program:
+- Fallback plan:
 
 ## 5. 运营检核 / Operations & Review
 
@@ -279,3 +305,4 @@ For `auto_regional_launch`, each phase section (3/4/5) must include at least one
 - Phase tables in Chapter 4 must include columns: 时间 / 动作 / 产出物 / 关键节点.
 - Chapter 3 must echo `Core value`, `Marketing主线`, and `Strategy pillars` from `## Core Strategic Idea`.
 - Chapter 2 must include audience persona, city localization insight, and market trend when research produced them.
+- **Sales mechanism column rule (auto_regional_launch)**: If `bid_or_tender=true`, every row in the Offline Actions table must have a non-empty `销售机制` entry, or the row must be marked with `n/a` and justified. Online Actions rows are encouraged but not required to have sales mechanism entries.
