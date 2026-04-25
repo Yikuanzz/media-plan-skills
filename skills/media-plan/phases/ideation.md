@@ -87,6 +87,14 @@ For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Cor
 
 If any field is missing, empty, or placeholder-only (e.g. "TBD", "待定"), mark the direction `revise`, not `keep`.
 
+### Highlight Mechanism Canvas completeness rule (auto_regional_launch)
+For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Highlight Mechanism Canvas` satisfies **all** of the following:
+1. Contains at least one **serialized IP** that appears in all three stages with phase-evolution logic.
+2. Each stage (Early / Mid / Late) lists at least **three concrete, named activities** (not channel placeholders).
+3. `Late` stage includes at least one **differentiated experience event** (e.g., test-drive camp, owner salon, premium outdoor experience, deep scenario trial) with a concrete venue or format named.
+
+If any of the above is missing or placeholder-only, mark the direction `revise`, not `keep`.
+
 ## Notes Requirements
 
 For each idea in `## Notes`, include:
@@ -115,6 +123,8 @@ For city or regional briefs, also include:
 - `Hashtag extensibility` (example tags such as `#...#`)
 
 - These four items (`One-line propagation theme`, `City or regional emotional binding`, `Product-sellpoint mapping`, `Hashtag extensibility`) must also be surfaced in either the `## Core Strategic Idea` block or the `## Highlight Mechanism Canvas` for the direction. They may not exist only inside `## Notes`.
+- `Serialized IP candidates`: [name at least one IP that could span all three phases, with evolution logic per phase]
+- `Differentiated experience event (Late stage)`: [concrete venue/format for a non-sales, experience-heavy activation]
 
 ## Core Strategic Idea requirement
 
