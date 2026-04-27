@@ -71,6 +71,12 @@ This spec defines failure modes the media plan skill must catch before it return
 - Expected behavior: The skill uses the signal only as a discovery hint, seeks stronger calibration sources, and marks the direction unsupported if better evidence does not appear.
 - Failure signal: The skill uses a low-trust or single-source signal as the main justification for ideation or recommendation.
 
+## Scenario 10: Framework-Only Proposal (No Execution Detail)
+
+- Trigger: The draft proposal has clean sections and KPI tables, but the phase plan contains abstract language only (for example, "increase awareness", "strengthen communication") with no program mechanism, no execution flow, and no owner-level action design.
+- Expected behavior: The skill fails proposal review, routes to proposal_enrich or upstream phases, and requires executable program blueprints (named action, mechanism, step flow, owner, lead capture path, KPI linkage).
+- Failure signal: The skill marks the proposal complete even though actions are not executable and cannot be translated into concrete campaign operations.
+
 ## Review Reminder
 
 - Every final proposal should show a visible chain from brief -> research -> ideas -> recommendation.

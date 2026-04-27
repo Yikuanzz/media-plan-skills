@@ -49,3 +49,10 @@ venv/
 
 # Local git worktrees
 .worktrees/
+
+# Claude
+.claude/
+
+# Cursor
+.cursor/
+

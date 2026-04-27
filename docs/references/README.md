@@ -9,3 +9,5 @@
 - 对外标准、合作方协议或外部文档的简要整理版。
 
 不要把大段供应商文档原样塞进来。这里应该是经过筛选和整理后的资料。
+
+- [deep-research-module-notes.md](deep-research-module-notes.md) — 与 Deep-Research-skills 风格的模块路由、多 Agent 合并说明（本仓库 skill 不硬依赖外部包）。

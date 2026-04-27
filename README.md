@@ -27,7 +27,10 @@
 - 进入调研前：须补齐「启动调研」所需字段（见 `skills/media-plan/shared/brief-intake-template.md` 中 *Required Fields To Start Research*）；占位符如 `unknown` / `tbd` 不算通过。
 - ideation 放行前：保留方向除了评分通过，还要补齐 `Highlight Mechanism Canvas`，明确主题、主事件、参与/传播/转化机制。
 - 进入执行规划与成案前：还须明确 `deliverables_needed`、`constraints`、`success_metric`，且须具体可用。
+- 城市/区域 brief 在 research 阶段必须产出完整 `City Evidence Pack`（圈层地图、事件窗口、竞品本地动作、KOL/KOC、高端场地池），缺项会被打回。
 - 各阶段之间通过 **显式 handoff**（如 Selected Direction、Validated Execution-Plan Handoff）衔接，避免口头承接导致断层。
+- 汽车区域上市场景默认切到 `auto_regional_launch` 单产物结构，输出直接可转 PPT 的策划正文（无双版本拆分）。
+- 汽车区域上市场景要求 `Execution Action Playbook`：每阶段至少 1 个 Program Blueprint（项目机制、执行流程、负责人、留资路径、KPI 绑定），禁止只给框架和 KPI 空表。
 
 **主流程与回退**
 
@@ -39,6 +42,7 @@
 - 调研：至少两类证据（热点/案例/公开数据/平台信号等），重要论断需可溯源。
 - 创意：至少三个可区分方向并评分筛选，其中至少保留一个 wildcard；`keep` 方向必须形成亮点机制画布，而不是只给 slogan 和动作列表。
 - 成案：需要显式展示亮点机制总览、阶段打法、核心事件与转化链路，KPI/风险/预案不可缺省。
+- 成案（汽车区域上市）：除结构完整外，必须达到“可执行颗粒”，至少覆盖赛道/流程/执行步骤等项目级细节。
 
 **运行环境假设**：依赖 Agent 的澄清与检索能力；设计文档中约定可结合 `websearch` / `webfetch` 等与实时信源协作（见设计文档「工具绑定」小节）。
 

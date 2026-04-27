@@ -1,5 +1,11 @@
 # Query Playbook
 
+## Research module routing (read before first search in a pass)
+
+- **Competitor / benchmark depth** (trust path, campaign proof): read `./research-modules/competitor-deep.md` then run queries below.
+- **City / region / Hotspot pairings** (venues, local calendar): read `./research-modules/city-signal.md` then run regional queries.
+- **Review loop** re-entry for evidence gaps: load the same module that matches the gap type before new `tavily_search` calls.
+
 ## Hotspot Query
 
 - intent: detect recent platform chatter, live attention spikes, memes, or event-adjacent discussion

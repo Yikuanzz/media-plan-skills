@@ -9,6 +9,7 @@
 - `channel_fit`: works for the selected channels and formats
 - `mechanism_strength`: forms a clear participation, spread, and conversion logic instead of disconnected actions
 - `execution_feasibility`: fits timeline, budget, and team reality
+- `propagation_theme_clarity` (required for city/regional briefs): whether the idea has a one-line emotional theme, city/regional binding, product-sellpoint mapping, and expandable hashtag logic
 
 ## Scoring Rules
 
@@ -25,9 +26,11 @@
 
 ```md
 ## Idea Evaluation
-| Idea | Brief Fit | Topic Freshness | Form Breakthrough | Research Support | Channel Fit | Mechanism Strength | Execution Feasibility | Total | Verdict |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Idea name | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | keep / revise / reject |
+| Idea | Brief Fit | Topic Freshness | Form Breakthrough | Research Support | Channel Fit | Mechanism Strength | Execution Feasibility | Propagation Theme Clarity* | Total | Verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Idea name | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | keep / revise / reject |
+
+*For non-city briefs this column may be marked `n/a`.
 
 ## Notes Requirements
 
@@ -48,9 +51,24 @@ For each idea in `## Notes`, include:
 - `Channel mix`: [online / offline / online-offline blend]
 - `Combinability`: [which other ideas this can combine with, and the logic]
 
+For city or regional briefs, also include:
+
+- `One-line propagation theme` (with emotional hook)
+- `City or regional emotional binding`
+- `Product-sellpoint mapping`
+- `Hashtag extensibility` (example tags such as `#...#`)
+
+## Core Strategic Idea
+
+Fill per [core-strategic-idea.md](core-strategic-idea.md) for the **primary** direction and any co-direction with a distinct narrative. **Do not** write `## Highlight Mechanism Canvas` for the primary until this block exists (core claim first, then canvas alignment).
+
 ## Highlight Mechanism Canvas
 
 Use `highlight-mechanism-canvas.md` for every `keep` direction.
+
+## Content Assets
+
+Echo [content-assets.md](content-assets.md) for the primary `keep` direction after the primary direction’s canvas is complete.
 
 ## Selected Direction Handoff
 
@@ -91,6 +109,7 @@ Use `highlight-mechanism-canvas.md` for every `keep` direction.
 - Penalize ideas that could be reused for any brand with minor copy edits.
 - Do not mark an idea as `keep` if `mechanism_strength` is below `3`.
 - Do not mark an idea as `keep` if execution feasibility is weak.
+- For city or regional briefs, do not mark an idea as `keep` if `propagation_theme_clarity` is below `3`.
 - If one direction is recommended for downstream planning, fill `## Selected Direction Handoff` explicitly so execution planning does not need to infer the winner.
 
 ## Anti-Cliché Checklist
