@@ -37,9 +37,9 @@ Single **canonical** narrative for the chosen direction. Downstream `Theme` and 
 - `Marketing主线` must now be provably derivable from `Slogan derivation logic`; if the slogan appears invented without derivation, mark the block incomplete.
 - `Strategy pillars` must name the **strategic thrusts** (not tactics) that organize all downstream execution. Every phase action must map to at least one pillar.
 - These three fields (`Slogan derivation logic`, `Stage sub-themes`, `Strategy pillars`) are mandatory for every `keep` direction.
-- Downstream binding: In `proposal-template.md` Chapter 3 (营销策略), the proposal must echo:
-  - `Core value` → Section 3.1
-  - `Marketing主线` → Section 3.2
-  - `Strategy pillars` → Section 3.3
-  - `Slogan derivation logic` → Section 3.2 (as derivation chain evidence)
-  - `Stage sub-themes` → Section 3.2 (as stage theme table)
+- Downstream binding: In `proposal-template.md` (`general_proposal` mode), the proposal must echo these fields by semantic section anchor, not fixed chapter numbering:
+  - `Core value` → `Core Strategic Idea`
+  - `Marketing主线` → `Strategic Direction`
+  - `Strategy pillars` → `Phased Execution Plan` and `Phased Event Menu`
+  - `Slogan derivation logic` → `Core Strategic Idea` (as derivation chain evidence)
+  - `Stage sub-themes` → `Phased Execution Plan` (as stage theme mapping)

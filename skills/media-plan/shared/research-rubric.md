@@ -29,7 +29,7 @@ When the brief includes city or regional scope, collect all five items below. Mi
 - [ ] Target-affluent or priority-circle concentration map (communities, clubs, associations, business groups)
 - [ ] City events, festivals, or sports windows during the launch timeline
 - [ ] Competitor launch or marketing actions in this city over the last 12 months
-- [ ] Local KOL or KOC matrix (auto, parenting, technology, lifestyle)
+- [ ] Local KOL or KOC matrix (category-relevant verticals and decision influencers)
 - [ ] Representative premium venues in this city (launch event, pop-up, private salon)
 
 ## Required Output Shape
@@ -51,8 +51,8 @@ When the brief includes city or regional scope, collect all five items below. Mi
 - Competitor local actions (12 months):
 - KOL/KOC matrix:
 - Premium venue pool:
-- Premium circle pool: [high-net-worth clubs, business associations, alumni networks, private membership groups relevant to target audience; e.g., "楚商联合会", "高端社区业主群", "EMBA校友会"]
-- Local sponsorship pool: [regional events, venues, or cultural IPs that could be co-activated; e.g., "武汉天地商业体", "东湖绿道骑行节", "武汉网球公开赛"]
+- Premium circle pool: [high-value circles relevant to target audience, such as business associations, alumni networks, private memberships, or local communities]
+- Local sponsorship pool: [regional events, venues, or cultural IPs that could be co-activated]
 - Audience persona: [age/income/family structure/decision drivers/pain points for target segment]
 - City localization insight: [consumption patterns, distribution maps, cultural anchors relevant to category]
 - Market trend snapshot: [category growth, technology shift, or policy window in this region]
@@ -67,7 +67,7 @@ When the brief includes city or regional scope, collect all five items below. Mi
 - Mechanic-worthy signals:
 - Proof assets worth carrying into proposal:
 - Strategic derivation anchors: [inputs that can become Core value / Marketing主线]
-- Family/emotional scene hooks: [for auto family-SUV briefs, emotional entry points beyond tech specs]
+- Family/emotional scene hooks: [emotionally resonant entry points tied to this category and audience, beyond feature listing]
 - Circle resource anchors: [specific local circles or associations that can be activated for circle-penetration or private-salon events]
 - Sponsorship/venue integration hooks: [regional events or venues that can host or co-brand with launch activities]
 
