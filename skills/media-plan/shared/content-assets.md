@@ -39,9 +39,9 @@ For each primary platform, provide:
 | --- | --- | --- | --- |
 | 抖音 | [e.g., 短视频，强情绪共鸣] | [e.g., 场景化家庭体验、AI创意] | [actual titles like `《光谷爸爸换车记》`] |
 | 小红书 | [e.g., 图文/短vlog，精致氛围感] | [e.g., 城市意境打卡、生活方式] | [actual titles like `《这台车和武汉很配》`] |
-| 懂车帝/汽车之家 | [e.g., 深度测评，专业干货] | [e.g., 产品对比、提车指南] | [actual titles like `《奕境 vs 理想L9 深度对比》`] |
+| 懂车帝/汽车之家 | [e.g., 深度测评，专业干货] | [e.g., 产品对比、提车指南] | [actual titles like `《[车型名] vs [竞品名] 深度对比》`] |
 | 视频号 | [e.g., 生活化、熟人传播] | [e.g., 车主故事、活动直播] | [actual titles like `车主购车真实记录`] |
-| 微博 | [e.g., 话题制造，热搜逻辑] | [e.g., 话题标签运营，舆论引导] | [actual titles like `#武汉首台奕境DH1#`] |
+| 微博 | [e.g., 话题制造，热搜逻辑] | [e.g., 话题标签运营，舆论引导] | [actual titles like `#武汉首台[车型名]#`] |
 
 - At least 3 platforms must have concrete title examples.
 - Titles must be specific enough to appear in a content calendar, not generic descriptions.
