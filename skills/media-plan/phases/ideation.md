@@ -32,7 +32,7 @@ Use the inspiration library plus the validated research pack to generate multipl
 - A `keep` direction is **invalid** if its `## Highlight Mechanism Canvas` is missing any of: `Stage pillars`, `Local life map`, or `Calendar alignment` (see `../shared/highlight-mechanism-canvas.md`). In that case, mark the direction `revise`, not `keep`.
 - For every `keep` direction, each macro stage (Early / Mid / Late) must show **at least two different formats** of concrete activation on the canvas (e.g. online UGC program + offline pop-up; elite circle salon + city landmark). **Forbidden**: only “one Hero + channel flight list” with no second named activation format in that stage.
 - For city or regional briefs, include `Propagation Theme Clarity` as a scoring dimension. Ideas with weak theme clarity cannot be marked `keep`.
-- For city or regional briefs, each `keep` direction must define at least one executable flagship program concept with mechanism and phase flow (for example: track design + launch/create/vote/award flow) so proposal can expand it into Program Blueprint Cards.
+- For city or regional briefs, each `keep` direction must define at least one executable flagship program concept with mechanism and phase flow (for example: challenge design + recruit/create/vote/award flow) so proposal can expand it into Program Blueprint Cards.
 
 ## Step 0: Frontier Signal Retrieval (mandatory)
 
@@ -89,8 +89,9 @@ If any field is missing, empty, or placeholder-only (e.g. "TBD", "待定"), mark
 
 ### Highlight Mechanism Canvas completeness rule
 For every `keep` direction, a `keep` status is **invalid** unless its `## Highlight Mechanism Canvas` satisfies **all** of the following:
-1. Contains at least one **serialized IP** that appears in all three stages with phase-evolution logic.
-   - (Cross-check) The serialized IP named here must also appear in `## Notes` under `Serialized IP candidates` with consistent phase-evolution logic.
+1. Contains at least one **cross-stage continuity mechanism** that appears in all three stages with phase-evolution logic.
+   - This can be a serialized IP, recurring program, narrative thread, or member journey; choose the form that fits the category.
+   - (Cross-check) The continuity mechanism named here must also appear in `## Notes` under `Cross-stage continuity candidates` with consistent phase-evolution logic.
 2. Each stage (Early / Mid / Late) lists at least **three concrete, named activities** (not channel placeholders).
 3. `Late` stage includes at least one **differentiated experience event** (e.g., test-drive camp, owner salon, premium outdoor experience, deep scenario trial) with a concrete venue or format named.
 
@@ -130,7 +131,7 @@ For city or regional briefs, also include:
 - `Hashtag extensibility` (example tags such as `#...#`)
 
 - These four items (`One-line propagation theme`, `City or regional emotional binding`, `Product-sellpoint mapping`, `Hashtag extensibility`) must also be surfaced in either the `## Core Strategic Idea` block or the `## Highlight Mechanism Canvas` for the direction. They may not exist only inside `## Notes`.
-- `Serialized IP candidates`: [name at least one IP that could span all three phases, with evolution logic per phase]
+- `Cross-stage continuity candidates`: [name at least one mechanism that could span all three phases, with evolution logic per phase]
 - `Differentiated experience event (Late stage)`: [concrete venue/format for a non-sales, experience-heavy activation]
 
 ## Core Strategic Idea requirement

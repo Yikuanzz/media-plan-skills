@@ -17,14 +17,14 @@ Use this file as the canonical contract for turning a viable idea direction into
 - `Stage pillars` (mandatory): named, schedulable activations per macro stage — not a repeat of generic “media flight” lines. For **Early**, **Mid**, and **Late**, each stage must list **at least three** named pillar lines **or** cover all three roles **声量** (reach / buzz) **/ 圈层集客** (community / lead) **/ 转化承接** (conversion / handoff) with at least one named activity per role. Each line: short name + role tag(s). This is the “event menu” grain; it must not collapse to “Hero + channel table only.”
 - `Local life map` (mandatory): for `geography_or_region`, list **at least three** concrete city-life slices (e.g. river/lake, core mall district, night economy, alley / “烟火”, cultural landmark) that are **not** only industrial-park or “车谷-only” narrative unless the brief is explicitly B2B / cluster-only. At least one slice must show:
   - Audience distribution pattern (e.g. “一江两湖三极” for affluent families)
-  - Local consumption behavior insight (e.g. “混动车型渗透率高于全国平均水平”)
+  - Local consumption behavior insight (e.g. "夜间消费集中在周五至周日")
   - Or cultural/emotional anchor (e.g. “过早文化” for Wuhan)
 - `Calendar alignment` (mandatory): at least **two** entries pairing **calendar month or week window** with a **citywide or industry event** to ride (sports, tourism festival, major fair, etc.). If research cannot substantiate, mark `TBC` and add a line to proposal `Open Questions`.
-- `Stage choreography`: what pre-heat, launch, and sustain phases each need to accomplish **as narrative roles** (how stages differ in job-to-be-done). Do not duplicate `Stage pillars` verbatim; choreography = **why** each stage exists; pillars = **what** is named on the calendar.
+- `Stage choreography`: what Early, Mid, and Late phases each need to accomplish **as narrative roles** (how stages differ in job-to-be-done). Do not duplicate `Stage pillars` verbatim; choreography = **why** each stage exists; pillars = **what** is named on the calendar. If the brief uses custom phase labels, map them explicitly.
 - **Cognitive map (bind to Early / Mid / Late)**: for each of Early, Mid, Late, state the **cognitive job** the stage advances — default mapping:
   - **Early** → 建立期待 (awareness / anticipation; reason to follow)
   - **Mid** → 验证价值 (proof, trust, product or experience truth)
-  - **Late** → 口碑与转化 (WOM, conversion, sustain, referral)  
+  - **Late** → 口碑与转化 (WOM, conversion, retention, referral)  
   Time and T± still live in `Calendar alignment` and execution handoff; **cognitive** labels do **not** replace calendar.
 - `Channel choreography`: how online, offline, creator, media, store, or private-domain actions relay rather than repeat.
 - `Defensibility`: why the mechanism is brand-specific instead of template reuse.
@@ -61,7 +61,7 @@ Use this file as the canonical contract for turning a viable idea direction into
     - …
   - Late:
     - …
-- **Activity density requirement:** Each stage (Early / Mid / Late) must list **at least three concrete, named activities** — not channel placeholders like "Douyin KOL seeding" or "WeChat Moments flight." Named activities include: "AI短视频创意大赛," "高端社区快闪定展," "车主&KOC沙龙." If any stage has fewer than three named activities, mark the direction `revise`.
+- **Activity density requirement:** Each stage (Early / Mid / Late) must list **at least three concrete, named activities** — not channel placeholders like "Douyin KOL seeding" or "WeChat Moments flight." Named activities include: "AI短视频创意大赛," "城市灵感快闪," "创作者共创夜谈." If any stage has fewer than three named activities, mark the direction `revise`.
 - Local life map:
   - …
   - …
@@ -90,7 +90,7 @@ Use this file as the canonical contract for turning a viable idea direction into
 - `Execution red lines` should be concise and real; do not use placeholder risk language.
 - If canvas `Core value` or `Marketing主线` contradicts the `## Core Strategic Idea` block for the same direction, mark the direction `revise` instead of `keep`.
 - Each named pillar in `Stage pillars` must map to one of the `Strategy pillars` from `## Core Strategic Idea`. Include the mapping inline: `[name] — [role tag] — maps to Strategy pillar: [pillar name]`.
-- **Serialized IP requirement (mandatory for all directions):** The canvas must name at least one **serialized IP program** that appears in all three stages (Early / Mid / Late) with a clear phase-evolution logic. Example: "AI Creator Contest" → Early (launch + creation), Mid (voting + award at launch event), Late (winner showcase + owner co-creation). A hero event that only appears in one stage does not satisfy this rule. If no serialized IP is present, mark the direction `revise`.
+- **Cross-stage continuity requirement (mandatory for all directions):** The canvas must name at least one **continuity mechanism** that appears in all three stages (Early / Mid / Late) with clear phase-evolution logic. This can be a serialized IP, recurring program, narrative quest, or community journey. A hero event that only appears in one stage does not satisfy this rule. If no continuity mechanism is present, mark the direction `revise`.
 - `Creative naming convention`: If any stage pillar uses generic naming ("KOL seeding", "线下活动", "线上推广", "媒体投放", "社群运营"), mark the direction `revise`.
 - `Platform differentiation map`: Each stage must show distinct platform angles; identical content across all platforms is insufficient.
 - `Conversion loop per pillar`: Generic conversion language ("引导购买") is insufficient; each pillar must name its specific trigger and handoff method.

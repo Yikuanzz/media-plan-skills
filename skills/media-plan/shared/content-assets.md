@@ -37,11 +37,11 @@ For each primary platform, provide:
 
 | Platform | Content style | Key direction | Example titles |
 | --- | --- | --- | --- |
-| 抖音 | [e.g., 短视频，强情绪共鸣] | [e.g., 场景化家庭体验、AI创意] | [actual titles like `《光谷爸爸换车记》`] |
-| 小红书 | [e.g., 图文/短vlog，精致氛围感] | [e.g., 城市意境打卡、生活方式] | [actual titles like `《这台车和武汉很配》`] |
-| 懂车帝/汽车之家 | [e.g., 深度测评，专业干货] | [e.g., 产品对比、提车指南] | [actual titles like `《[车型名] vs [竞品名] 深度对比》`] |
-| 视频号 | [e.g., 生活化、熟人传播] | [e.g., 车主故事、活动直播] | [actual titles like `车主购车真实记录`] |
-| 微博 | [e.g., 话题制造，热搜逻辑] | [e.g., 话题标签运营，舆论引导] | [actual titles like `#武汉首台[车型名]#`] |
+| 抖音 | [e.g., 短视频，强节奏情绪驱动] | [e.g., 场景化痛点解法、挑战机制] | [actual titles like `《72小时城市效率挑战》`] |
+| 小红书 | [e.g., 图文/短vlog，生活方式叙事] | [e.g., 城市意境打卡、日常使用清单] | [actual titles like `《这份周末路线我想反复走》`] |
+| 视频号 | [e.g., 生活化、熟人传播] | [e.g., 真实故事、活动直播切片] | [actual titles like `《普通人也能复刻的周末计划》`] |
+| B站 | [e.g., 中长视频，知识/测评导向] | [e.g., 深度拆解、对比实验] | [actual titles like `《一个月真实体验复盘：值不值得》`] |
+| 微博 | [e.g., 话题扩散，实时讨论] | [e.g., 话题共创、热点借势] | [actual titles like `#把通勤还给生活#`] |
 
 - At least 3 platforms must have concrete title examples.
 - Titles must be specific enough to appear in a content calendar, not generic descriptions.
