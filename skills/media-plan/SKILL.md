@@ -14,6 +14,11 @@ description: >
 
 Run the full China-market media planning workflow from pre-brief search through proposal review inside this single package. Read phase files and shared contracts from this package only. Do not depend on repo-level `docs/` or sibling skills during runtime.
 
+> [!IMPORTANT]
+> ## Routing notice
+>
+> - If the brief is clearly automotive + city or regional launch scope, route to `regional-auto-launch-plan` (`skills/regional-auto-launch-plan/SKILL.md`) and stop this skill's workflow.
+
 > [!CAUTION]
 > ## Global execution discipline (mandatory)
 >
@@ -95,19 +100,10 @@ Skipping required reads is not allowed.
 - Do not start **research** until `business_goal`, `target_audience`, `timeline`, `budget_or_resource_level`, `geography_or_region`, and `channel_constraints` are present and not placeholder-only.
 - Do not start **execution** or **proposal** until `deliverables_needed`, `constraints`, and `success_metric` are present and specific.
 - Do not pass **research** without at least two evidence classes, `## Competitor Actionable View` when competitive context exists, and at least one concrete source per important claim; generic competitor praise only → do not pass (see `research-rubric.md`).
-  - For `auto_regional_launch`, research must include 5-dimension competitor analysis per core/key competitor (定位/营销打法/渠道策略/信任路径/应对策略) with 2–3 recent campaigns each; generic praise → do not pass.
-  - For `auto_regional_launch`, `## City Evidence Pack` must include regional consumption trends, media habits, spatial distribution, and cultural anchors beyond industrial clusters.
 - For city or regional briefs, do not pass **research** unless `## City Evidence Pack` is complete per `research-rubric.md` mandatory items.
 - Do not pass **ideation** unless at least three distinct directions were considered, at least one wildcard direction was preserved, `## Core Strategic Idea` is filled for the primary `keep` path, `## Content Assets` exists for the primary direction, and `## Highlight Mechanism Canvas` is complete per `./shared/highlight-mechanism-canvas.md`.
-  - For `auto_regional_launch`, `## Core Strategic Idea` must include `Slogan derivation logic` and `Stage sub-themes`.
-  - For `auto_regional_launch`, `## Highlight Mechanism Canvas` must show creative naming for all pillars, a `Platform differentiation map`, `Conversion loop per pillar`, and a serialized IP spanning all three stages.
 - Do not start **execution** until the user **explicitly confirms** `## Selected Direction Handoff` (Step 5 BLOCKING) and the chosen direction includes a complete `## Highlight Mechanism Canvas` with `Stage pillars`, `Local life map`, and `Calendar alignment`.
-  - For `auto_regional_launch`, execution planning is blocked unless `## Content Assets` includes platform-specific content lines (抖音/小红书/懂车帝/视频号/微博) and Program Blueprint Cards include platform content angles and hashtag examples.
 - Do not enter **proposal** without `## Selected Direction Handoff`, `## Core Strategic Idea`, `## Content Assets`, `## Highlight Mechanism Canvas`, and `## Validated Execution-Plan Handoff` with `Validation status: validated`.
-  - For `auto_regional_launch`, do not enter proposal unless every chapter has a Compact View and chapters 2–4 have Expanded Views.
-  - For `auto_regional_launch`, do not pass proposal review without platform differentiation table in Chapter 4 and derivation logic traceability in Chapter 3.
-- For automotive city or regional launch briefs, route proposal drafting to `auto_regional_launch` in `./shared/proposal-template.md` and output a single PPT-ready planning document.
-- For automotive city or regional launch briefs, do not pass proposal review without `Execution Action Playbook` and phase-level Program Blueprint Cards (minimum one per phase) with concrete step flow.
 - **Bid (optional)**: if `bid_or_tender` is true and `evaluation_rubric` is non-empty, the proposal must include `## 15. Rubric Mapping`. If tender technical clauses require, include `## 14. Post-Campaign Review & Uplift`.
 - Do not declare **completion** until the final proposal passes `## Review Pass` per `./phases/proposal.md` **or** max review loops is exhausted with `## Open Issues` (see **Review loop**).
 - `evaluation_rubric` empty → do **not** require Rubric Mapping (unless the user still wants it).
@@ -226,14 +222,12 @@ Skipping required reads is not allowed.
 
 Before drafting, resolve output mode from `proposal-template.md` routing rules:
 - `general_proposal` for normal briefs.
-- `auto_regional_launch` when the brief is clearly automotive + city or regional launch.
 
 **Checkpoint**
 
 ```markdown
 ## Proposal draft complete
 - [x] All template sections present and decision-useful, including **11. Phased Event Menu** (with cognitive column) and **12. Content Assets** per `./shared/proposal-template.md`
-- [x] If `auto_regional_launch`: all nine dedicated sections present, including `Execution Action Playbook` with Program Blueprint Cards
 - [x] `## Review Pass` emitted
 - [ ] Next: If Review Pass = pass → Completion; if fail → Review loop (Step 7)
 ```
@@ -279,13 +273,6 @@ Before drafting, resolve output mode from `proposal-template.md` routing rules:
 | Strategy vs. execution mismatch | Execution or Ideation — name the mismatch |
 | Thin or filler proposal sections | Earliest stage that should supply the substance |
 | Review Pass fail (rubric / mapping) | proposal_enrich or upstream per Step 7 |
-| Missing slogan derivation or stage sub-themes | `ideation` |
-| Generic stage pillar names (no creative naming) | `ideation` |
-| Missing serialized IP or weak phase-evolution logic | `ideation` |
-| Competitor analysis lacks 5 dimensions or recent campaigns | `research` |
-| City evidence lacks regional consumption/media/spatial data | `research` |
-| Missing platform differentiation or hashtag examples | `execution` |
-| Compact/Expanded view mismatch or missing | `proposal_enrich` |
 
 ## Completion gate
 
