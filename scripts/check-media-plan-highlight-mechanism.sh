@@ -11,6 +11,10 @@ required_files=(
   "skills/media-plan/shared/competitor-actionable.md"
   "skills/media-plan/shared/research-modules/competitor-deep.md"
   "skills/media-plan/shared/research-modules/city-signal.md"
+  "skills/regional-auto-launch-plan/shared/highlight-mechanism-canvas.md"
+  "skills/regional-auto-launch-plan/shared/proposal-template.md"
+  "skills/regional-auto-launch-plan/phases/action.md"
+  "skills/regional-auto-launch-plan/phases/proposal.md"
 )
 
 required_patterns=(
@@ -25,17 +29,27 @@ required_patterns=(
   "skills/media-plan/shared/idea-scorecard.md::Mechanism"
   "skills/media-plan/shared/proposal-template.md::Mechanism Design"
   "skills/media-plan/shared/proposal-template.md::Cognitive focus"
-  "skills/media-plan/shared/proposal-template.md::auto_regional_launch"
-  "skills/media-plan/shared/proposal-template.md::Market And Competitor Insights"
-  "skills/media-plan/shared/proposal-template.md::Execution Action Playbook"
-  "skills/media-plan/shared/proposal-template.md::Program Blueprint Card"
   "skills/media-plan/shared/research-rubric.md::City / Regional Mandatory Evidence"
   "skills/media-plan/phases/research.md::## City Evidence Pack"
   "skills/media-plan/phases/ideation.md::Propagation Theme Clarity"
   "skills/media-plan/shared/idea-scorecard.md::Propagation Theme Clarity"
   "skills/media-plan/phases/proposal.md::Review Pass"
   "skills/media-plan/phases/proposal.md::no framework-only language"
+  "skills/regional-auto-launch-plan/SKILL.md::./shared/highlight-mechanism-canvas.md"
+  "skills/regional-auto-launch-plan/phases/action.md::## Action Playbook"
+  "skills/regional-auto-launch-plan/phases/action.md::## Alternative Cards"
+  "skills/regional-auto-launch-plan/phases/action.md::## Budget Allocation Table"
+  "skills/regional-auto-launch-plan/phases/proposal.md::Action Playbook"
+  "skills/regional-auto-launch-plan/phases/proposal.md::Budget Allocation Table"
+  "skills/regional-auto-launch-plan/phases/proposal.md::Alternative Cards"
+  "skills/regional-auto-launch-plan/shared/proposal-template.md::4. Action Plan"
+  "skills/regional-auto-launch-plan/shared/proposal-template.md::Budget Allocation Table"
+  "skills/regional-auto-launch-plan/shared/proposal-template.md::Alternative Cards"
   "docs/product-specs/2026-04-21-media-plan-skill-pressure-tests.md::主机制"
+)
+
+forbidden_patterns=(
+  "skills/media-plan/shared/proposal-template.md::auto_regional_launch"
 )
 
 failed=0
@@ -57,8 +71,24 @@ for rule in "${required_patterns[@]}"; do
     continue
   fi
 
-  if ! grep -q "${pattern}" "${repo_root}/${file}"; then
+  if ! grep -Fq "${pattern}" "${repo_root}/${file}"; then
     echo "文件 ${file} 缺少关键内容: ${pattern}"
+    failed=1
+  fi
+done
+
+for rule in "${forbidden_patterns[@]}"; do
+  file="${rule%%::*}"
+  pattern="${rule##*::}"
+
+  if [[ ! -f "${repo_root}/${file}" ]]; then
+    echo "缺少待检查文件: ${file}"
+    failed=1
+    continue
+  fi
+
+  if grep -Fq "${pattern}" "${repo_root}/${file}"; then
+    echo "文件 ${file} 不应包含内容: ${pattern}"
     failed=1
   fi
 done
