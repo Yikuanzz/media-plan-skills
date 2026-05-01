@@ -29,6 +29,9 @@ Use this file as the canonical contract for turning a viable idea direction into
 - `Channel choreography`: how online, offline, creator, media, store, or private-domain actions relay rather than repeat.
 - `Defensibility`: why the mechanism is brand-specific instead of template reuse.
 - `Execution red lines`: timeline, budget, approval, supply, legal, or brand-safety boundaries that cannot be crossed.
+- `Creative naming convention`: Every named pillar, program, and activity must carry a creative, brand-sounding name (not generic placeholders like "KOL seeding" or "线下活动").
+- `Platform differentiation map`: For each stage, note which platforms get which content angles and format differences.
+- `Conversion loop per pillar`: Each named pillar must state its specific conversion path (attention → lead → trial → order).
 
 ## Output Shape
 
@@ -43,6 +46,12 @@ Use this file as the canonical contract for turning a viable idea direction into
 - Participation mechanism:
 - Spread mechanism:
 - Conversion mechanism:
+- Platform differentiation map:
+  - Early: [platform + angle]
+  - Mid: [platform + angle]
+  - Late: [platform + angle]
+- Conversion loop per pillar:
+  - [pillar name]: [attention → lead → trial → order path]
 - Hero event:
 - Stage pillars:
   - Early:
@@ -81,4 +90,7 @@ Use this file as the canonical contract for turning a viable idea direction into
 - `Execution red lines` should be concise and real; do not use placeholder risk language.
 - If canvas `Core value` or `Marketing主线` contradicts the `## Core Strategic Idea` block for the same direction, mark the direction `revise` instead of `keep`.
 - For `auto_regional_launch`, each named pillar in `Stage pillars` must map to one of the `Strategy pillars` from `## Core Strategic Idea`. Include the mapping inline: `[name] — [role tag] — maps to Strategy pillar: [pillar name]`.
-- **Serialized IP requirement (auto_regional_launch only):** The canvas must name at least one **serialized IP program** that appears in all three stages (Early / Mid / Late) with a clear phase-evolution logic. Example: "AI Creator Contest" → Early (launch + creation), Mid (voting + award at launch event), Late (winner showcase + owner co-creation). A hero event that only appears in one stage does not satisfy this rule. If no serialized IP is present, mark the direction `revise`.
+- **Serialized IP requirement (mandatory for all directions):** The canvas must name at least one **serialized IP program** that appears in all three stages (Early / Mid / Late) with a clear phase-evolution logic. Example: "AI Creator Contest" → Early (launch + creation), Mid (voting + award at launch event), Late (winner showcase + owner co-creation). A hero event that only appears in one stage does not satisfy this rule. If no serialized IP is present, mark the direction `revise`.
+- `Creative naming convention`: If any stage pillar uses generic naming ("KOL seeding", "线下活动", "线上推广", "媒体投放", "社群运营"), mark the direction `revise`.
+- `Platform differentiation map`: Each stage must show distinct platform angles; identical content across all platforms is insufficient.
+- `Conversion loop per pillar`: Generic conversion language ("引导购买") is insufficient; each pillar must name its specific trigger and handoff method.
