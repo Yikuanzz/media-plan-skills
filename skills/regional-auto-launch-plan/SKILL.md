@@ -20,6 +20,10 @@ Run the full automotive regional launch workflow in this package only: pre-brief
 7. **ACTION DESIGN FOUR PRINCIPLES** - Every action must satisfy low cost, fast impact, executable delivery, and real audience pull. Reject gimmick-only ideas.
 8. **CORE THEME, NOT SERIALIZED IP** - Do not force serialized IP programs. Use evidence-backed `Core Theme` and stage sub-themes.
 
+## Contract maturity (scaffold phase)
+
+During the current scaffold/migration phase, this `SKILL.md` is the canonical gate contract for runtime enforcement. Shared and phase files may still contain stubs and must be completed in Task 3+; until then, enforce gates from this file when conflicts or omissions appear.
+
 ## Phase index
 
 | Phase file | Stage | Purpose |
@@ -86,6 +90,8 @@ Do not skip required reads.
 - Do not claim completion while review is failing without `Open Issues` at loop limit.
 
 ## Workflow
+
+Global hard gates in this file are canonical. Step-level `GATE` and `BLOCKING-*` checkpoints below are summaries for execution flow and must not conflict with the global gates.
 
 ### Step 1: Pre-brief search
 
