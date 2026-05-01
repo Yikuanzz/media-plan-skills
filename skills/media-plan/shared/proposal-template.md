@@ -221,7 +221,7 @@ For `auto_regional_launch`, each phase section (3/4/5) must include at least one
 ### Expanded View
 
 #### 3.1 产品核心差异化价值呈现
-- **品牌基础层**: [backing logic, e.g., 东风×华为双巨头共创]
+- **品牌基础层**: [backing logic, e.g., [品牌A×品牌B双巨头共创]]
 - **痛点解决层**: [3 value propositions with specific solutions, not slogans]
 - **产品目标层**: [one传播感 sentence defining ultimate market role]
 
@@ -345,9 +345,9 @@ For each集客 activity:
   | --- | --- | --- | --- |
   | 抖音 | 短视频，强情绪共鸣 | 场景化家庭体验、AI创意 | 《光谷爸爸换车记》 |
   | 小红书 | 图文/短vlog，精致氛围感 | 城市意境打卡、生活方式 | 《这台车和武汉很配》 |
-  | 懂车帝/汽车之家 | 深度测评，专业干货 | 产品对比、提车指南 | 《奕境 vs 理想L9 深度对比》 |
+  | 懂车帝/汽车之家 | 深度测评，专业干货 | 产品对比、提车指南 | 《[车型名] vs [竞品名] 深度对比》 |
   | 视频号 | 生活化、熟人传播 | 车主故事、活动直播 | 车主购车真实记录 |
-  | 微博 | 话题制造，热搜逻辑 | 话题标签运营，舆论引导 | #武汉首台奕境DH1# |
+  | 微博 | 话题制造，热搜逻辑 | 话题标签运营，舆论引导 | #武汉首台[车型名]# |
 - **KOL/KOC分层策略**:
   - 头部KOL: [汽车垂类，专业背书]
   - 腰部KOL: [亲子/旅行/科技，场景种草]
@@ -381,13 +381,13 @@ For each集客 activity:
 - 口碑内容策略: [what owners say, in what format]
 - KOC沙龙形式: [owner + KOC exchange]
 - 传播链路: [owner experience → UGC → platform diffusion → prospect attention]
-- 内容方向示例: [e.g., `《从BBA换奕境，为了家庭我做了这个选择》`]
+- 内容方向示例: [e.g., `《从BBA换[车型名]，为了家庭我做了这个选择》`]
 
 ##### ② 试驾价值体验活动
-- 活动创意命名: [scene-based, e.g., "江城生活·奕境随行"]
+- 活动创意命名: [scene-based, e.g., "江城生活·[车型名]随行"]
 - 场地选择理由: [urban/highway/rural road combination]
 - 静态体验区设计: [zone names, interactions, product卖点 linkage]
-- 动态试驾设计: [part/篇章式, e.g., 穿越生活/放飞自在/品味奕境]
+- 动态试驾设计: [part/篇章式, e.g., 穿越生活/放飞自在/品味[车型名]]
 - KOC参与机制: [how KOCs enable circle diffusion]
 - 无痕促单设计: [natural purchase guidance in experience]
 
