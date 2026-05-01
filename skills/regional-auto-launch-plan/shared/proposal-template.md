@@ -9,7 +9,7 @@ Use this skeleton to assemble the final regional auto launch proposal.
 - Every chapter that has both depths must place `Compact` before `Expanded`.
 - Chapters `2`, `3`, and `4` must always include `Expanded` depth.
 
-## Section skeleton (0-7 mandatory; 6 conditional)
+## Section skeleton (0-7 order fixed; section 6 is conditional)
 
 ```md
 0. Cover / TOC
@@ -42,7 +42,7 @@ Use this skeleton to assemble the final regional auto launch proposal.
 5. Operations Assurance (Compact default)
 
 6. Service Team (bid-only)
-   - If non-bid: `skipped_non_bid` marker only.
+   - If non-bid: output exactly `## 6. Service Team (skipped - non-bid)`.
 
 7. Closing / Thanks
 ```

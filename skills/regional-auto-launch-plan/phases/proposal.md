@@ -24,6 +24,7 @@ Assemble final proposal chapters from upstream outputs, run quality checks, and 
    - `Budget Allocation Table`
    - `Alternative Cards`
 4. Conditionally include:
+   - section `6. Service Team` as bid-only; when non-bid, output exactly `## 6. Service Team (skipped - non-bid)`.
    - section `14. Post-Campaign Review & Uplift` when tender requirements request post-campaign review/optimization.
    - section `15. Rubric Mapping` when rubric is non-empty.
 

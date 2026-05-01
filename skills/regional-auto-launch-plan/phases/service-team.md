@@ -15,7 +15,7 @@ Generate service-team role cards only for bid briefs.
 Do not run this phase. Set handoff state and continue to Proposal:
 
 - `Service Team Phase Status = skipped_non_bid`
-- Proposal must render the exact non-bid marker from `../shared/service-team-template.md`.
+- Proposal must render exactly `## 6. Service Team (skipped - non-bid)`.
 
 No role cards, no optional role section, no extra text generated in this phase.
 

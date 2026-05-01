@@ -7,7 +7,7 @@ Use this template only when `bid_or_tender = true`.
 When non-bid state is routed from Service Team phase, Proposal must output exactly this marker:
 
 ```md
-## 7. Service Team (skipped — non-bid)
+## 6. Service Team (skipped - non-bid)
 ```
 
 Do not output role cards, optional roles, or explanatory filler after the marker.
