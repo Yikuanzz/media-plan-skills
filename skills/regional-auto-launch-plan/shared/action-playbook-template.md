@@ -60,6 +60,8 @@ You are a planning sub-agent for `regional-auto-launch-plan`.
 - Fields 1-7 are mandatory and cannot be `partial`.
 - If fields 8-13 are uncertain, mark `partial` and state what evidence is missing.
 - Respect budget red lines in `shared/budget-allocation-rule.md`.
+- Per-card budget cap is deterministic: `single-card cap = min(stage guideline cap, total_budget * 0.30)`.
+- If stage guideline and hard cap conflict, the hard cap (`total_budget * 0.30`) wins.
 
 ## Phase-Specific Constraints
 - If stage is `Phase 1 (Pre-heat)`:
@@ -69,7 +71,7 @@ You are a planning sub-agent for `regional-auto-launch-plan`.
 - If stage is `Phase 2 (Launch Burst)`:
   - must include linked actions around `N-7 / N / N+3` key nodes.
   - venue and build can be spending focus but cannot break phase red lines.
-  - single-card budget should usually stay <= CNY 80k.
+  - stage guideline cap is `CNY 80k`, but enforce `min(CNY 80k, total_budget * 0.30)` as final cap.
 - If stage is `Phase 3 (Sustain)`:
   - focus on conversion of hesitant leads and referral growth.
   - KPI must be measurable in orders, leads, or test-drive appointments.

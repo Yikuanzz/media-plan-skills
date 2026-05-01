@@ -23,6 +23,8 @@ Weighted score formula:
 2. Among valid cards, select highest `total_score` as `primary`.
 3. Select second highest `total_score` as `alternative`.
 4. If two cards tie on `total_score`, pick the one with higher `Real audience pull`; if still tied, pick higher `Delivery feasibility`.
+5. If hard-gate filtering leaves fewer than two valid cards, re-dispatch candidate generation and re-score until at least two valid cards are available.
+6. If still only one valid card after one re-dispatch round, raise an explicit blocking exception and request user confirmation before using a single-card temporary fallback.
 
 ## Review Log Template
 

@@ -28,6 +28,7 @@ Each pillar must output:
 3. Score candidates with the four-dimension review scorecard.
 4. Select highest valid score as `primary`, second highest as `alternative`.
 5. Validate mandatory fields and budget red lines before locking results.
+6. If hard-gate filtering leaves only one valid card, re-dispatch and re-score until two valid cards exist; if still unresolved, raise explicit blocking exception for user confirmation.
 
 ## Hard Gates in Action Phase
 
@@ -61,7 +62,7 @@ Required confirmation request:
 ## BLOCKING-C
 Phase 2 primary cards are ready for confirmation.
 - Confirmed cards: <list>
-- Phase 2 budget snapshot: <online/offline/total + venue-related ratio>
+- Phase 2 budget snapshot: <online/offline/total + venue-related amount + venue-related ratio>
 Please confirm before we dispatch Phase 3 pillars.
 ```
 
@@ -85,5 +86,5 @@ Before handing off to `Phase: Operations`, output:
 
 1. `## Action Playbook` with all stage/pillar primary cards
 2. `## Alternative Cards` with one backup per pillar
-3. `## Budget Allocation Table` with online/offline split by stage and overall total
+3. `## Budget Allocation Table` with online/offline split by stage and overall total; Phase 2 row must include venue-related amount for the 60% validation
 4. `## Blocking Log` with explicit confirmations for `BLOCKING-B`, `BLOCKING-C`, `BLOCKING-D`

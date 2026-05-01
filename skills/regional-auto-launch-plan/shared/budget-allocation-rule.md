@@ -6,6 +6,13 @@ Use this contract in `Phase: Action` and `Phase: Proposal` for budget validation
 
 Default total budget context: CNY `200k-300k` (typical midpoint `250k`).
 
+## Out-of-Band Budget Handling (mandatory)
+
+- If total budget is outside `200k-300k`, classify it as out-of-band.
+- Out-of-band budget cannot be treated as default: request explicit user confirmation before Action or Proposal continues.
+- When confirmed, annotate outputs with `regional-flagship` and record the confirmed total budget value.
+- Keep all hard constraints below unless user explicitly approves a separate exception.
+
 | Stage | % of total budget | Midpoint amount (250k base) | Typical spending focus |
 | --- | --- | --- | --- |
 | Phase 1 Pre-heat | 25-30% | 62.5k-75k | KOL/KOC seeding, UGC incentives, lightweight offline touchpoints |
@@ -25,7 +32,7 @@ Default total budget context: CNY `200k-300k` (typical midpoint `250k`).
 | Stage | Online | Offline | Total | Share |
 | --- | --- | --- | --- | --- |
 | Phase 1 | CNY ... | CNY ... | CNY ... | ...% |
-| Phase 2 | CNY ... | CNY ... (venue-related CNY ...) | CNY ... | ...% |
+| Phase 2 | CNY ... | CNY ... (venue-related CNY ...; venue ratio ...%) | CNY ... | ...% |
 | Phase 3 | CNY ... | CNY ... | CNY ... | ...% |
 | Overall | CNY ... | CNY ... | CNY ... | 100% |
 ```
@@ -34,4 +41,4 @@ Validation rules for the table:
 
 1. `Online + Offline = Stage Total` for every stage.
 2. Sum of stage totals equals overall total.
-3. Phase 2 line must expose venue-related amount for the 60% check.
+3. Phase 2 line must expose venue-related amount (and ratio) for the 60% check.
