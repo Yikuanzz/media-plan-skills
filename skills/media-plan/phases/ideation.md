@@ -76,9 +76,9 @@ After generating proposals from the inspiration library, generate **two mandator
 - If Wildcard A cannot be generated due to weak frontier signals, substitute with a "radical frontier hypothesis" (a 12-month forward projection based on category trends).
 - Wildcard B must not exceed 50% structural similarity with any direction in the inspiration library.
 
-### Core Strategic Idea completeness rule (auto_regional_launch)
+### Core Strategic Idea completeness rule
 
-For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Core Strategic Idea` block contains all of the following fields with non-placeholder content:
+For every `keep` direction, a `keep` status is **invalid** unless its `## Core Strategic Idea` block contains all of the following fields with non-placeholder content:
 1. `One-line claim`
 2. `Core value`
 3. `Marketing主线`
@@ -87,8 +87,8 @@ For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Cor
 
 If any field is missing, empty, or placeholder-only (e.g. "TBD", "待定"), mark the direction `revise`, not `keep`.
 
-### Highlight Mechanism Canvas completeness rule (auto_regional_launch)
-For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Highlight Mechanism Canvas` satisfies **all** of the following:
+### Highlight Mechanism Canvas completeness rule
+For every `keep` direction, a `keep` status is **invalid** unless its `## Highlight Mechanism Canvas` satisfies **all** of the following:
 1. Contains at least one **serialized IP** that appears in all three stages with phase-evolution logic.
    - (Cross-check) The serialized IP named here must also appear in `## Notes` under `Serialized IP candidates` with consistent phase-evolution logic.
 2. Each stage (Early / Mid / Late) lists at least **three concrete, named activities** (not channel placeholders).
@@ -96,11 +96,11 @@ For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Hig
 
 If any of the above is missing or placeholder-only, mark the direction `revise`, not `keep`.
 
-### Creative naming validation (auto_regional_launch)
-For `auto_regional_launch`, a `keep` direction is **invalid** if any stage pillar uses generic naming ("KOL seeding", "线下活动", "线上推广", "媒体投放", "社群运营"). Every named activity must have a creative, brand-sounding name. If generic names exist, mark the direction `revise`.
+### Creative naming validation
+For every `keep` direction, a `keep` status is **invalid** if any stage pillar uses generic naming ("KOL seeding", "线下活动", "线上推广", "媒体投放", "社群运营"). Every named activity must have a creative, brand-sounding name. If generic names exist, mark the direction `revise`.
 
-### Slogan derivation validation (auto_regional_launch)
-For `auto_regional_launch`, a `keep` direction is **invalid** if its `## Core Strategic Idea` lacks `Slogan derivation logic` or if the `Marketing主线` appears invented without a traceable derivation chain. The derivation must show how insight dimensions (brand + audience/use-case + product value) converge to the slogan. If missing or invented, mark `revise`.
+### Slogan derivation validation
+For every `keep` direction, a `keep` status is **invalid** if its `## Core Strategic Idea` lacks `Slogan derivation logic` or if the `Marketing主线` appears invented without a traceable derivation chain. The derivation must show how insight dimensions (brand + audience/use-case + product value) converge to the slogan. If missing or invented, mark `revise`.
 
 ## Notes Requirements
 

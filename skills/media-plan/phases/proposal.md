@@ -17,7 +17,6 @@ Assemble the final proposal and review it against the shared template and upstre
 - Pull inputs from the approved intake summary, research pack (including `## Competitor Actionable View`, `## Hotspot × Regional Resource Match`), scored idea evaluation, `## Core Strategic Idea`, `## Content Assets`, and validated execution-plan handoff.
 - Pull the selected direction's `## Highlight Mechanism Canvas` forward explicitly; `## Mechanism Design` in the proposal must mirror the three mechanisms without new logic.
 - Include all numbered sections per `../shared/proposal-template.md`, including **11. Phased Event Menu** with **Cognitive focus** column and **12. Content Assets**.
-- When `../shared/proposal-template.md` routes to `auto_regional_launch`, use the dedicated single-output structure and require a complete `## City Evidence Pack` from research before drafting.
 - If `bid_or_tender` is true and `evaluation_rubric` is non-empty, `## 15. Rubric Mapping` is mandatory. If `tender_technical_requirements` or bid context requires, `## 14. Post-Campaign Review & Uplift` is mandatory.
 - If evidence, idea quality, or execution fit is unresolved, stop and route back upstream rather than patching with filler.
 
@@ -35,20 +34,9 @@ After assembling the full markdown against the template, output:
   - [ ] Core Strategic Idea + canvas + Mechanism Design consistent
   - [ ] Event Menu: cognitive column + time + pillar + content asset link where applicable
   - [ ] Content Assets long / mid / short
-  - [ ] if auto regional launch: all six chapters present (1-任务课题, 2-市场洞察, 3-营销策略, 4-行动规划, 5-运营检核, 6-服务团队)
-  - [ ] if auto regional launch: bid-gated chapters (5, 6) are present when `bid_or_tender=true`, collapsed when false
-  - [ ] if auto regional launch: Chapter 4 includes at least 1 Program Blueprint Card per phase
-  - [ ] if auto regional launch: each Program Blueprint Card has mechanism + step flow + owner + lead capture + KPI link
-  - [ ] if auto regional launch: Chapter 4 phase tables use 时间/动作/产出物/关键节点 columns
-  - [ ] if auto regional launch: Chapter 3 echoes Core value, Marketing主线, and Strategy pillars from Core Strategic Idea
-  - [ ] if auto regional launch: Chapter 2 includes audience persona, city localization insight, and market trend
-  - [ ] if auto regional launch: every chapter (1–4) has a Compact View (slide-ready: tables/bullets, ≤3-line paragraphs)
-  - [ ] if auto regional launch: chapters 2–4 have Expanded Views with full narrative depth per proposal-template.md
-  - [ ] if auto regional launch: Compact and Expanded Views are traceable to upstream contracts (Core Strategic Idea, Highlight Mechanism Canvas)
-  - [ ] if auto regional launch: Chapter 4 Expanded includes platform differentiation table (抖音/小红书/懂车帝/视频号/微博) with content style, key direction, and example titles
-  - [ ] if auto regional launch: Chapter 4 has per-activity hashtag examples (not generic descriptions)
-  - [ ] if auto regional launch: Chapter 3 slogan is traceable to `Slogan derivation logic` in Core Strategic Idea (derivation chain present, not invented)
-  - [ ] if auto regional launch: Chapter 3 stage sub-themes align with `Stage sub-themes` in Core Strategic Idea
+  - [ ] structure follows the active template route in `proposal-template.md`
+  - [ ] Program Blueprint Cards (if used) include mechanism + step flow + owner + lead capture + KPI link
+  - [ ] chapter-level strategic claims remain traceable to Core Strategic Idea fields (Core value, Marketing主线, Strategy pillars, stage sub-themes)
   - [ ] no framework-only language: abstract claims are mapped to named executable actions
   - [ ] if rubric: each scoring dimension mapped in section 15
 - If **fail**: `## Review Gap` with:
@@ -58,8 +46,6 @@ After assembling the full markdown against the template, output:
 ```
 
 - Do not declare the workflow complete while `## Review Pass` is `fail`, except when **max review loops** in `../SKILL.md` is reached — then emit `## Open Issues` and stop.
-- For `auto_regional_launch`, Review Pass must also verify all nine dedicated sections are present and presentation-ready (named actions, schedule windows, channels or venues, and expected output).
-
 - **Routing (exclusive):** evidence/ competitor → `research`; idea/core idea/canvas mismatch → `ideation` (re-confirm with user if direction changes per SKILL BLOCKING); plan/event/calendar break → `execution`; wording/rubric/mapping only → `proposal_enrich` (re-run Review Pass on revised draft only).
 
 ## Proposal draft loop

@@ -36,7 +36,7 @@ Single **canonical** narrative for the chosen direction. Downstream `Theme` and 
 - `Marketing主线` must connect product truth to audience emotion. It should be quotable as a chapter headline.
 - `Marketing主线` must now be provably derivable from `Slogan derivation logic`; if the slogan appears invented without derivation, mark the block incomplete.
 - `Strategy pillars` must name the **strategic thrusts** (not tactics) that organize all downstream execution. Every phase action must map to at least one pillar.
-- These three new fields are **mandatory** for `auto_regional_launch` mode; for `general_proposal`, they are strongly recommended but not blocking.
+- These three fields (`Slogan derivation logic`, `Stage sub-themes`, `Strategy pillars`) are mandatory for every `keep` direction.
 - Downstream binding: In `proposal-template.md` Chapter 3 (营销策略), the proposal must echo:
   - `Core value` → Section 3.1
   - `Marketing主线` → Section 3.2

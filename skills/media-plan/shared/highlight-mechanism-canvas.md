@@ -61,7 +61,7 @@ Use this file as the canonical contract for turning a viable idea direction into
     - …
   - Late:
     - …
-- **Activity density requirement (auto_regional_launch only):** Each stage (Early / Mid / Late) must list **at least three concrete, named activities** — not channel placeholders like "Douyin KOL seeding" or "WeChat Moments flight." Named activities include: "AI短视频创意大赛," "高端社区快闪定展," "车主&KOC沙龙." If any stage has fewer than three named activities, mark the direction `revise`.
+- **Activity density requirement:** Each stage (Early / Mid / Late) must list **at least three concrete, named activities** — not channel placeholders like "Douyin KOL seeding" or "WeChat Moments flight." Named activities include: "AI短视频创意大赛," "高端社区快闪定展," "车主&KOC沙龙." If any stage has fewer than three named activities, mark the direction `revise`.
 - Local life map:
   - …
   - …
@@ -89,7 +89,7 @@ Use this file as the canonical contract for turning a viable idea direction into
 - `Defensibility` must explain why a competitor cannot copy the idea with only minor wording swaps.
 - `Execution red lines` should be concise and real; do not use placeholder risk language.
 - If canvas `Core value` or `Marketing主线` contradicts the `## Core Strategic Idea` block for the same direction, mark the direction `revise` instead of `keep`.
-- For `auto_regional_launch`, each named pillar in `Stage pillars` must map to one of the `Strategy pillars` from `## Core Strategic Idea`. Include the mapping inline: `[name] — [role tag] — maps to Strategy pillar: [pillar name]`.
+- Each named pillar in `Stage pillars` must map to one of the `Strategy pillars` from `## Core Strategic Idea`. Include the mapping inline: `[name] — [role tag] — maps to Strategy pillar: [pillar name]`.
 - **Serialized IP requirement (mandatory for all directions):** The canvas must name at least one **serialized IP program** that appears in all three stages (Early / Mid / Late) with a clear phase-evolution logic. Example: "AI Creator Contest" → Early (launch + creation), Mid (voting + award at launch event), Late (winner showcase + owner co-creation). A hero event that only appears in one stage does not satisfy this rule. If no serialized IP is present, mark the direction `revise`.
 - `Creative naming convention`: If any stage pillar uses generic naming ("KOL seeding", "线下活动", "线上推广", "媒体投放", "社群运营"), mark the direction `revise`.
 - `Platform differentiation map`: Each stage must show distinct platform angles; identical content across all platforms is insufficient.

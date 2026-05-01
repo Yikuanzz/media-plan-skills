@@ -31,7 +31,7 @@ Long-, mid-, and short-form **named** content lines that the campaign can **repe
 - When (burst vs sustained):
 ```
 
-## Platform-Specific Content Lines (auto_regional_launch)
+## Platform-Specific Content Lines (city or regional briefs)
 
 For each primary platform, provide:
 
@@ -51,4 +51,4 @@ For each primary platform, provide:
 - **At least one** named line per tier for the primary `keep` direction. If a tier is truly not used, mark `N/A` with one-sentence justification.
 - Names must be stable enough to appear in the **Event Menu** “link to main idea / hero” column.
 - Tiers must not all describe the same single hero event — differentiate length and **job-to-be-done** (e.g. depth vs always-on feed).
-- For `auto_regional_launch`, platform-specific content lines are mandatory. If missing, the Content Assets block is incomplete.
+- For city or regional briefs where multi-platform amplification is expected, platform-specific content lines are mandatory. If missing, the Content Assets block is incomplete.

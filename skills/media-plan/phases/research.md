@@ -59,7 +59,7 @@ For city or regional briefs, also append:
 - Competitor local actions (12 months):
 - KOL/KOC matrix: (auto / parenting / technology / lifestyle)
 - Premium venue pool: (launch, pop-up, private salon candidates)
-- For `auto_regional_launch`, `## City Evidence Pack` must also include:
+- For city or regional briefs that need localized execution granularity, `## City Evidence Pack` should also include:
   - Regional consumption trends (category-specific local habits, e.g., 混动渗透率高于全国平均)
   - Media habits (platforms used for auto decision-making in this region)
   - Spatial distribution (where target audiences live/gather, e.g., "一江两湖三极")
