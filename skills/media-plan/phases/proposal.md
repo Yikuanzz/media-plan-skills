@@ -42,6 +42,13 @@ After assembling the full markdown against the template, output:
   - [ ] if auto regional launch: Chapter 4 phase tables use 时间/动作/产出物/关键节点 columns
   - [ ] if auto regional launch: Chapter 3 echoes Core value, Marketing主线, and Strategy pillars from Core Strategic Idea
   - [ ] if auto regional launch: Chapter 2 includes audience persona, city localization insight, and market trend
+  - [ ] if auto regional launch: every chapter (1–4) has a Compact View (slide-ready: tables/bullets, ≤3-line paragraphs)
+  - [ ] if auto regional launch: chapters 2–4 have Expanded Views with full narrative depth per proposal-template.md
+  - [ ] if auto regional launch: Compact and Expanded Views are traceable to upstream contracts (Core Strategic Idea, Highlight Mechanism Canvas)
+  - [ ] if auto regional launch: Chapter 4 Expanded includes platform differentiation table (抖音/小红书/懂车帝/视频号/微博) with content style, key direction, and example titles
+  - [ ] if auto regional launch: Chapter 4 has per-activity hashtag examples (not generic descriptions)
+  - [ ] if auto regional launch: Chapter 3 slogan is traceable to `Slogan derivation logic` in Core Strategic Idea (derivation chain present, not invented)
+  - [ ] if auto regional launch: Chapter 3 stage sub-themes align with `Stage sub-themes` in Core Strategic Idea
   - [ ] no framework-only language: abstract claims are mapped to named executable actions
   - [ ] if rubric: each scoring dimension mapped in section 15
 - If **fail**: `## Review Gap` with:
