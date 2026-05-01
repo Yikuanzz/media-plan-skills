@@ -26,6 +26,9 @@ Turn the selected strategy direction into a validated execution-plan handoff tha
 - Produce proposal-ready material for the proposal’s Phased Execution Plan, Phased Event Menu (with **cognitive** column), and Content Assets alignment, plus a validated execution handoff. Event Menu rows should reference **Content asset** names where applicable.
 - **Program Blueprint Card completeness (auto_regional_launch)**: Every Program Blueprint Card must contain non-placeholder entries for `Interaction flow`, `Lead capture path`, and `Sales mechanism`. If any card is missing these three fields or they are generic ("TBD", "待定", "待确认"), set `Validation status: blocked` and route back to ideation to strengthen the mechanism.
 - **Launch Event closed-loop requirement (auto_regional_launch)**: The Launch Event Plan must show a documented `Interaction → Lead capture → Conversion incentive` loop. If the loop is broken or absent, set `Validation status: blocked`.
+- **Platform content angle (auto_regional_launch)**: Every Program Blueprint Card must include `Platform content angle` — which platform(s) this program targets and what content angle/format is used per platform. If a program is multi-platform, list each platform's differentiated angle.
+- **Hashtag / topic tag requirement (auto_regional_launch)**: Every Program Blueprint Card must include at least 2 concrete hashtag or topic tag examples (e.g., `#AI帮我带娃出行#`, `#一车装下整个家#`). Generic tags ("#新车上市#") are insufficient.
+- **Online Actions hashtag column (auto_regional_launch)**: In Phase Online Actions tables, add a `话题标签` column. Every row should have at least one concrete hashtag or topic tag. Rows without tags must be marked `n/a` with justification.
 
 ## Required Handoff Shape
 
