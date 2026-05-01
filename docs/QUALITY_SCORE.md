@@ -13,9 +13,10 @@
 
 | 区域 | 评分 | 原因 | 下一步 |
 | --- | --- | --- | --- |
-| 产品定义与范围 | B | 已有 media-plan skill 设计文档、pressure test spec 和明确的中国市场提案级范围，目标用户路径与失败场景基本清楚。 | 用 2 到 3 个真实 brief 演练，确认是否还缺垂类约束或交付边界。 |
-| Skill 架构与分层 | B | 已收敛为单包 `skills/media-plan/`：顶层 master skill 管总 workflow，`phases/` 管阶段逻辑，`shared/` 管唯一 contract，运行时链路比多 skill 更稳定。 | 在实际演练中继续收敛顶层 gate 与 phase 读取边界，避免 master 过薄或 phase 职责重新发散。 |
-| 共享约束与写作契约 | B | intake、research、idea、proposal、灵感母题、亮点机制画布和预搜索 source map 已统一收口到 `skills/media-plan/shared/`，shared 现在既约束防套路，也开始约束提案型 handoff。 | 根据真实案例补充亮点机制字段的易错项，尤其是 theme 空泛、主事件孤立和转化链路断裂的判定细则。 |
-| 验证与压力测试 | B | pressure test 已覆盖 intake 前预搜索、灵感过拟合、低可信信号误用，以及“只有创意名词没有主机制”的新失败场景；仓库也新增了亮点机制检查脚本。 | 补充至少 3 轮可复跑的真实 brief 演练，重点验证亮点机制画布是否真的提升成案质量，而不是只让输出变长。 |
-| 仓库文档同步 | B | 设计文档、execution plan、product spec、history 已基本成链，当前架构与质量文档也开始映射真实状态。 | 后续每次 skill 行为变化时，同步更新 `docs/ARCHITECTURE.md`、`docs/QUALITY_SCORE.md` 和对应 history。 |
-| 运行可靠性 | B | 运行时已收敛到单包 skill，shared 断链风险显著下降；新增亮点机制检查脚本后，关键 contract 和 phase/template 引用开始具备机械守护。 | 继续补充针对 shared 引用、phase gate 和示例输出的检查，减少 prompt 行为和文档描述之间的漂移。 |
+| 产品定义与范围 | B | 主包 `skills/media-plan/` 与专项包 `skills/regional-auto-launch-plan/` 的分工已明确：前者做通用传媒策划总控与分流，后者承载汽车区域上市全流程与阻断门槛。 | 用真实区域上市 brief 做端到端演练，确认分流触发语义与非汽车场景不串线。 |
+| Skill 架构与分层 | B | 架构已从单包升级为双 runtime 包；两个包都采用 `SKILL + phases + shared` 结构，边界更清楚，但跨包演进还在磨合期。 | 继续约束“跨包仅入口路由、不做 runtime 依赖”，并在评审中重点检查边界漂移。 |
+| 共享约束与写作契约 | B | `media-plan` 的 shared 契约保持稳定；`regional-auto-launch-plan` 关键 shared 文件已从占位迁移为最小可运行 contract（pre-brief source map、trust policy、highlight mechanism、content assets）。 | 在后续真实案例中补充 regional 专项的失败样例，细化“可执行颗粒”与“低成本真实牵引力”判定。 |
+| 阶段合同完整度（regional-auto-launch-plan） | B | `insight/strategy/action/operations/proposal` 已具备强 gate；原先 `pre-brief-search/intake` 与部分 shared stub 已补齐为可执行文本合同。 | 增加 1 到 2 轮专项 dry-run，验证 pre-brief 到 intake 的阻断与字段追问是否足够稳定。 |
+| 验证与压力测试 | B | 现有仓库检查覆盖文档骨架、仓库卫生、action pinning、亮点机制锚点；新增 runtime 占位检查可机械拦截 `Purpose: Placeholder` 残留。 | 把新检查纳入后续 release 前固定清单，并逐步补充 scenario 级回放验证。 |
+| 仓库文档同步 | B | 架构文档、history 与质量文档已开始反映双包现状，但 README 等对外说明仍有单包历史表述。 | 按发布节奏补齐对外文档中的双包描述，避免运行边界与读者认知偏差。 |
+| 运行可靠性 | B | 多包运行下的核心门槛、BLOCKING 节点和 proposal review loop 已明确；机械检查覆盖面提升后，stub 漏网风险下降。 | 继续强化 phase gate 与 shared contract 的一致性检查，降低文档变化导致的行为漂移。 |

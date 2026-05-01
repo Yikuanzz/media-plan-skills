@@ -18,6 +18,7 @@
 - `skills/media-plan/shared/` 保持通用 contract，不再承载汽车区域上市 `auto_regional_launch` 专项模板。
 - `skills/regional-auto-launch-plan/shared/` 承载汽车区域上市专项 contract（如 `City Evidence Pack`、`Budget Allocation Table`、阶段化 Action Playbook），确保专项约束在独立包内闭环。
 - `scripts/check-media-plan-highlight-mechanism.sh`：仓库级轻量守护，检查亮点机制 contract 是否存在，关键 phase/template 是否仍显式引用。
+- `scripts/check-runtime-contract-placeholders.sh`：仓库级轻量守护，阻断 `phases/` 与 `shared/` 中遗留的 `Purpose: Placeholder` runtime stub。
 - `docs/product-specs/`：记录压力测试和失败场景，约束 skill 在缺信息、弱证据、老套创意、执行失配时必须回退。
 - `docs/exec-plans/` 与 `docs/design-docs/`：分别沉淀实施步骤和设计依据，保证 skill 演进不只依赖聊天上下文。
 

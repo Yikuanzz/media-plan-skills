@@ -23,6 +23,7 @@ required_files=(
   ".github/workflows/supply-chain-security.yml"
   ".markdownlint.json"
   "scripts/check-media-plan-highlight-mechanism.sh"
+  "scripts/check-runtime-contract-placeholders.sh"
   "scripts/check-action-pinning.sh"
 )
 
