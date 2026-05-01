@@ -90,10 +90,17 @@ If any field is missing, empty, or placeholder-only (e.g. "TBD", "待定"), mark
 ### Highlight Mechanism Canvas completeness rule (auto_regional_launch)
 For `auto_regional_launch`, a `keep` direction is **invalid** unless its `## Highlight Mechanism Canvas` satisfies **all** of the following:
 1. Contains at least one **serialized IP** that appears in all three stages with phase-evolution logic.
+   - (Cross-check) The serialized IP named here must also appear in `## Notes` under `Serialized IP candidates` with consistent phase-evolution logic.
 2. Each stage (Early / Mid / Late) lists at least **three concrete, named activities** (not channel placeholders).
 3. `Late` stage includes at least one **differentiated experience event** (e.g., test-drive camp, owner salon, premium outdoor experience, deep scenario trial) with a concrete venue or format named.
 
 If any of the above is missing or placeholder-only, mark the direction `revise`, not `keep`.
+
+### Creative naming validation (auto_regional_launch)
+For `auto_regional_launch`, a `keep` direction is **invalid** if any stage pillar uses generic naming ("KOL seeding", "线下活动", "线上推广", "媒体投放", "社群运营"). Every named activity must have a creative, brand-sounding name. If generic names exist, mark the direction `revise`.
+
+### Slogan derivation validation (auto_regional_launch)
+For `auto_regional_launch`, a `keep` direction is **invalid** if its `## Core Strategic Idea` lacks `Slogan derivation logic` or if the `Marketing主线` appears invented without a traceable derivation chain. The derivation must show how insight dimensions (brand + audience/use-case + product value) converge to the slogan. If missing or invented, mark `revise`.
 
 ## Notes Requirements
 
