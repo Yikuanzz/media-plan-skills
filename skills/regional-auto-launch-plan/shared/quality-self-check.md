@@ -21,7 +21,7 @@ Run this checklist before emitting `Review Pass`.
 ## Standard 3: Structure
 
 - Compact before Expanded in each chapter where both exist.
-- Chapters 2-4 include Expanded depth.
+- Insight, Strategy, and Action chapters include Expanded depth.
 - Heading hierarchy remains parallel/progressive/contrast-consistent.
 - Activity Card fields follow canonical order.
 - Budget table includes online/offline split and stage totals.
@@ -41,12 +41,14 @@ Enable only when rubric is non-empty.
 - Rubric lines are captured verbatim.
 - Coverage Map has no `partial` and no `missing` before proposal draft.
 - Every high-weight rubric item (`>=15%`) is expanded.
-- Section `15. Rubric Mapping` includes anchor + evidence for each row.
+- `Rubric Mapping` section includes anchor + evidence for each row.
 - Mandatory rubric clauses (required data / required case count / mandatory elements) are satisfied.
 
 ## Review Pass contract
 
 - Each enabled standard is graded `pass` or `fail`.
+- Rubric standard must always be represented as `enabled` or `skipped`.
+- If rubric standard is `skipped`, `skip_reason` must be explicit (`rubric_not_provided`).
 - `Review Pass = pass` only when every enabled standard is `pass`.
 - Any single `fail` means overall `Review Pass = fail` and requires route-based repair loop.
 
@@ -69,9 +71,11 @@ Enable only when rubric is non-empty.
 - verdict: pass/fail
 - failed_items: [...]
 
-### Rubric Coverage (only when rubric non-empty)
-- verdict: pass/fail
-- failed_items: [...]
+### Rubric Coverage
+- state: enabled/skipped
+- skip_reason: rubric_not_provided/null
+- verdict: pass/fail/null
+- failed_items: [...]/null
 
 ### Overall
 - verdict: pass/fail

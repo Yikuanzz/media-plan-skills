@@ -1,6 +1,6 @@
 # Phase: Service Team (bid-only)
 
-Control whether service-team role cards are generated based on tender mode.
+Generate service-team role cards only for bid briefs.
 
 ## Inputs (must be ready)
 
@@ -10,15 +10,14 @@ Control whether service-team role cards are generated based on tender mode.
 
 ## Routing rule
 
-### Case A: `bid_or_tender = false`
+### Case A: `bid_or_tender = false` (logical skip)
 
-Output exactly this marker and stop this phase:
+Do not run this phase. Set handoff state and continue to Proposal:
 
-```md
-## 7. Service Team (skipped — non-bid)
-```
+- `Service Team Phase Status = skipped_non_bid`
+- Proposal must render the exact non-bid marker from `../shared/service-team-template.md`.
 
-No role cards, no optional role section, no extra text.
+No role cards, no optional role section, no extra text generated in this phase.
 
 ### Case B: `bid_or_tender = true`
 
@@ -32,7 +31,7 @@ If `tender_technical_requirements` specifies qualifications or case-count constr
 
 ## Gate
 
-- Non-bid path passes only if the marker string is exact.
+- Non-bid path passes only if phase is skipped and handoff state is explicit.
 - Bid path passes only if all required role cards and required fields are complete.
 
 Do not continue to Proposal assembly until this gate is pass.

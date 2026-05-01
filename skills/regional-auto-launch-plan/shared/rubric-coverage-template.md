@@ -42,12 +42,12 @@ Before proposal drafting, validate all rows:
 
 If any check fails, set `Rubric Coverage Gate = fail` and route fixes upstream before drafting.
 
-## Section 15 mapping output
+## Rubric Mapping output
 
 When rubric is non-empty, proposal must include `Rubric Mapping` section with one line per rubric item:
 
 ```md
-## 15. Rubric Mapping
+## Rubric Mapping
 | Rubric ID | Chapter Anchor | Key Evidence (1-2 lines) |
 | --- | --- | --- |
 | R1 |  |  |
