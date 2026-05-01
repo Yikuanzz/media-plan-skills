@@ -16,6 +16,11 @@ Single **canonical** narrative for the chosen direction. Downstream `Theme` and 
 - One-line claim: [single sentence — campaign-line / proposition level]
 - Core value: [2-4 product-truth pillars, e.g. "全尺寸 | 高智能 | 超安全"]
 - Marketing主线: [emotional narrative thread, e.g. "奕家主场 · 境享美好"]
+- Slogan derivation logic: [explicit chain from insight dimensions — brand dimension + audience/use-case dimension + product value dimension → final slogan; dimensions must match the car's positioning, not default to "family"]
+- Stage sub-themes:
+  - Pre-heat: [sub-slogan for 预热造势期]
+  - Launch: [sub-slogan for 上市引爆期]
+  - Sustain: [sub-slogan for 延续转化期]
 - Core contradiction: [what the audience does not believe, or the category default belief to break]
 - Resolution path: [how comms and experience will resolve that contradiction; must be testable in-market]
 - Strategy pillars: [2-4 strategic thrusts that organize execution, e.g. 声量饱和攻击 / 场景高频体验 / 链路高效转化]
@@ -29,9 +34,12 @@ Single **canonical** narrative for the chosen direction. Downstream `Theme` and 
 - `Resolution path` must name **at least one** proof type (event, content series, KOL layer, product demo, data, partner) — not slogans only.
 - `Core value` must be **product-truth-based**, not slogans. Format: 2-4 keyword pillars separated by `|`.
 - `Marketing主线` must connect product truth to audience emotion. It should be quotable as a chapter headline.
+- `Marketing主线` must now be provably derivable from `Slogan derivation logic`; if the slogan appears invented without derivation, mark the block incomplete.
 - `Strategy pillars` must name the **strategic thrusts** (not tactics) that organize all downstream execution. Every phase action must map to at least one pillar.
 - These three new fields are **mandatory** for `auto_regional_launch` mode; for `general_proposal`, they are strongly recommended but not blocking.
 - Downstream binding: In `proposal-template.md` Chapter 3 (营销策略), the proposal must echo:
   - `Core value` → Section 3.1
   - `Marketing主线` → Section 3.2
   - `Strategy pillars` → Section 3.3
+  - `Slogan derivation logic` → Section 3.2 (as derivation chain evidence)
+  - `Stage sub-themes` → Section 3.2 (as stage theme table)
