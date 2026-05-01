@@ -6,7 +6,7 @@ Build a competitor deep-dive for core and secondary competitors, with actionable
 
 ## Mandatory Scope
 
-- Analyze each major competitor by `5 维`:
+- Analyze each major competitor by the `5-dimension (5维)` frame:
   1. Positioning
   2. Marketing approach
   3. Channel strategy
@@ -43,6 +43,6 @@ Build a competitor deep-dive for core and secondary competitors, with actionable
 
 ## Gate
 
-- Fail if any competitor misses one of the 5 dimensions.
+- Fail if any competitor misses one of the `5-dimension (5维)` dimensions.
 - Fail if any competitor has fewer than 2 recent campaigns.
 - Fail if evidence count is below two sources.

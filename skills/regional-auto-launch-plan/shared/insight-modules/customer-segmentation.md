@@ -18,7 +18,7 @@ Define decision-useful customer segments for the regional launch, including loca
 ## Output Template
 
 ```md
-## 2.5-2.6 Customer Segmentation
+## 2.5 Customer Segmentation
 
 ### Segment A
 - Profile:

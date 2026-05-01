@@ -2,6 +2,8 @@
 
 Use this file before web search in `Phase: Insight`.
 
+Runtime note: replace relative time tokens (for example, `current year`) with the actual runtime year when issuing queries.
+
 ## Module Routing
 
 - Product value questions -> read `./insight-modules/product-value.md` first.
@@ -20,25 +22,25 @@ Use this file before web search in `Phase: Insight`.
 
 ### Market environment
 
-- `<city or region> auto market sales trend 2026`
-- `<province or city> new energy vehicle policy 2026`
+- `<city or region> auto market sales trend current year`
+- `<province or city> new energy vehicle policy current year`
 - `<city> seasonal consumption festival calendar`
 
 ### Competitor deep
 
-- `<competitor brand> <key model> regional launch campaign 2025 2026`
+- `<competitor brand> <key model> regional launch campaign last 12 months`
 - `<competitor brand> campaign case Douyin Weibo Xiaohongshu`
 - `<competitor brand> dealer test drive event city`
 
 ### Customer segmentation
 
 - `<city> new energy car buyer profile`
-- `<audience segment> car purchase motivation China 2026`
+- `<audience segment> car purchase motivation China current year`
 - `<city tier> family commute suv demand trend`
 
 ### City signal
 
-- `<city> consumption hotspots mall district 2026`
+- `<city> consumption hotspots mall district current year`
 - `<city> media usage short video social platform`
 - `<city> landmark venue event space`
 - `<city> cultural calendar festivals sports concerts`
