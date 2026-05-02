@@ -8,6 +8,7 @@ Build three-stage execution cards aligned to approved strategy, then emit Auto-D
 - Read `../shared/action-playbook-template.md` for Activity Card Schema and dispatch prompt.
 - Read `../shared/idea-scorecard.md` for primary/alternative selection logic.
 - Read `../shared/budget-allocation-rule.md` for hard budget gates.
+- Read `../shared/persistence-rules.md` for project path and chapter write triggers.
 
 ## Stage and Pillar Structure (mandatory)
 
@@ -111,3 +112,36 @@ Before handing off to `Phase: Operations`, output:
 3. `## Budget Allocation Table` with online/offline split by stage and overall total; Phase 2 row must include venue-related amount and venue-related ratio for the 60% validation
 4. `## Auto-Display Log` with summaries for Phase 1/2/3 (replacing the old Blocking Log)
 5. `## Activity Form Compliance Report` with per-card compliance status (`compliant` / `partial` / `non-compliant`) and any rejection notes
+6. `## Persisted Files Snapshot`
+   - `03-action-overview.md`
+   - `04-action-phase1.md`
+   - `05-action-phase2.md`
+   - `06-action-phase3.md`
+   - `07-action-alternatives.md`
+
+## Persistence Events (mandatory)
+
+1. After `BLOCKING-A` confirm:
+   - write `03-action-overview.md` with chapter 4 intro + `4.1 Stage Overview` + budget placeholder rows (`TBD`).
+2. On Phase 1 auto-display trigger:
+   - write `04-action-phase1.md` (`4.2` full text: `1-online` + `1-offline`, each with primary + alternative);
+   - backfill Phase 1 budget row in `03-action-overview.md`.
+3. On Phase 2 auto-display trigger:
+   - write `05-action-phase2.md` (`4.3.A/B/C` full text);
+   - enforce venue ratio evidence for `<=60%`;
+   - backfill Phase 2 budget row in `03-action-overview.md`.
+4. On Phase 3 auto-display trigger:
+   - write `06-action-phase3.md` (`4.4` full text);
+   - write `07-action-alternatives.md` (`4.5` full alternatives);
+   - finalize budget table in `03-action-overview.md`.
+5. If any write fails:
+   - stop progression and emit blocking error.
+
+## Anti-Compression Hard Gates in Action
+
+- C3: every primary card must use `### <pillar>.primary <name>` + 8 fixed `####` sub-headings.
+- C3: each required `####` field must be >=120 words.
+- C4: `05-action-phase2.md` must contain `### 4.3.A`, `### 4.3.B`, `### 4.3.C`; each section includes one primary + one alternative.
+- C5: every online primary card `#### 媒介平台矩阵` must include Douyin, Xiaohongshu, Dongchedi, Video Account, Weibo, each with >=1 title example.
+- C6: every online primary card `#### KOL 矩阵` must include `头部 KOL`, `腰部 KOL`, `KOC`; each layer includes >=2 tactics.
+- Fail-fast: if any C3-C6 item fails, do not emit that phase auto-display summary.
