@@ -19,6 +19,7 @@ Run the full automotive regional launch workflow in this package only: pre-brief
 6. **REGIONAL SMALL-BUDGET REALISM** - Default budget context is regional small-cost marketing (typically 200k-300k CNY, online + offline + venue). Flag out-of-band budget as a user confirmation item.
 7. **ACTION DESIGN FOUR PRINCIPLES** - Every action must satisfy low cost, fast impact, executable delivery, and real audience pull. Reject gimmick-only ideas.
 8. **CORE THEME, NOT SERIALIZED IP** - Do not force serialized IP programs. Use evidence-backed `Core Theme` and stage sub-themes.
+9. **ACTIVITY FORM CONSTRAINTS** - All activity design must comply with `./shared/activity-form-constraints.md`. Exclude List items are hard vetos; Preference List items receive scoring bonus during idea evaluation. Every offline card must include dealer-linkage; every online card must include traceability.
 
 ## Contract maturity (scaffold phase)
 
@@ -138,15 +139,49 @@ Global hard gates in this file are canonical. Step-level `GATE` and `BLOCKING-*`
 - Select one `primary` and keep one `alternative` per pillar.
 - Enforce Activity Card field requirements and stage budget red lines.
 
-**BLOCKING-B**: After all Phase 1 pillars are complete (`1-online`, `1-offline`), request user confirmation for Phase 1 primary cards.
+### Auto-Display Checkpoints (was BLOCKING-B/C/D)
 
-**BLOCKING-C**: After all Phase 2 pillars are complete (`2-offline-core`, `2-offline-aux`, `2-online`), request user confirmation for Phase 2 primary cards.
+Phase transitions no longer require explicit user confirmation. After each phase's pillars are complete, output an `## Auto-Display Summary` and proceed automatically.
 
-**BLOCKING-D**: After all Phase 3 pillars are complete (`3-offline-conv`, `3-offline-trial`, `3-online`), request user confirmation for Phase 3 primary cards.
+#### After Phase 1
+
+Output:
+```md
+## Phase 1 Auto-Display Summary
+- Primary cards: <list>
+- Alternative cards: <list>
+- Budget snapshot: <online/offline/total>
+- Activity form compliance: <all compliant | partial items noted>
+- Next: dispatching Phase 2 pillars automatically.
+```
+
+#### After Phase 2
+
+Output:
+```md
+## Phase 2 Auto-Display Summary
+- Primary cards: <list>
+- Alternative cards: <list>
+- Budget snapshot: <online/offline/total + venue-related amount + venue-related ratio>
+- Activity form compliance: <all compliant | partial items noted>
+- Next: dispatching Phase 3 pillars automatically.
+```
+
+#### After Phase 3
+
+Output:
+```md
+## Phase 3 Auto-Display Summary
+- Primary cards: <list>
+- Alternative cards: <list>
+- Budget snapshot: <online/offline/total>
+- Activity form compliance: <all compliant | partial items noted>
+- Next: moving to Operations automatically.
+```
 
 ### Step 6: Operations
 
-**GATE**: `BLOCKING-D` is confirmed.
+**GATE**: Phase 3 Auto-Display Summary is emitted.
 
 **Required reads**: `./phases/operations.md`, `./shared/operations-assurance-template.md`
 
@@ -194,5 +229,5 @@ If still `fail` after max loops, emit `Open Issues` and stop claiming completion
 
 Declare completion only when either path is true:
 
-- `Review Pass` is `pass`, all global hard gates are satisfied, and blocking confirmations are completed; or
+- `Review Pass` is `pass`, all global hard gates are satisfied, and `BLOCKING-A` is confirmed; or
 - loop cap reached with `Open Issues` documented and no false success claim.

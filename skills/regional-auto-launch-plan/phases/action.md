@@ -36,48 +36,44 @@ Each pillar must output:
 - Fields `8-13` should be deep; if unavailable, mark `partial` with missing-evidence note.
 - Budget must satisfy all hard constraints from `budget-allocation-rule.md`.
 
-## Stage-Level Blocking Checkpoints
+## Auto-Display Checkpoints (was BLOCKING-B/C/D)
 
-### BLOCKING-B (after Phase 1)
+Phase transitions no longer require explicit user confirmation. After each phase's pillars are complete, output an `## Auto-Display Summary` and proceed automatically.
 
-Trigger only when both `1-online` and `1-offline` pillars have `primary + alternative` cards and review logs.
+### After Phase 1
 
-Required confirmation request:
-
+Output:
 ```md
-## BLOCKING-B
-Phase 1 primary cards are ready for confirmation.
-- Confirmed cards: <list>
-- Phase 1 budget snapshot: <online/offline/total>
-Please confirm before we dispatch Phase 2 pillars.
+## Phase 1 Auto-Display Summary
+- Primary cards: <list>
+- Alternative cards: <list>
+- Budget snapshot: <online/offline/total>
+- Activity form compliance: <all compliant | partial items noted>
+- Next: dispatching Phase 2 pillars automatically.
 ```
 
-### BLOCKING-C (after Phase 2)
+### After Phase 2
 
-Trigger only when `2-offline-core`, `2-offline-aux`, and `2-online` pillars are all complete and red-line checks pass.
-
-Required confirmation request:
-
+Output:
 ```md
-## BLOCKING-C
-Phase 2 primary cards are ready for confirmation.
-- Confirmed cards: <list>
-- Phase 2 budget snapshot: <online/offline/total + venue-related amount + venue-related ratio>
-Please confirm before we dispatch Phase 3 pillars.
+## Phase 2 Auto-Display Summary
+- Primary cards: <list>
+- Alternative cards: <list>
+- Budget snapshot: <online/offline/total + venue-related amount + venue-related ratio>
+- Activity form compliance: <all compliant | partial items noted>
+- Next: dispatching Phase 3 pillars automatically.
 ```
 
-### BLOCKING-D (after Phase 3)
+### After Phase 3
 
-Trigger only when `3-offline-conv`, `3-offline-trial`, and `3-online` pillars are all complete and red-line checks pass.
-
-Required confirmation request:
-
+Output:
 ```md
-## BLOCKING-D
-Phase 3 primary cards are ready for confirmation.
-- Confirmed cards: <list>
-- Phase 3 budget snapshot: <online/offline/total>
-Please confirm before moving to Operations.
+## Phase 3 Auto-Display Summary
+- Primary cards: <list>
+- Alternative cards: <list>
+- Budget snapshot: <online/offline/total>
+- Activity form compliance: <all compliant | partial items noted>
+- Next: moving to Operations automatically.
 ```
 
 ## Output Contract for Next Phase
@@ -87,4 +83,5 @@ Before handing off to `Phase: Operations`, output:
 1. `## Action Playbook` with all stage/pillar primary cards
 2. `## Alternative Cards` with one backup per pillar
 3. `## Budget Allocation Table` with online/offline split by stage and overall total; Phase 2 row must include venue-related amount and venue-related ratio for the 60% validation
-4. `## Blocking Log` with explicit confirmations for `BLOCKING-B`, `BLOCKING-C`, `BLOCKING-D`
+4. `## Auto-Display Log` with summaries for Phase 1/2/3 (replacing the old Blocking Log)
+5. `## Activity Form Compliance Report` with per-card compliance status (`compliant` / `partial` / `non-compliant`) and any rejection notes
