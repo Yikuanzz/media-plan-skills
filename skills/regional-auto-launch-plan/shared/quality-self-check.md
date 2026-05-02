@@ -2,6 +2,15 @@
 
 Run this checklist before emitting `Review Pass`.
 
+## Anti-Compression Thresholds
+
+- C3 minimum words per card field: 120
+- C7 minimum words per SWOT quadrant: 60
+- C1 minimum recent campaigns per competitor: 2
+- C5 minimum title examples per required platform row: 1
+- C6 minimum tactics per KOL layer: 2
+- C4 minimum cards per Phase 2 segment: 1 primary + 1 alternative
+
 ## Standard 1: Content
 
 - Core claims have source, year, and method context.
@@ -71,6 +80,11 @@ Enable only when rubric is non-empty.
 - verdict: pass/fail
 - failed_items: [...]
 
+### Anti-Compression Coverage
+- verdict: pass/fail
+- failed_items:
+  - Cx: <failure detail>
+
 ### Rubric Coverage
 - state: enabled/skipped
 - skip_reason: rubric_not_provided/null
@@ -81,3 +95,15 @@ Enable only when rubric is non-empty.
 - verdict: pass/fail
 - rule: all-enabled-standards-must-pass
 ```
+
+## Standard 6: Anti-Compression Coverage (always enabled)
+
+- C1: `01-insight.md` section `2.4` has per-competitor `### 2.4.<n>` blocks with 5 fixed dimensions and >=2 recent campaigns.
+- C2: `01-insight.md` section `2.6` has per-persona `### 2.6.<n>` blocks with 7 fixed dimensions.
+- C3: every `primary` card in `04/05/06` has 8 fixed `####` headings and each field >=120 words.
+- C4: `05-action-phase2.md` contains `4.3.A`, `4.3.B`, `4.3.C`; each includes one primary + one alternative.
+- C5: online primary `#### 媒介平台矩阵` includes five required platforms each with >=1 title example.
+- C6: online primary `#### KOL 矩阵` includes `头部 KOL`, `腰部 KOL`, `KOC`; each with >=2 tactics.
+- C7: SWOT quadrants in `2.7` are >=60 words and include city-evidence label reference.
+
+Any single fail forces overall `Review Pass = fail`.
