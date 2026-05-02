@@ -13,20 +13,16 @@ Assemble final proposal chapters from upstream outputs, run quality checks, and 
   - `../shared/proposal-template.md`
   - `../shared/quality-self-check.md`
   - `../shared/rubric-coverage-template.md`
+  - `../shared/persistence-rules.md`
 
 ## Assembly contract
 
-1. Build sections `0-7` from template order.
-2. Enforce depth rules:
-   - `Compact` appears before `Expanded` in each chapter.
-   - Chapters `2`, `3`, `4` must include `Expanded` depth.
-3. In chapter `4`, include both:
-   - `Budget Allocation Table`
-   - `Alternative Cards`
-4. Conditionally include:
-   - section `6. Service Team` as bid-only; when non-bid, output exactly `## 6. Service Team (skipped - non-bid)`.
-   - section `14. Post-Campaign Review & Uplift` when tender requirements request post-campaign review/optimization.
-   - section `15. Rubric Mapping` when rubric is non-empty.
+1. Read persisted files from project directory in fixed order:
+   `00-intake.md` -> `01-insight.md` -> `02-strategy.md` -> `03-action-overview.md` -> `04-action-phase1.md` -> `05-action-phase2.md` -> `06-action-phase3.md` -> `07-action-alternatives.md` -> `08-operations.md` -> `09-service-team.md`.
+2. Build `proposal.md` by concatenation only:
+   `cover + toc + cat 00->09 + closing + optional 14/15`.
+3. Do not rewrite or summarize chapter text during assembly.
+4. Run `Review Pass` before writing final `proposal.md`.
 
 ## Review Pass and loop
 
@@ -51,14 +47,26 @@ Allowed routes are fixed: `research | ideation | execution | proposal_enrich | i
 Emit:
 
 ```md
-## Proposal Draft
-<sections 0-7, optional 14/15 according to triggers>
-
 ## Review Pass
-<quality verdict by dimension>
+...
+
+## Anti-Compression Coverage
+- verdict: pass/fail
+- failed_items: [...]
+
+## Persistence Result
+- proposal_written: true/false
+- proposal_path: <project_dir>/proposal.md|null
+- open_issues_path: <project_dir>/OPEN-ISSUES.md|null
 
 ## Review Gap
-- route: research|ideation|execution|proposal_enrich|intake
+- route: research|ideation|execution|proposal_enrich|intake|null
+- target_file: <file>|null
 - required_fixes: [...]
-- estimated_loops: 1|2|3
 ```
+
+## Persistence behavior
+
+- If `Review Pass = pass`: write `proposal.md` by full overwrite.
+- If `Review Pass = fail`: do not write `proposal.md`; emit `Review Gap` and route loop repair.
+- If loop cap exhausted (`MAX_REVIEW_LOOPS = 3`): write `OPEN-ISSUES.md` in project directory and explicitly report incomplete state.
