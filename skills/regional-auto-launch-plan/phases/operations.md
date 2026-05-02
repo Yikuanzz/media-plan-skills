@@ -6,6 +6,7 @@ Build the operations assurance layer after Action is confirmed and before Servic
 
 - Phase 3 Auto-Display Summary is emitted.
 - Read `../shared/operations-assurance-template.md`.
+- Read `../shared/persistence-rules.md`.
 - Action output includes final stage KPI definitions (field `10` semantics preserved).
 
 ## Required output blocks (all mandatory)
@@ -38,3 +39,8 @@ Emit:
 - verdict: pass/fail
 - failed_items: [...]
 ```
+
+## Persistence Output Contract
+
+- On `Operations Gate = pass`, write `08-operations.md` with final chapter `## 5. Operations Assurance`.
+- If write fails, keep gate as fail and stop before Service Team.
