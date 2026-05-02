@@ -42,3 +42,14 @@ Define decision-useful customer segments for the regional launch, including loca
 - Fail if segment profiles exist but motivations/barriers are missing.
 - Fail if regional distribution is not described.
 - Fail if evidence count is below two sources.
+
+## 2.6 Audience Regional Depth
+
+### 2.6.<n> <persona name>
+#### 消费趋势
+#### 触媒习惯
+#### 空间分布
+#### 心态
+#### 消费习惯
+#### 出行习惯
+#### 文化情感归因

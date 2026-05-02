@@ -36,3 +36,11 @@ Produce a `City Evidence Pack` for the target geography.
 
 - Fail if any City Evidence Pack dimension is missing.
 - Fail if evidence count is below two sources.
+
+## Source label requirement
+
+Each evidence item must include reusable label format:
+
+- `[CITY-EV-<short-id>] <source + key point>`
+
+SWOT (`2.7`) must quote at least one label per quadrant.

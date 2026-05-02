@@ -22,23 +22,17 @@ Build a competitor deep-dive for core and secondary competitors, with actionable
 ## Output Template
 
 ```md
-## 2.3-2.4 Competitor Deep
+## 2.4 Competitor Deep Dive
 
-### [Competitor brand]
-- Positioning:
-- Marketing approach:
-- Channel strategy:
-- Trust path:
-- Counter-strategy (multi-sentence):
-
-#### Recent campaigns (2-3)
-1. [campaign + date + source]
-2. [campaign + date + source]
-3. [optional campaign + date + source]
-
-### Evidence
-1. [source + key point]
-2. [source + key point]
+### 2.4.<n> <competitor name>
+#### 核心定位
+#### 营销打法
+#### 渠道策略
+#### 用户信任路径
+#### 应对策略
+#### 近期 Campaign
+1. ...
+2. ...
 ```
 
 ## Gate
