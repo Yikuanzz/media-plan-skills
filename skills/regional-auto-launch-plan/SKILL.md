@@ -12,7 +12,7 @@ Run the full automotive regional launch workflow in this package only: pre-brief
 ## Global execution discipline (mandatory)
 
 1. **SERIAL PHASES ONLY** - Run phases in order. Do not skip forward or merge multiple unresolved phases into one pass.
-2. **BLOCKING = HARD STOP** - Markers `BLOCKING-A`, `BLOCKING-B`, `BLOCKING-C`, `BLOCKING-D` require explicit user confirmation before continuing.
+2. **BLOCKING = HARD STOP** - Marker `BLOCKING-A` requires explicit user confirmation before continuing. Phase transitions in Action (was BLOCKING-B/C/D) now use Auto-Display Checkpoints and proceed automatically.
 3. **NO CROSS-PHASE BUNDLING** - Do not draft proposal while any upstream gate is unresolved. Do not generate action cards before strategy is confirmed.
 4. **NO SPECULATIVE BACKFILL** - Pre-brief signals narrow questions only. They never auto-fill required intake fields.
 5. **RUNTIME SCOPE** - Use only `./phases/*.md` and `./shared/*.md` (including `./shared/insight-modules/*.md`) as runtime contracts.
@@ -82,9 +82,9 @@ Do not skip required reads.
 - Do not pass **Strategy** unless slogan derivation chain is traceable across brand anchor + audience insight + product value, `Core Theme` source is explained, and three stage sub-themes are distinct but aligned.
 - `BLOCKING-A`: After strategy output, require explicit user confirmation of Core Theme + slogan + three stage sub-themes before Action.
 - Do not pass **Action** unless each stage has required pillars, each pillar has a primary Activity Card plus one alternative candidate, and budget constraints match `./shared/budget-allocation-rule.md`.
-- `BLOCKING-B`: After all Phase 1 pillar cards are complete, require user confirmation before Phase 2 dispatch.
-- `BLOCKING-C`: After all Phase 2 pillar cards are complete, require user confirmation before Phase 3 dispatch.
-- `BLOCKING-D`: After all Phase 3 pillar cards are complete, require user confirmation before Operations.
+- Auto-Display Phase 1: After all Phase 1 pillar cards are complete, emit Phase 1 Auto-Display Summary and proceed to Phase 2 automatically.
+- Auto-Display Phase 2: After all Phase 2 pillar cards are complete, emit Phase 2 Auto-Display Summary and proceed to Phase 3 automatically.
+- Auto-Display Phase 3: After all Phase 3 pillar cards are complete, emit Phase 3 Auto-Display Summary and proceed to Operations automatically.
 - Do not pass **Operations** unless all five assurance blocks are complete and KPI checkpoints align with staged action KPIs.
 - Do not enter **Service Team** unless `bid_or_tender = true`; otherwise emit skipped state in proposal service-team section.
 - Do not pass **Proposal** review unless quality standards pass (content, language, structure, creativity), and rubric coverage also passes when rubric is non-empty.
