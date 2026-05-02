@@ -4,7 +4,7 @@ Use this contract in `Phase: Action` after `BLOCKING-A` is confirmed.
 
 ## Activity Card Schema
 
-Each pillar card must follow this 13-field schema. Fields `1-7` are mandatory; fields `8-13` should be filled as deeply as available and may be marked `partial` only when evidence is genuinely unavailable.
+Each pillar card must follow this 14-field schema. Fields `1-7` and `14` are mandatory; fields `8-13` should be filled as deeply as available and may be marked `partial` only when evidence is genuinely unavailable.
 
 ### Group A - Identity (4)
 
@@ -79,8 +79,8 @@ Before proposing any activity, read `../shared/activity-form-constraints.md` and
 - **Field 14**: Every card must include field `14. Activity Form Compliance` with a valid value and explanation.
 
 ## Global Constraints
-- Output must follow all fields in `Activity Card Schema` (1-13, in order).
-- Fields 1-7 are mandatory and cannot be `partial`.
+- Output must follow all fields in `Activity Card Schema` (1-14, in order).
+- Fields 1-7 and 14 are mandatory and cannot be `partial`.
 - If fields 8-13 are uncertain, mark `partial` and state what evidence is missing.
 - Respect budget red lines in `shared/budget-allocation-rule.md`.
 - Per-card budget cap is deterministic: `single-card cap = min(stage guideline cap, total_budget * 0.30)`.
@@ -108,6 +108,7 @@ Return exactly one markdown card in this shape:
 2. ...
 ...
 13. ...
+14. ...
 ```
 
 ## Main-Agent Review Hand-off
