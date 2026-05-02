@@ -20,6 +20,7 @@ Run the full automotive regional launch workflow in this package only: pre-brief
 7. **ACTION DESIGN FOUR PRINCIPLES** - Every action must satisfy low cost, fast impact, executable delivery, and real audience pull. Reject gimmick-only ideas.
 8. **CORE THEME, NOT SERIALIZED IP** - Do not force serialized IP programs. Use evidence-backed `Core Theme` and stage sub-themes.
 9. **ACTIVITY FORM CONSTRAINTS** - All activity design must comply with `./shared/activity-form-constraints.md`. Exclude List items are hard vetos; Preference List items receive scoring bonus during idea evaluation. Every offline card must include dealer-linkage; every online card must include traceability.
+10. **PERSISTENCE IS MANDATORY** - Every phase must persist chapter output per `./shared/persistence-rules.md`; write failure blocks phase transition.
 
 ## Contract maturity (scaffold phase)
 
@@ -42,6 +43,7 @@ During the current scaffold/migration phase, this `SKILL.md` is the canonical ga
 
 | Shared file | Role |
 | --- | --- |
+| `./shared/persistence-rules.md` | Persistence contract: folder shape, slug, write triggers, assembly order |
 | `./shared/pre-brief-source-map.md` | Pre-brief source priorities |
 | `./shared/brief-intake-template.md` | Intake schema, statuses, and required fields |
 | `./shared/source-trust-policy.md` | Evidence trust tiers |
@@ -70,6 +72,7 @@ Before entering each phase, read that phase file and its required shared contrac
 ```markdown
 ## [Phase: <StageName>]
 Read: <phase path> + <shared paths>
+Write path: <project-dir>/<target-file-or-files>
 Task: <one-line objective for this phase>
 ```
 
@@ -217,17 +220,20 @@ If still `fail` after max loops, emit `Open Issues` and stop claiming completion
 
 ### Symptom -> Review Gap route
 
-| Symptom | Route |
-| --- | --- |
-| Missing evidence, weak source grounding, missing competitor/city support | `research` |
-| Core Theme source unclear, slogan chain broken, sub-themes inconsistent | `ideation` |
-| Pillar cards incomplete, KPI non-quantified, budget band violations | `execution` |
-| Chapter structure, wording quality, mapping anchors, formatting completeness | `proposal_enrich` |
-| Rubric item capture not verbatim, mandatory intake clauses missing | `intake` |
+| Symptom | Route | Target file |
+| --- | --- | --- |
+| C1 fail / competitor compression | research | `01-insight.md` section `2.4` |
+| C2 fail / persona compression | research | `01-insight.md` section `2.6` |
+| C7 fail / generic SWOT | research | `01-insight.md` section `2.7` |
+| Strategy chain inconsistency | ideation | `02-strategy.md` |
+| C3/C4/C5/C6 card compression | execution | `04`/`05`/`06-action-phaseN.md` targeted section |
+| Budget red-line failure | execution | failed phase file + `03-action-overview.md` |
+| Proposal ordering/assembly issue | proposal_enrich | `proposal.md` only |
+| Intake verbatim capture issue | intake | `00-intake.md` |
 
 ## Completion gate
 
 Declare completion only when either path is true:
 
-- `Review Pass` is `pass`, all global hard gates are satisfied, and `BLOCKING-A` is confirmed; or
+- `Review Pass` is `pass`, all global hard gates are satisfied, `BLOCKING-A` is confirmed, and `<project-dir>/proposal.md` is persisted; or
 - loop cap reached with `Open Issues` documented and no false success claim.
