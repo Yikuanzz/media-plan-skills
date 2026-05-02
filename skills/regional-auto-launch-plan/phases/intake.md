@@ -5,6 +5,7 @@ Normalize the user brief with the intake contract and decide whether downstream 
 ## Required Read
 
 - `../shared/brief-intake-template.md`
+- `../shared/persistence-rules.md`
 
 ## Inputs (must be ready)
 
@@ -50,3 +51,22 @@ Then emit the intake contract blocks:
 
 - Set `ready` only when every required field in `brief-intake-template.md` is resolved with decision-usable values.
 - If any required field is unresolved, set `blocked` and ask targeted questions only for those fields.
+- If slug derivation or `00-intake.md` write fails, set `Intake Status = blocked` and stop before Insight.
+
+## Persistence Output Contract
+
+When `Intake Status = ready`, do all items in order:
+
+1. Derive `<project-slug>` using `../shared/persistence-rules.md`.
+2. Create `<cwd>/<YYYY-MM-DD>-<project-slug>/`.
+3. Write `00-intake.md` with:
+   - `## 1. Task Brief`
+   - intake required fields table (all required fields present)
+   - rubric/tender source text verbatim (if provided)
+4. Emit:
+
+```md
+## Persistence Path
+- project_dir: <absolute-or-cwd-relative path>
+- intake_file: <project_dir>/00-intake.md
+```
