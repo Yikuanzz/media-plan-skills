@@ -35,6 +35,19 @@ Each pillar card must follow this 13-field schema. Fields `1-7` are mandatory; f
 12. Risks and mitigation (multi-sentence paragraph; include positioning/content/channel/mindset counter-moves and internal Plan B)
 13. Source trace (one sentence linking back to Insight evidence)
 
+### Group E - Activity Form Compliance (1)
+
+14. Activity Form Compliance (`mandatory`)
+    - Value: `compliant` | `partial` | `non-compliant`
+    - Determined by applying rules in `../shared/activity-form-constraints.md`:
+      1. Exclude check first: if core form matches Exclude List, mark `non-compliant`.
+      2. Preference scoring: count Preference List categories touched.
+      3. Dealer-linkage check: offline cards must describe dealer involvement.
+      4. Traceability check: online cards must describe lead/order tracking method.
+    - `non-compliant` cards cannot be selected as `primary` or `alternative`.
+    - `partial` cards require a note explaining which rule triggered it and a mitigation plan.
+    - For hybrid cards, evaluate both Rule 3 and Rule 4. If both trigger `partial`, list both reasons in the note.
+
 ## Sub-Agent Dispatch Prompt Template
 
 Use for each pillar with `N=2-3` sub-agents.
@@ -54,6 +67,16 @@ You are a planning sub-agent for `regional-auto-launch-plan`.
 2) Fast impact: include near-term trigger nodes, not long pre-build dependency.
 3) Executable delivery: dealer/local team can execute with available resources.
 4) Real audience pull: explain concrete motivation, not slogan-only gimmicks.
+
+## Activity Form Constraints (non-negotiable)
+
+Before proposing any activity, read `../shared/activity-form-constraints.md` and enforce:
+
+- **Hard veto**: Exclude List items are never allowed. If your idea falls into any excluded category, discard it and generate a new candidate.
+- **Preference bonus**: Ideas that hit 2+ Preference List categories score higher.
+- **Offline mandate**: Every offline card must explicitly describe dealer involvement (venue, staff, or lead handoff).
+- **Online mandate**: Every online card must describe how leads/orders are tracked (UTM, unique code, or CRM tag).
+- **Field 14**: Every card must include field `14. Activity Form Compliance` with a valid value and explanation.
 
 ## Global Constraints
 - Output must follow all fields in `Activity Card Schema` (1-13, in order).
@@ -89,4 +112,10 @@ Return exactly one markdown card in this shape:
 
 ## Main-Agent Review Hand-off
 
-After collecting all candidate cards for a pillar, the main agent must score each card with `shared/idea-scorecard.md`, select one `primary`, keep one `alternative`, and carry forward both decision logs.
+After collecting all candidate cards for a pillar, the main agent must:
+
+1. Verify field `14` is present and valid for every card.
+2. Reject any `non-compliant` card immediately (do not score it).
+3. Score remaining cards with `shared/idea-scorecard.md`, adding a **preference bonus** (+1 point per Preference List category hit, max +3).
+4. Select highest valid score as `primary`, second highest as `alternative`.
+5. Carry forward both decision logs and compliance notes.
