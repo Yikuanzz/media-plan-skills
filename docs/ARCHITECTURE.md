@@ -17,6 +17,9 @@
 - `skills/media-plan/shared/`：包内 canonical contract，沉淀输入字段、研究判定、创意评分、灵感母题、亮点机制画布、预搜索 source priority、query playbook、**core strategic idea**、**competitor-actionable**、**content-assets**、proposal 全结构（含 Mechanism Design、认知双轴 Event Menu、可选 Rubric / 复盘节），以及 `research-modules/` 下的检索策略分片。
 - `skills/media-plan/shared/` 保持通用 contract，不再承载汽车区域上市 `auto_regional_launch` 专项模板。
 - `skills/regional-auto-launch-plan/shared/` 承载汽车区域上市专项 contract（如 `City Evidence Pack`、`Budget Allocation Table`、阶段化 Action Playbook），确保专项约束在独立包内闭环。
+- regional runtime now uses persisted chapter files (`00`-`09`) as source-of-truth and assembles `proposal.md` mechanically.
+- `shared/persistence-rules.md` is required by phase contracts and blocks downstream progression on write failure.
+- `shared/quality-self-check.md` includes `Standard 6` anti-compression hard gates (C1-C7).
 - `scripts/check-media-plan-highlight-mechanism.sh`：仓库级轻量守护，检查亮点机制 contract 是否存在，关键 phase/template 是否仍显式引用。
 - `scripts/check-runtime-contract-placeholders.sh`：仓库级轻量守护，阻断 `phases/` 与 `shared/` 中遗留的 `Purpose: Placeholder` runtime stub。
 - `docs/product-specs/`：记录压力测试和失败场景，约束 skill 在缺信息、弱证据、老套创意、执行失配时必须回退。
