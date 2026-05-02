@@ -2,6 +2,12 @@
 
 Use this skeleton to assemble the final regional auto launch proposal.
 
+## Assembly mode (mandatory)
+
+- `proposal.md` is a mechanical assembly artifact from persisted chapter files.
+- Chapter source-of-truth files are `00`-`09`; assembly layer must not summarize or rewrite.
+- Fixed order is defined in `../shared/persistence-rules.md` and cannot be reordered.
+
 ## Depth model (mandatory)
 
 - `Compact`: decision-first summary for fast review.

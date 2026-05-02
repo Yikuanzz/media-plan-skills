@@ -120,3 +120,25 @@ After collecting all candidate cards for a pillar, the main agent must:
 3. Score remaining cards with `shared/idea-scorecard.md`, adding a **preference bonus** (+1 point per Preference List category hit, max +3).
 4. Select highest valid score as `primary`, second highest as `alternative`.
 5. Carry forward both decision logs and compliance notes.
+
+## Primary Card Expanded Schema (anti-compression)
+
+Each `primary` card in phase outputs must use:
+
+```md
+### <pillar>.primary <creative name>
+#### 活动目的
+#### 核心创意亮点
+#### 活动玩法
+#### 执行流程
+#### 媒介平台矩阵
+#### KOL 矩阵
+#### 转化闭环
+#### 话题标签
+```
+
+Rules:
+
+- Each `####` section must be >=120 words.
+- For online pillars, `媒介平台矩阵` and `KOL 矩阵` must satisfy C5/C6 in quality self-check.
+- Keep original 13-field schema as semantic appendix (mapping only), not as compressed output form.
