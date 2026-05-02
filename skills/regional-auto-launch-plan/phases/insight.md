@@ -8,6 +8,7 @@ Build a complete, evidence-backed insight base for proposal chapter `2` and down
 - Read:
   - `../shared/source-trust-policy.md`
   - `../shared/query-playbook.md`
+  - `../shared/persistence-rules.md`
   - all `../shared/insight-modules/*.md`
 
 ## Required insight outputs (all mandatory)
@@ -65,3 +66,11 @@ Set `Insight Gate = pass` only when:
 - handoff pack is complete for strategy/proposal consistency.
 
 If any check fails, set `Insight Gate = fail`, repair in this phase, then re-check.
+
+## Persistence Output Contract
+
+- Write `01-insight.md` as final chapter text for `## 2. Market Insight` (`2.1`-`2.7`).
+- `2.4` must use per-competitor structure (`### 2.4.<n>`) with 5 fixed `####` dimensions + `#### 近期 Campaign` (>=2).
+- `2.6` must use per-persona structure (`### 2.6.<n>`) with 7 fixed `####` dimensions.
+- `2.7` SWOT four quadrants must each be >=60 words and cite at least one city evidence source label from `2.5/2.6`.
+- If any structural check fails, keep `Insight Gate = fail`, repair in-phase, and do not emit pass.

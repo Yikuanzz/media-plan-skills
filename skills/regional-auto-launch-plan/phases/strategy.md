@@ -8,6 +8,7 @@ Convert approved insight evidence into a proposal-ready strategic spine.
 - Read:
   - `../shared/core-theme-derivation.md`
   - `../shared/highlight-mechanism-canvas.md`
+  - `../shared/persistence-rules.md`
 
 ## Required outputs (all mandatory)
 
@@ -50,3 +51,9 @@ Set `Strategy Gate = pass` only when:
 - handoff pack is complete for proposal assembly.
 
 If any check fails, set `Strategy Gate = fail`, repair in this phase, then re-check.
+
+## Persistence Output Contract
+
+- Before Action begins, write `02-strategy.md` as final chapter text for `## 3. Strategy Plan` (`3.1`-`3.4`, Compact then Expanded).
+- Preserve `BLOCKING-A`: Action starts only after user confirms strategy outputs.
+- If `02-strategy.md` write fails, keep `Strategy Gate = fail` and stop.
