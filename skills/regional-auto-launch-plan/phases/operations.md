@@ -4,7 +4,7 @@ Build the operations assurance layer after Action is confirmed and before Servic
 
 ## Inputs (must be ready)
 
-- `BLOCKING-D` is confirmed.
+- Phase 3 Auto-Display Summary is emitted.
 - Read `../shared/operations-assurance-template.md`.
 - Action output includes final stage KPI definitions (field `10` semantics preserved).
 
