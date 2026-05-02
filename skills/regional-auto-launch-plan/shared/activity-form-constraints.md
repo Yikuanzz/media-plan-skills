@@ -42,3 +42,4 @@ In Activity Card Schema, add field `14`:
   - Determined by applying Validation Rules 1-4 above.
   - Cards with `non-compliant` cannot be selected as `primary` or `alternative`.
   - Cards with `partial` require a note explaining which rule triggered it and a mitigation plan.
+  - For hybrid cards, evaluate both Rule 3 and Rule 4. If both trigger `partial`, list both reasons in the note (e.g., "partial: missing dealer-linkage and missing traceability").
