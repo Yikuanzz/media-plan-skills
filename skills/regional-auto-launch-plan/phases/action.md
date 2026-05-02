@@ -1,6 +1,6 @@
 # Phase: Action
 
-Build three-stage execution cards aligned to approved strategy, then stop at stage-level blocking checkpoints.
+Build three-stage execution cards aligned to approved strategy, then emit Auto-Display Summaries at stage transitions.
 
 ## Inputs (must be ready)
 
@@ -36,44 +36,70 @@ Each pillar must output:
 - Fields `8-13` should be deep; if unavailable, mark `partial` with missing-evidence note.
 - Budget must satisfy all hard constraints from `budget-allocation-rule.md`.
 
-## Auto-Display Checkpoints (was BLOCKING-B/C/D)
+## Stage-Level Auto-Display Checkpoints
 
 Phase transitions no longer require explicit user confirmation. After each phase's pillars are complete, output an `## Auto-Display Summary` and proceed automatically.
 
 ### After Phase 1
 
-Output:
+Trigger when both `1-online` and `1-offline` pillars have `primary + alternative` cards and review logs.
+
+Required output:
+
 ```md
 ## Phase 1 Auto-Display Summary
-- Primary cards: <list>
-- Alternative cards: <list>
-- Budget snapshot: <online/offline/total>
-- Activity form compliance: <all compliant | partial items noted>
-- Next: dispatching Phase 2 pillars automatically.
+- Confirmed primary cards:
+  - <1-online primary card name>
+  - <1-offline primary card name>
+- Alternative cards:
+  - <1-online alternative card name>
+  - <1-offline alternative card name>
+- Phase 1 budget snapshot:
+  - Online: <amount>
+  - Offline: <amount>
+  - Total: <amount>
+- Activity form compliance: <all compliant | partial: <note>>
+- Proceeding to Phase 2 automatically.
 ```
 
 ### After Phase 2
 
-Output:
+Trigger when `2-offline-core`, `2-offline-aux`, and `2-online` pillars are all complete and red-line checks pass.
+
+Required output:
+
 ```md
 ## Phase 2 Auto-Display Summary
-- Primary cards: <list>
+- Confirmed primary cards:
+  - <2-offline-core primary>
+  - <2-offline-aux primary>
+  - <2-online primary>
 - Alternative cards: <list>
-- Budget snapshot: <online/offline/total + venue-related amount + venue-related ratio>
-- Activity form compliance: <all compliant | partial items noted>
-- Next: dispatching Phase 3 pillars automatically.
+- Phase 2 budget snapshot:
+  - Online: <amount>
+  - Offline: <amount>
+  - Total: <amount>
+  - Venue-related: <amount> (<ratio>% of Phase 2)
+- Activity form compliance: <all compliant | partial: <note>>
+- Proceeding to Phase 3 automatically.
 ```
 
 ### After Phase 3
 
-Output:
+Trigger when `3-offline-conv`, `3-offline-trial`, and `3-online` pillars are all complete and red-line checks pass.
+
+Required output:
+
 ```md
 ## Phase 3 Auto-Display Summary
-- Primary cards: <list>
+- Confirmed primary cards: <list>
 - Alternative cards: <list>
-- Budget snapshot: <online/offline/total>
-- Activity form compliance: <all compliant | partial items noted>
-- Next: moving to Operations automatically.
+- Phase 3 budget snapshot:
+  - Online: <amount>
+  - Offline: <amount>
+  - Total: <amount>
+- Activity form compliance: <all compliant | partial: <note>>
+- Moving to Operations automatically.
 ```
 
 ## Output Contract for Next Phase
