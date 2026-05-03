@@ -46,7 +46,7 @@ management, idea fusion, energy curve rhythm, and variable-depth proposal writin
 | `./phases/insight.md` | Insight | Build atomic insight resources |
 | `./phases/narrative-spine.md` | Narrative Spine | Build worldview + state machine + memory anchor |
 | `./phases/lead-pool.md` | Lead Pool | Generate leads by Value Category, manage lifecycle |
-| `./phases/strategy-plan.md` | Strategy Plan | Build narrative arc + energy curve + structure |
+| `./phases/strategy-plan.md` | Strategy Plan | Build narrative arc + Energy Curve + structure |
 | `./phases/proposal-assembly.md` | Proposal Assembly | Deep processing + Review Pass |
 
 ## Shared Contract Index
