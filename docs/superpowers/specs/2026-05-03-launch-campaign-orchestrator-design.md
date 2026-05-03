@@ -9,11 +9,11 @@
 
 ## 1. Purpose
 
-Build a new skill (`launch-campaign-orchestrator`) that generates launch communication proposals through a **three-layer atomic architecture** governed by a **Narrative Spine**:
+Build a new skill (`launch-campaign-orchestrator`) that generates launch communication proposals through a **three-layer atomic architecture** governed by a **Narrative Spine** with **state-machine-driven emotional transitions**:
 
-- **Narrative Spine**: The worldview, emotional arc, and symbolic system that all leads and stages must align with. Prevents "creative miscellany" syndrome.
+- **Narrative Spine**: The worldview, emotional arc, and symbolic system that all leads and stages must align with. Includes **Narrative State Transitions** — the triggers that move audience from one emotional state to the next.
 - **Layer 1 — Insight Engine**: Produces atomic insight resources (product, market, region, audience, trends).
-- **Layer 2 — Lead Engine**: Produces a pool of creative leads classified by **Value Category × Execution Tier × Narrative Role**, with **Lead Lifecycle** management and optional **Idea Fusion**.
+- **Layer 2 — Lead Engine**: Produces a pool of creative leads classified by **Value Category × Execution Tier × Narrative Roles (multi-role with weights)**, with **Memory Anchors**, **Lead Lifecycle** management, and optional **Idea Fusion**.
 - **Layer 3 — Campaign Composer**: Assembles a **Strategy Plan** (narrative arc + structure + **Energy Curve**) and a **full proposal** with variable depth per execution tier.
 
 Key principles:
@@ -22,6 +22,7 @@ Key principles:
 - **Creative heat, memorability, and highlight value are prioritized over budget precision** — when an idea is hot enough, budget can be fuzzed, downplayed, or allowed to overflow.
 - Proposal depth is **not uniform** — S-tier gets full plans, A-tier gets execution summaries, B-tier gets packaging notes.
 - **Narrative Spine is the single source of truth for coherence** — every lead, every stage, every activity must hang from the Spine.
+- **Narrative is a state machine, not a list** — emotions transition via specific triggers; leads must serve those transitions.
 
 ---
 
@@ -34,7 +35,7 @@ Narrative Spine is built **immediately after Insight completes** and **before Le
 ```
 Insight ──► Narrative Spine ──► Lead Pool ──► Strategy Plan ──► Proposal Assembly
                 ↑
-                │ All leads MUST narrative-align before entering the pool
+                │ All leads MUST narrative-align AND serve a state transition
 ```
 
 ### 2.2 Spine Schema
@@ -42,42 +43,91 @@ Insight ──► Narrative Spine ──► Lead Pool ──► Strategy Plan �
 ```yaml
 NarrativeSpine:
   core_tension: "城市太熟悉，但其实你从未真正探索"
+
   emotional_arc:
     - curiosity
     - participation
     - discovery
     - belonging
+
+  narrative_transitions:           # NEW: State machine, not just a list
+    - from: curiosity
+      to: participation
+      trigger_types:
+        - ugc_invite
+        - social_proof
+        - reward_unlock
+      failure_modes:
+        - passive_viewing
+        - high_participation_cost
+      lead_requirements:
+        - must_lower_participation_barrier
+        - must_provide_immediate_feedback
+
+    - from: participation
+      to: discovery
+      trigger_types:
+        - personalized_result
+        - unexpected_reveal
+        - peer_comparison
+      failure_modes:
+        - generic_experience
+        - no_surprise_moment
+
+    - from: discovery
+      to: belonging
+      trigger_types:
+        - shared_identity
+        - collective_moment
+        - exclusive_access
+      failure_modes:
+        - isolated_experience
+        - no_community_bridge
+
   symbolic_objects:
     - AI地图
     - 城市彩蛋
     - 夜间光点
+
   narrative_keywords:
     - 探索
     - 解锁
     - 城市隐藏面
+
   story_world: "AI城市探索宇宙"
-  protagonist: "...
+  protagonist: "..."
   audience_role: "城市探索玩家"
+
+  memory_anchor:                    # NEW: What users will remember
+    anchor: "城市隐藏光点"
+    type: visual                    # visual | slogan | interaction | ritual | collectible
+    memorability_test: "用户一年后还能不能描述这个画面？"
 ```
 
 ### 2.3 Spine Quality Gates
 
 - Core tension must be a **single sentence** with clear emotional polarity.
 - Emotional arc must have **≥3 distinct emotional states** with progression.
+- **Narrative transitions must define trigger_types and failure_modes** for each step.
 - Symbolic objects must be **concrete and visualizable** (not abstract concepts).
 - Story world must be **named** (gives the campaign a universe feel).
 - Audience role must be **active** (user does something, not just "target audience").
+- Memory anchor must pass the **"one year test"** — can users still describe it a year later?
 
 ### 2.4 Lead Alignment Requirement
 
 Every lead in the pool must include:
 
 ```yaml
-narrative_alignment: curiosity   # Which emotional arc node it serves
-story_function: "让用户第一次进入世界观"  # Its function within the story world
+narrative_alignment:
+  serves_transition: "curiosity → participation"   # Which transition it drives
+  emotional_target: participation                  # Which emotional state it targets
+  trigger_mechanism: "ugc_invite"                  # Which trigger type it activates
+
+story_function: "让用户第一次进入世界观"           # Its function within the story world
 ```
 
-Leads without narrative alignment are **rejected at generation time**, not post-filtered.
+Leads without narrative alignment or without serving a defined transition are **rejected at generation time**.
 
 ---
 
@@ -87,6 +137,8 @@ Leads without narrative alignment are **rejected at generation time**, not post-
 ┌─────────────────────────────────────────────────────────────────┐
 │ Narrative Spine (governs all layers)                            │
 │   core_tension / emotional_arc / symbolic_objects / story_world │
+│   narrative_transitions (state machine)                         │
+│   memory_anchor                                                 │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
@@ -101,7 +153,8 @@ Leads without narrative alignment are **rejected at generation time**, not post-
 │ Layer 2: Lead Engine                                            │
 │   Inputs:  Insight + Narrative Spine + trend search + user      │
 │   Outputs: Lead Pool (02-leads/02-lead-pool.md) + Scorecard     │
-│   Rules:   Value Category × Execution Tier × Narrative Role     │
+│   Rules:   Value Category × Execution Tier × Narrative Roles    │
+│            Memory Anchors per lead                              │
 │            Lead Lifecycle (active/archived/fused/deprecated)    │
 │            Idea Fusion (emotional/symbolic/narrative basis)     │
 │            Auto Compression when pool exceeds thresholds        │
@@ -135,8 +188,8 @@ Intake ──► Insight ──► Narrative Spine ──► Lead Pool ──►
 |---|---|---|---|
 | 1. Intake | Normalize brief, validate required fields | `00-intake.md` | All research-start fields non-placeholder |
 | 2. Insight | Run insight modules, produce atomic resources | `01-insight/*.md` | All modules complete with ≥2 Atomic Resources each |
-| 3. Narrative Spine | Build worldview, emotional arc, symbolic system | `01-insight/01g-narrative-spine.md` | Spine passes all 5 quality gates |
-| 4. Lead Pool | Generate leads aligned to Spine, score, manage lifecycle | `02-leads/02-lead-pool.md`, `02-scorecard.md` | User says "lead pool is enough, start Strategy Plan" |
+| 3. Narrative Spine | Build worldview, emotional arc, state transitions, memory anchor | `01-insight/01g-narrative-spine.md` | Spine passes all quality gates |
+| 4. Lead Pool | Generate leads aligned to Spine + transitions, score, manage lifecycle | `02-leads/02-lead-pool.md`, `02-scorecard.md` | User says "lead pool is enough, start Strategy Plan" |
 | 5. Strategy Plan | Build narrative arc + energy curve + proposal structure + lead utilization map | `03-strategy-plan.md` | User says "Strategy Plan OK, start assembly" |
 | 6. Proposal Assembly | Deep processing: lead deformation, execution detail fill-in, energy curve implementation | `04-proposal.md` | Review Pass = pass |
 
@@ -159,7 +212,7 @@ Intake ──► Insight ──► Narrative Spine ──► Lead Pool ──►
 │   ├── 01d-customer-segmentation.md
 │   ├── 01e-city-signal.md
 │   ├── 01f-trend-signal.md
-│   └── 01g-narrative-spine.md      ← NEW: Narrative Spine
+│   └── 01g-narrative-spine.md
 ├── 02-leads/
 │   ├── 02-lead-pool.md
 │   └── 02-scorecard.md
@@ -212,11 +265,31 @@ Lead:
   # Classification
   value_category: 够新鲜 | 够亮眼 | 够爆 | 够热
   execution_tier: S级 | A级 | B级
-  narrative_role: Ignition | Amplifier | Converter | Retainer | Proof | Social Currency | Participation
+
+  # Narrative Roles (multi-role with weights)
+  narrative_roles:
+    primary: Ignition
+    secondary:
+      - Participation
+      - Social Currency
+    role_weights:
+      Ignition: 0.7
+      Participation: 0.2
+      Social Currency: 0.1
 
   # Narrative Spine Alignment (MANDATORY)
-  narrative_alignment: curiosity   # Which emotional_arc node
-  story_function: "让用户第一次进入世界观"  # Function within story_world
+  narrative_alignment:
+    serves_transition: "curiosity → participation"
+    emotional_target: participation
+    trigger_mechanism: "ugc_invite"
+  story_function: "让用户第一次进入世界观"
+
+  # Memory Anchor (NEW)
+  memory_anchor:
+    anchor: "深夜城市光点跑"
+    type: visual                          # visual | slogan | interaction | ritual | collectible
+    memorability_test: "一年后还能不能描述这个画面？"
+    one_sentence_recall: "用AI地图解锁城市隐藏光点"
 
   # Context
   lifecycle_stage: 悬念期 | 揭秘期 | 上市期 | 延续期 | ...
@@ -230,9 +303,9 @@ Lead:
 
   # Lifecycle Management
   lead_status: active | archived | fused | deprecated | rejected
-  lead_confidence: 85      # 0-100, Agent's confidence in this lead
-  lead_uniqueness: 90      # 0-100, how distinct from other leads
-  lead_overlap_score: 15   # 0-100, similarity to other leads (high = redundant)
+  lead_confidence: 85      # 0-100
+  lead_uniqueness: 90      # 0-100
+  lead_overlap_score: 15   # 0-100
 
   # Fusion (populated during compression)
   fusion_candidates: [L001, L007]
@@ -268,9 +341,32 @@ Lead:
 | **Social Currency** | Provide shareable identity | High颜值, check-in worthy, boast-worthy social currency |
 | **Participation** | Drive UGC participation | Low-barrier participation, users become content producers |
 
-**Quality control rule**: Each stage in the Strategy Plan must cover **≥2 different Narrative Roles**. Prohibited: "all Ignition" or "all Amplifier".
+**Quality control rule**: Each stage in the Strategy Plan must cover **≥2 different primary Narrative Roles**. Prohibited: "all Ignition" or "all Amplifier".
 
-### 7.5 Lead Generation Mode
+**Multi-role rule**: A single lead can serve multiple roles. Role weights must sum to 1.0. Primary role weight must be ≥0.5.
+
+### 7.5 Memory Anchor System
+
+Every lead, especially S-tier and A-tier, must define a memory anchor:
+
+```yaml
+memory_anchor:
+  anchor: "一句话描述用户会记住什么"
+  type: visual | slogan | interaction | ritual | collectible
+  memorability_test: "一年后还能不能描述？"
+  one_sentence_recall: "用AI地图解锁城市隐藏光点"
+```
+
+**Memory anchor types**:
+- **visual**: A specific image or scene (e.g., "网易云乐评墙")
+- **slogan**: A sticky phrase (e.g., "可口可乐名字瓶")
+- **interaction**: A specific participatory moment (e.g., "宜家睡一晚")
+- **ritual**: A repeatable behavioral pattern
+- **collectible**: A physical or digital collectible item
+
+**Quality gate**: S-tier leads MUST have a memory anchor that passes the "one year test".
+
+### 7.6 Lead Generation Mode
 
 Leads are generated **by Value Category in batches**, not randomly rolled:
 
@@ -280,9 +376,9 @@ Leads are generated **by Value Category in batches**, not randomly rolled:
 | "再来一些够热的，要蹭暑假节点" | Generate in 够热, limit to summer vacation /亲子 / travel trends |
 | "把够新鲜的线索都升级到 S 级" | Review existing 够新鲜 leads, judge which warrant S-tier expansion |
 
-Every lead is classified with Value Category, Execution Tier, and Narrative Role **at generation time**, not post-classified.
+Every lead is classified with Value Category, Execution Tier, and Narrative Roles **at generation time**, not post-classified.
 
-### 7.6 Scorecard Dimensions
+### 7.7 Scorecard Dimensions
 
 | Dimension | Description | Weight |
 |---|---|---|
@@ -291,7 +387,8 @@ Every lead is classified with Value Category, Execution Tier, and Narrative Role
 | **Buzz Potential** | Controversy /裂变 / discussion potential | High |
 | **Trend Heat** | Current temperature of the trend being ridden | High |
 | **Insight Fit** | Strength of connection to product / region / audience insights | High |
-| **Memorability** | Whether it has a one-sentence memory anchor | **High** — e.g., "宜家睡一晚", "网易云乐评墙" |
+| **Memorability** | One-sentence memory anchor; passes "one year test" | **High** |
+| **Transition Fit** | How well it serves a Narrative State Transition | **High** |
 | Tier Appropriateness | Whether S/A/B assignment is reasonable | Medium |
 | Budget Feasibility | Rough fit within intake budget range | **Low** — not a veto dimension |
 
@@ -351,7 +448,8 @@ Executed during the transition from Lead Pool to Strategy Plan (or on user reque
 - **Fusion Strategy**: emotional + symbolic + narrative
 - **Mother Event Concept**: 以 AI 为工具邀请用户探索城市隐藏地标，生成短视频打卡
 - **Tier Upgrade**: B×3 → S（three lightweight actions fuse into one core引爆 event）
-- **Narrative Role**: Ignition + Social Currency
+- **Narrative Roles**: Ignition (0.6) + Social Currency (0.3) + Participation (0.1)
+- **Memory Anchor**: "AI地图上的城市光点" — visual, passes one-year test
 - **Budget Impact**: Budget more concentrated, avoids fragmentation
 ```
 
@@ -404,6 +502,13 @@ One-sentence core story + three-paragraph expansion
 ## Narrative Spine Reference
 Explicit link to `01-insight/01g-narrative-spine.md` — how this plan realizes the Spine
 
+## Narrative Transition Map（叙事迁移映射）
+| From | To | Trigger | Serving Leads | Failure Guard |
+|---|---|---|---|---|
+| curiosity | participation | ugc_invite | L001, L003 | 必须降低参与门槛 |
+| participation | discovery | unexpected_reveal | L012 | 必须制造惊喜时刻 |
+| discovery | belonging | shared_identity | L015 | 必须有社群连接点 |
+
 ## Energy Curve（能量曲线）
 | Stage | Emotion | Intensity | Narrative Role Mix | Rationale |
 |---|---|---|---|---|
@@ -418,23 +523,33 @@ Explicit link to `01-insight/01g-narrative-spine.md` — how this plan realizes 
 - Adjacent stages should have **≥20 intensity difference** to create contrast.
 - White space (low-intensity breathing room) is intentional, not a gap.
 
+**Future: Multi-axis Energy** (v2+):
+```yaml
+energy_curve:
+  emotional:     # 情绪强度
+  social:        # 社交讨论度
+  commercial:    # 转化强度
+```
+Different activities can score high on one axis while low on another (e.g., music festival = high emotional, low commercial; flash sale = high commercial, low emotional).
+
 ## Proposal Structure（策划案结构）
 - Stage count and naming derived from intake + insight + user intent + energy curve
 - NOT preset 3-phase; could be 2-phase, 4-phase, or custom naming
 - Each stage: theme, objective, core actions, referenced lead IDs, target intensity
 
 ## Lead Utilization Map（线索使用映射）
-| Stage | Value Category | Execution Tier | Narrative Role | Lead ID | Write Style | Deformation Note | Energy Target |
-|---|---|---|---|---|---|---|---|
-| 悬念期 | 够新鲜 | S级 | Ignition | L001 | 完整方案 | AI大赛扩展为全网赛制 | intensity: 40 |
-| 悬念期 | 够热 | B级 | Amplifier | L003 | 包装方式 | 蹭暑假做"家庭出行季"概念 | intensity: 40 |
-| ... | ... | ... | ... | ... | ... | ... | ... |
+| Stage | Value Category | Execution Tier | Primary Role | Lead ID | Write Style | Deformation Note | Energy Target | Memory Anchor |
+|---|---|---|---|---|---|---|---|---|
+| 悬念期 | 够新鲜 | S级 | Ignition | L001 | 完整方案 | AI大赛扩展为全网赛制 | intensity: 40 | "AI地图光点" |
+| 悬念期 | 够热 | B级 | Amplifier | L003 | 包装方式 | 蹭暑假做"家庭出行季"概念 | intensity: 40 | — |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
 ## Narrative Role Coverage Check
-- [ ] 每个阶段覆盖 ≥2 种 Narrative Role
+- [ ] 每个阶段覆盖 ≥2 种不同的 Primary Narrative Role
 - [ ] S级事件总数 ≤ 2-3（budget and rhythm constraint）
 - [ ] B级线索占比不过高（避免策划案"虚"）
 - [ ] Energy Curve 有明确的峰值和留白
+- [ ] 每个阶段有至少 1 个 Memory Anchor
 ```
 
 ---
@@ -450,7 +565,7 @@ Explicit link to `01-insight/01g-narrative-spine.md` — how this plan realizes 
    - **A-tier**: Expand to execution summary (format + channel + content + budget + KPI, with brief process).
    - **B-tier**: Clarify packaging approach (hook + highlight + direction + budget range + supplier type).
 
-2. **Narrative consistency**: Every activity in every stage must open with one sentence explaining how it serves the Main Narrative AND the Narrative Spine. Isolated activities are prohibited.
+2. **Narrative consistency**: Every activity in every stage must open with one sentence explaining how it serves the Main Narrative, the Narrative Spine, AND the target emotional transition. Isolated activities are prohibited.
 
 3. **Energy curve implementation**: Each stage's activities must collectively deliver the target intensity from Strategy Plan. If a stage targets intensity 40, don't pack three S-tier events into it.
 
@@ -471,15 +586,18 @@ Explicit link to `01-insight/01g-narrative-spine.md` — how this plan realizes 
 | Structure completeness | All stages defined in Strategy Plan have corresponding content |
 | Narrative consistency | Every activity explicitly links to Main Narrative AND Narrative Spine |
 | Narrative drift | No activity deviates from the core_tension or emotional_arc |
+| Narrative transition coverage | Each state transition has at least one lead serving it |
 | Redundancy | No two activities express the same thing in different packaging |
 | Peak collision | No two S-tier events compete for attention within the same stage |
 | White space | Low-intensity stages are intentional breathing room, not gaps |
+| Creative density | Per-stage concept count, new term count, symbol count, S-tier count are within healthy range; not "every page is explosive" |
 | Insight support | All core claims cite Atomic Resource IDs |
 | Lead coverage | All Strategy Plan referenced leads appear in Proposal with appropriate deformation |
 | Tier appropriateness | S/A/B depth rules followed; no over-elaboration on B-tier items |
 | Budget reasonableness | Total within rough range OR high-creative overflow items explicitly flagged |
-| Narrative role balance | Each stage covers ≥2 different Narrative Roles |
+| Narrative role balance | Each stage covers ≥2 different Primary Narrative Roles |
 | Energy curve | Intensity progression follows Strategy Plan; peak appears once |
+| Memory anchors | S-tier and A-tier activities have explicit memory anchors |
 
 ---
 
@@ -487,7 +605,7 @@ Explicit link to `01-insight/01g-narrative-spine.md` — how this plan realizes 
 
 - Do not enter **Insight** until intake has all research-start fields.
 - Do not enter **Narrative Spine** until Insight has ≥3 modules with Key Findings and ≥2 Atomic Resources per module.
-- Do not enter **Lead Pool** until Narrative Spine passes all 5 quality gates.
+- Do not enter **Lead Pool** until Narrative Spine passes all quality gates.
 - Do not enter **Strategy Plan** until Lead Pool has ≥10 valid leads covering ≥2 Value Categories and ≥2 Execution Tiers.
 - Do not enter **Proposal Assembly** until Strategy Plan is explicitly user-confirmed.
 - Do not declare completion until `04-proposal.md` passes Review Pass.
@@ -534,28 +652,49 @@ When user requests upstream modifications while in a downstream stage:
 
 ---
 
-## 18. Future Evolution: JSON + Markdown Dual-Track
+## 18. Future Evolution: Narrative Graph Runtime
 
-**Current state**: All artifacts are Markdown files. Human-readable, editable, suitable for proposals.
+**Current state (V1)**: File-driven planning system. Markdown artifacts are human-readable, editable, and suitable for proposals.
 
-**Future state** (recommended for v2+): Introduce structured JSON as the "runtime layer" while keeping Markdown as the "presentation layer":
+**Future state (V2+)**: Evolve from tree-structured files to a **Narrative Knowledge Graph**:
 
-| Layer | Format | Purpose |
-|---|---|---|
-| Runtime | JSON | Routing, scoring, fusion, overlap analysis, energy curve calculation, role balance checking |
-| Presentation | Markdown | Human reading, editing, final proposal output |
+```
+Nodes:
+  - leads
+  - emotions (emotional_arc states)
+  - symbols (symbolic_objects)
+  - memories (memory_anchors)
+  - roles (narrative_roles)
+  - stages (lifecycle stages)
+  - transitions (narrative_transitions)
 
-**Candidate JSON files**:
+Edges:
+  - amplifies
+  - transitions_to
+  - reinforces
+  - overlaps_with
+  - resolves
+  - serves
+```
+
+**Why a graph?**
+- **Overlap analysis**: Computing `lead_overlap_score` via graph similarity is more accurate than keyword matching.
+- **Role balance**: Checking stage coverage of narrative roles becomes a graph traversal problem.
+- **Fusion quality**: Emotional/symbolic fusion is a graph edge weighting problem.
+- **Energy routing**: Multi-axis energy curves are graph property propagation.
+- **Narrative drift detection**: Detecting deviation from core_tension is a graph centrality problem.
+
+**Implementation path**:
+- V1: Markdown-only (current spec)
+- V2: Markdown (presentation) + JSON (runtime) dual-track
+- V3: Narrative Graph Runtime with autonomous Creative Director capabilities
+
+**Candidate JSON runtime files**:
 - `runtime/lead-pool.json` — Structured lead data for programmatic scoring and fusion
 - `runtime/narrative-spine.json` — Machine-readable spine for alignment checks
 - `runtime/strategy-graph.json` — Stage dependencies and energy curve data
 - `runtime/fusion-registry.json` — Fusion group metadata
-
-This separation enables:
-- Automated overlap detection and compression suggestions
-- Energy curve validation against mathematical constraints
-- Narrative drift detection via semantic alignment scoring
-- Richer programmatic review passes
+- `runtime/memory-anchors.json` — Memory anchor catalog for memorability scoring
 
 ---
 
@@ -567,3 +706,4 @@ This separation enables:
 4. Review Pass failure routing: which upstream stage to return to for each failure mode.
 5. How to implement `lead_overlap_score` calculation (semantic similarity vs. keyword overlap).
 6. Whether to auto-generate `lead_uniqueness` at creation time or on-demand during compression.
+7. How to validate Narrative Transition trigger_types against actual lead designs.
