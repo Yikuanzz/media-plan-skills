@@ -12,6 +12,7 @@ Build a competitor deep-dive for core and secondary competitors, with actionable
   3. Channel strategy
   4. Trust path
   5. Counter-strategy for our plan (multi-sentence paragraph)
+- Counter-strategy must be a differentiated marketing-experience solution sentence, not parameter comparison.
 - For each competitor brand, include `2-3` recent campaigns.
 
 ## Evidence Requirement
@@ -33,6 +34,10 @@ Build a competitor deep-dive for core and secondary competitors, with actionable
 #### 近期 Campaign
 1. ...
 2. ...
+
+#### 应对策略写法约束
+- Must use specific marketing action sentence(s) (what to do, where, for whom, with what differentiated experience).
+- Do not output parameter-comparison tables or version-vs-version spec language.
 ```
 
 ## Gate
@@ -40,3 +45,4 @@ Build a competitor deep-dive for core and secondary competitors, with actionable
 - Fail if any competitor misses one of the `5-dimension (5维)` dimensions.
 - Fail if any competitor has fewer than 2 recent campaigns.
 - Fail if evidence count is below two sources.
+- Fail if competitor counter-strategy is only attribute/spec comparison and lacks concrete marketing action.

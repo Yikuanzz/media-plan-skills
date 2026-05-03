@@ -10,6 +10,7 @@ Run this checklist before emitting `Review Pass`.
 - C5 minimum title examples per required platform row: 1
 - C6 minimum tactics per KOL layer: 2
 - C4 minimum cards per Phase 2 segment: 1 primary + 1 alternative
+- C8 minimum rows in Insight Data Table: 2
 
 ## Standard 1: Content
 
@@ -18,6 +19,13 @@ Run this checklist before emitting `Review Pass`.
 - Audience insights are traceable to insight modules.
 - Stage actions are traceable to strategy chain, not ad-hoc additions.
 - City evidence includes consumption, media habits, spatial distribution, and culture anchor.
+- City evidence includes `City Battlefield Map` with named anchors (not generic districts).
+- Product value includes Product Spec Table with传播感 language translation and >=3 tech highlights.
+- Product value includes independent trust-value paragraph.
+- Competitor landscape includes three-tier classification (核心/重点/延展) and image benchmark.
+- Task Thesis includes core proposition + three tasks + one declaration slogan.
+- Competitor deep-dive includes per-competitor action-oriented response statement.
+- Customer segmentation includes 用车场景, 关注要点, and 情感诉求 per segment.
 
 ## Standard 2: Language
 
@@ -26,6 +34,11 @@ Run this checklist before emitting `Review Pass`.
 - Verb-driven wording; avoid empty buzzwords.
 - Subject ownership is explicit.
 - Quantified expressions are preferred over vague adjectives.
+- OUTPUT STYLE (applies regardless of vehicle type):
+  - Section headings use Chinese punchy phrases, not English labels or academic terms.
+  - Competitor response uses specific marketing actions, not attribute comparison tables.
+  - Activity descriptions include emotional/atmospheric language, not only execution steps.
+  - KPI targets are consolidated in Operations section, not scattered in activity cards.
 
 ## Standard 3: Structure
 
@@ -34,14 +47,31 @@ Run this checklist before emitting `Review Pass`.
 - Heading hierarchy remains parallel/progressive/contrast-consistent.
 - Activity Card fields follow canonical order.
 - Budget table includes online/offline split and stage totals.
+- Market Insight includes at least one data table with metric/value/year/source.
+- Phase 2/3 includes launch execution package (`选址 + 现场布置 + 核心流程 + 留资转化路径`).
+- KPI targets are consolidated in Operations and not scattered in action descriptions.
+- Launch communication includes `N-7/N/N+3` table and platform-differentiated content matrix.
+- Each activity card includes creative naming and explicit execution/closure details.
+- Strategy chapter includes Three-Stage Rhythm Framework, Marketing MAP (6 columns), and Communication MAP (5 columns).
+- Market Insight 2.2 includes national track-level analysis (3-year trend + powertrain breakdown) and regional-vs-national comparison.
+- Phase 3 includes structured continuation templates (Template A/B/C) per `continuation-activity-templates.md`.
+- Phase 3 cards demonstrate 螺旋上升永动机 logic (referral → order → advocacy → new lead).
 
 ## Standard 4: Creativity
 
 - Core Theme source explanation exists.
+- Core Impact Strategy includes three directions (声量传播/出行场景/目标客群转化) each with strategic内涵 and examples.
 - Slogan derivation chain links brand, audience, and product.
+- Core Theme and slogan pass dual-axis balance (technology + primary buyer identity).
 - Three stage sub-themes are distinct and aligned.
 - Every pillar has specific naming, not generic labels.
 - At least one action demonstrates real attendance pull.
+- Each phase has at least one budget-busting event with actual-cost/perceived-value disclosure.
+- Phase 2 includes one independent non-traditional launch ritual derived from primary buyer identity.
+- Action cards include explicit source-id trace to insight evidence.
+- If hotspot leverage is used, it must be mass-culture aligned with buyer identity and not industry-event-primary.
+- Competitor response uses differentiated marketing action solution, not parameter comparison.
+- Main launch storyline is delivery-first and does not rely on industry trade show primary tie-in.
 
 ## Standard 5 (conditional): Rubric Coverage
 
@@ -105,5 +135,6 @@ Enable only when rubric is non-empty.
 - C5: online primary `#### 媒介平台矩阵` includes five required platforms each with >=1 title example.
 - C6: online primary `#### KOL 矩阵` includes `头部 KOL`, `腰部 KOL`, `KOC`; each with >=2 tactics.
 - C7: SWOT quadrants in `2.7` are >=60 words and include city-evidence label reference.
+- C8: `01-insight.md` has at least one `Insight Data Table` with >=2 rows and columns `Metric | Value | Year/Window | Source`.
 
 Any single fail forces overall `Review Pass = fail`.

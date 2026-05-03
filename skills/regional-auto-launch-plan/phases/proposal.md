@@ -12,6 +12,7 @@ Assemble final proposal chapters from upstream outputs, run quality checks, and 
 - Read:
   - `../shared/proposal-template.md`
   - `../shared/quality-self-check.md`
+  - `../shared/3md-alignment-checklist.md`
   - `../shared/rubric-coverage-template.md`
   - `../shared/persistence-rules.md`
 
@@ -20,9 +21,16 @@ Assemble final proposal chapters from upstream outputs, run quality checks, and 
 1. Read persisted files from project directory in fixed order:
    `00-intake.md` -> `01-insight.md` -> `02-strategy.md` -> `03-action-overview.md` -> `04-action-phase1.md` -> `05-action-phase2.md` -> `06-action-phase3.md` -> `07-action-alternatives.md` -> `08-operations.md` -> `09-service-team.md`.
 2. Build `proposal.md` by concatenation only:
-   `cover + toc + cat 00->09 + closing + optional 14/15`.
+   `cover + toc + cat 00->09 + closing + visual-anchor-list + optional 14/15`.
 3. Do not rewrite or summarize chapter text during assembly.
 4. Run `Review Pass` before writing final `proposal.md`.
+5. Apply output style constraints before writing final `proposal.md`:
+   - All section headings must be Chinese punchy phrases; English labels and academic terminology are not permitted as headings.
+   - Competitor response in `2.4` must be expressed as specific marketing-action sentences, not attribute comparison tables.
+   - Each primary Activity Card description must include at least two sentences of atmospheric/emotional language describing participant experience, not only execution steps.
+   - KPI data is consolidated in Chapter 5 Operations; do not scatter numeric targets inside activity card descriptions in Chapter 4.
+   - Evidence citation markers (e.g. `[E1]`, `[E2]`) are permitted in Insight chapter only; remove from Strategy and Action chapters before final assembly.
+6. Run `3md-alignment-checklist.md` and repair missing items before final write.
 
 ## Review Pass and loop
 
@@ -32,13 +40,14 @@ Assemble final proposal chapters from upstream outputs, run quality checks, and 
 
 ### Symptom -> route table
 
-| Symptom | route |
-| --- | --- |
-| Evidence missing, weak source grounding, city signal gaps, competitor support incomplete | research |
-| Core Theme source unclear, slogan derivation chain broken, stage sub-themes inconsistent | ideation |
-| Action cards incomplete, KPI not quantifiable, budget red-line violations | execution |
-| Compact/Expanded mismatch, chapter relation confusion, wording quality issues, mapping anchor errors | proposal_enrich |
-| Rubric capture not verbatim, mandatory intake clauses missing, unresolved bid compliance clause | intake |
+| Symptom | route | target_file |
+| --- | --- | --- |
+| Evidence missing, weak source grounding, city signal gaps, competitor support incomplete | research | `01-insight.md` |
+| Core Theme source unclear, slogan derivation chain broken, stage sub-themes inconsistent | ideation | `02-strategy.md` |
+| Action cards incomplete, KPI not quantifiable, budget red-line violations | execution | `03-07 action chapter files` |
+| Compact/Expanded mismatch, chapter relation confusion, wording quality issues, mapping anchor errors | proposal_enrich | `proposal.md` |
+| Output style violations (English headings, attribute-only competitor tables, KPI scattered in action cards) | proposal_enrich | `proposal.md` style pass |
+| Rubric capture not verbatim, mandatory intake clauses missing, unresolved bid compliance clause | intake | `00-intake.md` |
 
 Allowed routes are fixed: `research | ideation | execution | proposal_enrich | intake`.
 

@@ -6,6 +6,7 @@ Build the operations assurance layer after Action is confirmed and before Servic
 
 - Phase 3 Auto-Display Summary is emitted.
 - Read `../shared/operations-assurance-template.md`.
+- Read `../shared/private-domain-operations.md`.
 - Read `../shared/persistence-rules.md`.
 - Action output includes final stage KPI definitions (field `10` semantics preserved).
 
@@ -15,15 +16,18 @@ Build the operations assurance layer after Action is confirmed and before Servic
 2. Content Dispatch Flow (one sentence).
 3. Feedback Loop (`monitor -> aggregate -> feedback`).
 4. Reporting Matrix (default four levels, three allowed when justified).
-5. Node Checkpoints (Phase 1/2/3 aligned and KPI-aligned to Action field `10`).
+5. Node Checkpoints (Phase 1/2/3 aligned and KPI-aligned to Action field `10`, with sales + brand dual dimensions).
+6. Private-Domain Architecture (WeChat topology + lifecycle calendar + referral + churn prevention plan).
 
 ## Gate
 
 Set `Operations Gate = pass` only when:
 
-- all 5 blocks are complete,
+- all 6 blocks are complete,
 - Group Matrix range is valid (`3-5群`), and
-- Node Checkpoints maintain stage and KPI alignment.
+- Node Checkpoints maintain stage and KPI alignment,
+- each stage includes both sales KPI and brand KPI with explicit data source,
+- Private-Domain Architecture has complete node ownership and lifecycle communication matrix.
 
 If any condition fails, set `Operations Gate = fail`, repair in this phase, then re-check. Do not enter `Phase: Service Team` while gate is fail.
 
@@ -33,7 +37,7 @@ Emit:
 
 ```md
 ## Operations Assurance
-<all five blocks populated>
+<all six blocks populated>
 
 ## Operations Gate
 - verdict: pass/fail
