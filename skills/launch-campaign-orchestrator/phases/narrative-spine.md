@@ -9,7 +9,8 @@ that governs all downstream creative work.
 
 - `./phases/insight.md`
 - `./shared/narrative-spine-template.md`
-- `./shared/insight-modules/*.md` (for context)
+- `{artifact_root}/01a-product-value.md` … `{artifact_root}/01f-trend-signal.md` (completed Insight modules)
+- `./shared/insight-modules/*.md` (optional pattern reference inside the skill package)
 
 ## Action
 
@@ -27,7 +28,7 @@ that governs all downstream creative work.
 
 ## Output
 
-Write to `01-insight/01g-narrative-spine.md`.
+Write to `{artifact_root}/01g-narrative-spine.md`.
 
 ## Quality Gates (all must pass)
 
@@ -44,6 +45,6 @@ Write to `01-insight/01g-narrative-spine.md`.
 ```markdown
 ## Narrative Spine complete
 - [x] All 7 quality gates passed
-- [x] Output written to 01g-narrative-spine.md
-- [ ] Next: Lead Pool
+- [x] Output written to `{artifact_root}/01g-narrative-spine.md`
+- [ ] Next: Activity Card Draw
 ```

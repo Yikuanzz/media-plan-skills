@@ -13,7 +13,7 @@ Key Findings and Atomic Resources with IDs.
 
 ## Modules
 
-Run all 6 modules. Each module file is a standalone artifact.
+Run all 6 modules. Each module file is a standalone artifact under `{artifact_root}/` (see `SKILL.md` **Artifact root**).
 
 | Module | File | Output ID Prefix |
 |---|---|---|
@@ -52,5 +52,5 @@ Run all 6 modules. Each module file is a standalone artifact.
 - [x] >=3 modules with findings
 - [x] >=2 Atomic Resources per module
 - [x] All resources trust-tagged
-- [ ] Next: Narrative Spine
+- [ ] Next: Hotspot Harvest (when ready)
 ```

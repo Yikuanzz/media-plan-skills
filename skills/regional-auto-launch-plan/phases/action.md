@@ -26,13 +26,13 @@ Each pillar must output:
 
 - one `primary` Activity Card
 - one `alternative` Activity Card
-- review log with four-dimension weighted scoring
+- review log with five-dimension weighted scoring
 
 ## Execution Pattern per Pillar
 
 1. Main agent writes one pillar brief (audience anchor, KPI target, budget cap, risk notes).
 2. Dispatch `N=2-3` sub-agents using the shared dispatch prompt template.
-3. Score candidates with the four-dimension review scorecard.
+3. Score candidates with the five-dimension review scorecard.
 4. Select highest valid score as `primary`, second highest as `alternative`.
 5. Validate mandatory fields and budget red lines before locking results.
 6. If hard-gate filtering leaves fewer than two valid cards, allow exactly one re-dispatch round and re-score; if still fewer than two valid cards, raise explicit blocking exception for user confirmation.
@@ -42,16 +42,18 @@ Each pillar must output:
 - Every card follows `Activity Card Schema` with fields `1-7` mandatory.
 - Fields `8-13` should be deep; if unavailable, mark `partial` with missing-evidence note.
 - Budget must satisfy all hard constraints from `budget-allocation-rule.md`.
+- `Budget Tier Gate`: selected budget tier (`conservative` / `standard` / `flagship`) must be explicit before card scoring; threshold checks follow tier-specific limits.
 - `Lead Capture Gate`: each phase must define capture entry, lead scoring tier (H/W/C), and dealer intake owner/SLA.
 - `Conversion Gate`: each phase must define conversion mechanism and the test-drive-to-order handoff; Phase 3 must include促单深度动作（close trigger + deposit follow-up owner).
 - `Retention Seeding Gate`: each phase must define at least one private-domain seed action (WeCom/community/referral/lifecycle touchpoint).
 - `Activity Form Gate`: high-cost/high-complexity forms listed in `activity-form-constraints.md` must be rejected unless explicit user exception exists.
 - `Circle Infiltration Gate`: each stage must include at least one activity that reaches the buyer inside their existing life circle rather than waiting for showroom visits. Valid circle types depend on `<primary-buyer-identity>`:
-  - family -> parent communities, school/kindergarten partnerships, residential compounds
+  - family -> parent communities, school/kindergarten partnerships, residential compounds, and high-net-worth family scenes (private salons, art/philanthropy events, premium clubs)
   - business elite -> chamber of commerce, golf clubs, private dining
   - adventure -> outdoor clubs, trail groups, camping communities
   - performance -> track clubs, driving schools, motorsport events
   At least 2 circle types must appear across the three phases.
+  If `<primary-buyer-identity> = family-oriented` and vehicle is premium price band, at least one pillar must include high-net-worth family scene.
 - `Hot-Spot Optional Gate`: hotspot tie-in is optional. If used, it must be validated in `2.2 Market Environment` and cannot use industry trade shows as primary storyline event.
 - `Owned Launch Event Gate`: at least one launch event across Phase 2/3 must provide complete execution package:
   - 选址建议: at least 1 main site + 1 backup with rationale

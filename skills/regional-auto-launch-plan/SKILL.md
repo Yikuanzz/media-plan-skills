@@ -99,6 +99,7 @@ Do not skip required reads.
 - Do not pass **Action** if any selected card violates high-cost/high-complexity form exclusions in `./shared/activity-form-constraints.md` (unless user explicitly approved exception).
 - Do not pass **Action** unless at least one owned launch event outputs a complete execution package (`选址建议 + 现场空间部署 + 核心流程 + 现场集客留资 + 促单环节`).
 - Do not pass **Action** if industry events/trade shows are used as primary tie-in event for main launch storyline.
+- Do not pass **Action** unless budget tier selection is explicit and all budget checks follow tier-specific thresholds in `./shared/budget-allocation-rule.md`.
 - Auto-Display Phase 1: After all Phase 1 pillar cards are complete, emit Phase 1 Auto-Display Summary and proceed to Phase 2 automatically.
 - Auto-Display Phase 2: After all Phase 2 pillar cards are complete, emit Phase 2 Auto-Display Summary and proceed to Phase 3 automatically.
 - Auto-Display Phase 3: After all Phase 3 pillar cards are complete, emit Phase 3 Auto-Display Summary and proceed to Operations automatically.
@@ -152,7 +153,7 @@ Global hard gates in this file are canonical. Step-level `GATE` and `BLOCKING-*`
 **Required reads**: `./phases/action.md`, `./shared/action-playbook-template.md`, `./shared/launch-execution-template.md`, `./shared/activity-form-constraints.md`, `./shared/lead-capture-playbook.md`, `./shared/conversion-mechanics-playbook.md`, `./shared/idea-scorecard.md`, `./shared/budget-allocation-rule.md`, `./shared/content-assets.md`
 
 **Action**:
-- For each pillar, dispatch `N = 2-3` sub-agent candidates, score by real attraction, feasibility, budget feasibility, and theme fit.
+- For each pillar, dispatch `N = 2-3` sub-agent candidates, score by real attraction, feasibility, budget feasibility, theme fit, and emotional resonance.
 - Select one `primary` and keep one `alternative` per pillar.
 - Enforce Activity Card field requirements and stage budget red lines.
 - Enforce lead capture, conversion mechanics, and retention seeding outputs in the phase contract.

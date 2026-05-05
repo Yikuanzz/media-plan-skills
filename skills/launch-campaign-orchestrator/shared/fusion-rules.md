@@ -20,7 +20,10 @@
 - **Narrative Roles**: Ignition (0.6) + Social Currency (0.3) + Participation (0.1)
 - **Memory Anchor**: ...
 - **Budget Impact**: Budget more concentrated
-```
+- **Hotspot lineage (when applicable)**: If fused candidates carried `public_heat_signal`
+  rows, rewrite one consolidated `angle_of_entry` + `spine_bridge` + `shallow_stack_check`
+  for the mother lead so reviewers can still validate those fields against Spine
+  and the Review Pass superficial hotspot row in `quality-self-check.md`.```
 
 ## Compression Rules
 

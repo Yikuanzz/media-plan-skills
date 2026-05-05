@@ -45,6 +45,13 @@ Runtime note: replace relative time tokens (for example, `current year`) with th
 - `<city> landmark venue event space`
 - `<city> cultural calendar festivals sports concerts`
 
+### Mass-culture and AI hotspot
+
+- `<city> major sports events current year`
+- `<city> music festival calendar current year`
+- `<city> AI creator challenge short video trend current year`
+- `<platform> AI UGC campaign case automotive`
+
 ## Source And Validation Rules
 
 - Every insight module must cite >=2 evidence sources before module pass.

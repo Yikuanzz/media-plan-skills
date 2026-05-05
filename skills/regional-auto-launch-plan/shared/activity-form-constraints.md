@@ -6,15 +6,20 @@ Central contract for activity-type exclusions and preferences in `regional-auto-
 
 The following activity forms are **prohibited** in any Activity Card. A card proposing any of these must be rejected automatically.
 
-- 大型车展（面积 >= 5000㎡ 或单场地费用 >= CNY 100k）
+- 大型车展（conservative tier: 面积 >= 5000㎡ 或单场地费用 >= CNY 100k）
 - 国际发布会（含海外嘉宾、跨国直播、双语物料）
-- 高成本线下快闪（单点位 >= CNY 30k 或不含可追踪转化链路）
+- 高成本线下快闪（conservative tier: 单点位 >= CNY 30k，or 不含可追踪转化链路）
 - 纯品牌曝光无转化链路的活动（无法归因到线索/试驾/订单）
 - 需要 >4 周筹备周期的重搭建项目
-- 高成本 3D 动画主导内容（单条制作 >= CNY 20k 且无明确转化链路）
+- 高成本 3D 动画主导内容（conservative tier: 单条制作 >= CNY 20k 且无明确转化链路）
 - 复杂设备重搭建（大型互动装置、沉浸式光影空间、重硬件调试依赖）
 - 传统高投入车展打法（豪华展台、明星站台、重舞美发布会）
 - 高门槛线下活动（赛车/极限驾驶/专业资质依赖，导致大众参与门槛显著升高）
+
+Tier note:
+
+- Apply exclusion thresholds by budget tier from `./budget-allocation-rule.md` (`conservative` / `standard` / `flagship`).
+- When tier is upgraded with user confirmation, exclusion thresholds can relax according to tier table; core conversion-traceability requirements still apply.
 
 ## Preference List (positive signals)
 
@@ -31,10 +36,13 @@ When generating Activity Cards, **prioritize** the following forms. Preference d
 | 轻量地标联动 | 地标 AR 扫码互动、城市既有场景轻量灯光/视觉联动 | 借势公共资源，避免重资产搭建 |
 | 深度试驾促单 | 48 小时深度试驾、圈层专场试驾日（老车主/企业员工） | 真实场景说服力更强，转化效率更高 |
 | 私域裂变留客 | 车主联盟计划、推荐码裂变、本地腰部 KOL/KOC 共创 | 留资到转化到复购链路更完整 |
+| 大众文化热点借势 | 体育赛事、音乐节、AI/科技热点、城市级节日联动 | 非汽车圈层破圈，提升传播外溢 |
+| AI/科技热点共创 | AI短视频大赛、AI海报共创、AI脚本挑战 | 降低创作门槛，扩大UGC参与 |
 
 PREFERENCE - Circle infiltration over passive invitation (identity-conditional):
 
 - If target buyer is family-oriented -> parent/community/school circles.
+- If target buyer is family-oriented -> parent/community/school circles + high-net-worth family private scenes (private salons, art/philanthropy evenings, premium clubs).
 - If target buyer is business elite -> chamber of commerce/golf/private clubs.
 - If target buyer is adventure-oriented -> outdoor clubs/camping groups.
 - Rationale: high-ticket buyers rarely walk into dealerships spontaneously; activities should enter their existing life circles.
@@ -65,6 +73,7 @@ When evaluating an Activity Card, apply these rules in order:
 
 1. **Exclude check first**: If the card's core form matches any Exclude List item, mark `non-compliant` and reject.
 2. **Preference scoring**: If compliant, count how many Preference List categories the card touches. More categories = higher preference score.
+   - Add `+1` bonus for each of these categories when present: `大众文化热点借势`, `AI/科技热点共创`.
 3. **Dealer-linkage mandatory**: Any offline card must explicitly describe dealer involvement (venue, staff, or lead handoff). Cards without this are `partial`.
 4. **Traceability mandatory**: Any online card must describe how leads/orders are tracked (UTM, unique code, CRM tag). Cards without this are `partial`.
 5. **Complexity sanity check**: If a card relies on high-production heavy assets (3D-heavy, complex hardware, long setup), mark `non-compliant` unless user explicitly approved exception.
